@@ -1,6 +1,6 @@
 Library/
 Temp/
-Oobj/
+Obj/
 Build/
 Builds/
 Assets/AssetStoreTools*
@@ -24,4 +24,4 @@ ExportedObj/
 sysinfo.txt
 *.apk
 *.unitypackage
-Assets/
+
