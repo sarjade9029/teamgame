@@ -17,9 +17,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         SpeedCalculator();
-
         if (Cooltime == 0)
         {
             if (stamina < 10)
@@ -27,7 +25,6 @@ public class PlayerMove : MonoBehaviour
                 stamina++;
             }
         }
-
         InputMove();
     }
     //スピード計算
