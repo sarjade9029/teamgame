@@ -21,6 +21,6 @@ public class hide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);
+        
     }
 }
