@@ -42,14 +42,16 @@ public class PlayerMove : MonoBehaviour
     //キー入力
     void InputMove()
     {
-        Rigidbody myRigid = GetComponent<Rigidbody>();
+        Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
-            myRigid.AddForce(new Vector3(speed, 0, 0));
+            transform.localScale = new Vector3(1, 1, 1);
+            myRigid.AddForce(new Vector3(-speed, 0, 0));
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
-            myRigid.AddForce(new Vector3(-speed, 0, 0));
+            transform.localScale = new Vector3(-1, 1, 1);
+            myRigid.AddForce(new Vector3(speed, 0, 0));
         }
         if (player.onTheWall == true)
         {
