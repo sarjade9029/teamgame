@@ -4,48 +4,50 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
-    
-    public GameObject shotObject;
 
-    public GameObject shotPosObject;
+    //public GameObject shotObject;
+
+    //public GameObject shotPosObject;
+    //プレイヤーオブジェクト
+    public GameObject player;
+    //弾のプレハブオブジェクト
+    public GameObject tama;
+
+    private float currentTime = 0;
     public float speed = 0.1f;
     public float life_time = 1.5f;
-    float time = 0f;
+
+    float startTime;
+
+    // Use this for initialization
     void Start()
     {
-        time = 0;
+        startTime = Time.time;
     }
+
     // Update is called once per frame
     void Update()
     {
-
-        //ショットのゲームオブジェクトをコピーする
-        //コピーした物をnewshotに入れる
-        GameObject newShot = GameObject.Instantiate(shotObject);
-
-        //mewshotの位置をプレイヤーと同じにする
-        newShot.transform.position = shotPosObject.transform.position;
-
-        //向きを同じにする
-        newShot.transform.rotation = gameObject.transform.rotation;
-
-        time += Time.deltaTime;
-        if (time > life_time)
+        // 現在時刻から開始時刻を引くと、開始から立った時間がとれる
+        // それが３秒より大きいとき自殺する
+        if (Time.time - startTime > 5.0f)
         {
             Destroy(gameObject);
         }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //弾に入れるスクリプト
         //Debug.Log(other.gameObject + "当たり！");
         if (other.gameObject.tag == "player")
         {
             //使うステを取る
             Player player = other.gameObject.GetComponent<Player>();
             //体力減らす
-            player.sleepiness = player.sleepiness + 1;
+            player.sleepiness++;
             if (player.sleepiness <= 10)
             {
                 Destroy(other.gameObject);
