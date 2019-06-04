@@ -2,11 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public struct Condition
 {
+    public int staminamax;
+    public float fatigue;
+};
+
+public class PlayerMove : MonoBehaviour
+{ 
+
     Player player = new Player();
     float speed = 0.0f;                     //移動速度:最終的な移動速度この値が移動速度になる
     float fatigue = 1.0f;                   //疲労:この数値をかけてスピードを調整する
+    static int con = 3;
+    Condition[] conditions = new Condition[con];
+    void Start()
+    {
+        for (int i = 0; i < con; i++) 
+        {
+            conditions[i] = new Condition() { staminamax = (i + 1) * 3, fatigue = 1.0f - (0.1f * (i+1)) };
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -23,17 +40,14 @@ public class PlayerMove : MonoBehaviour
     //スピード計算
     void SpeedCalculator()
     {
-        if (player.stamina <= 10 && player.stamina >= 8)
+        fatigue = 1.0f;
+        for (int i = 0; i < con; i++)
         {
-            fatigue = 1.0f;
-        }
-        if (player.stamina <= 7 && player.stamina >= 4)
-        {
-            fatigue = 0.9f;
-        }
-        if (player.stamina <= 3)
-        {
-            fatigue = 0.7f;
+            //マックス値以下なら疲労を代入
+            if(player.stamina < conditions[i].staminamax)
+            {
+                fatigue = conditions[i].fatigue;
+            }
         }
 
         speed = player.normalSpeed * fatigue;
