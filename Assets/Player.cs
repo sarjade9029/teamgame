@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int sleepiness = 0;              //眠気:蓄積されると移動が遅くなる
     public bool onTheWall = false;          //壁に張り付いている状態か
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
-    public float tonguelength = 5.0f;       //舌の判定の長さ
+    //public float tonguelength = 5.0f;       //舌の判定の長さ
 
     //public float 
     //public float

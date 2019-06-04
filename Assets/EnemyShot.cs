@@ -17,7 +17,7 @@ public class EnemyShot : MonoBehaviour
         // それが３秒より大きいとき自殺する
         if (Time.time - startTime > 5.0f)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     private void OnTriggerEnter(Collider other)

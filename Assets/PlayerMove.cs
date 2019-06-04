@@ -9,9 +9,9 @@ public struct Condition
 };
 
 public class PlayerMove : MonoBehaviour
-{ 
+{
 
-    Player player = new Player();
+    //Player player = new Player();
     float speed = 0.0f;                     //移動速度:最終的な移動速度この値が移動速度になる
     float fatigue = 1.0f;                   //疲労:この数値をかけてスピードを調整する
     static int con = 3;
@@ -27,6 +27,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var player = gameObject.AddComponent<Player>();
         SpeedCalculator();
         if (player.Cooltime == 0)
         {
@@ -40,6 +41,7 @@ public class PlayerMove : MonoBehaviour
     //スピード計算
     void SpeedCalculator()
     {
+        var player = gameObject.AddComponent<Player>();
         fatigue = 1.0f;
         for (int i = 0; i < con; i++)
         {
@@ -56,6 +58,7 @@ public class PlayerMove : MonoBehaviour
     //キー入力
     void InputMove()
     {
+        var player = gameObject.AddComponent<Player>();
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
