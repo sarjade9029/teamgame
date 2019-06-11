@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
+    public Rigidbody2D myRigid;
+
     float startTime;
+    public float xSpeed;
+
     // Use this for initialization
     void Start()
     {
@@ -18,6 +22,15 @@ public class EnemyShot : MonoBehaviour
         if (Time.time - startTime > 5.0f)
         {
             Destroy(gameObject);
+        }
+        // たまが反対を向いている（スケールがマイナス）なら反対に進ませる
+        if (transform.localScale.x < 0)
+        {
+            myRigid.velocity = -transform.right * xSpeed;
+        }
+        else
+        {
+            myRigid.velocity = transform.right * xSpeed;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

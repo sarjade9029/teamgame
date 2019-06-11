@@ -4,52 +4,29 @@ using UnityEngine;
 
 public class SetShot : MonoBehaviour
 {
-    //public GameObject shotObject;
-    //弾の目標と弾の形を指定する
-    //public GameObject shotPosObject;
-    //プレイヤーオブジェクト
-    public GameObject playerPos;
-    //弾のプレハブオブジェクト
-    public GameObject shotObject;
 
-    public GameObject enemyPos;
-    private float currentTime = 0;
-    //public float life_time = 1.5f;
-    void Start()
-    {
-       
-    }
-    void Update()
-    {
-        currentTime++;
-    }
+    // 生み出すもととなる弾のプレハブ
+    public GameObject shotPrefab;
+
+    // ショットを生み出す場所
+    public GameObject shotPoint;
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.gameObject.tag == "Player" && currentTime == 60)
+        if (other.gameObject.tag == "Player")
         {
-            currentTime = 0;
-            //敵の座標を変数posに保存
-            var pos = enemyPos.transform.position;
+            // 生み出した弾の位置をショットポジションと同じにする.
+            GameObject newShot = GameObject.Instantiate(shotPrefab);
+            newShot.transform.position = shotPoint.transform.position;
 
-            //ゲームオブジェクトの格納
-            GameObject newShot = GameObject.Instantiate(shotObject);
-            //オブジェクトの位置を敵と同じにする
-            newShot.transform.position = enemyPos.transform.position;
-
-            //弾のプレハブを作成
-            //var t = Instantiate(tama) as GameObject;
-            //弾のプレハブの位置を敵の位置にする
-            //t.transform.position = pos;
-
-            //敵からプレイヤーに向かうベクトルをつくる
-            //プレイヤーの位置から敵の位置（弾の位置）を引く
-            Vector2 vec = playerPos.transform.position - pos;
-
-            //弾のRigidBody2Dコンポネントのvelocityに先程求めたベクトルを入れて力を加える
-            newShot.GetComponent<Rigidbody2D>().velocity = vec;
-
-
+            // プレイヤーが反対を向いている場合は、ショットも反対を向かせる.
+            // Xのスケールがマイナスの場合は反対をむく
+            if (transform.localScale.x < 0)
+            {
+                newShot.transform.localScale =
+                    new Vector3(newShot.transform.localScale.x * -1,
+                    newShot.transform.localScale.y,
+                    newShot.transform.localScale.z);
+            }
         }
     }
 }
