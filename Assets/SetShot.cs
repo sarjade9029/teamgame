@@ -23,10 +23,10 @@ public class SetShot : MonoBehaviour
     {
         currentTime++;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "player" && currentTime == 60)
+        if (other.gameObject.tag == "Player" && currentTime == 60)
         {
             currentTime = 0;
             //敵の座標を変数posに保存

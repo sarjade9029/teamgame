@@ -10,7 +10,16 @@ public struct Condition
 
 public class PlayerMove : MonoBehaviour
 {
+    public int Cooltime = 5;                //クールタイム:スタミナが0になると発生する
+    public int witecount = 10;              //スタミナが1回復するまでの時間(フレーム)
+    public int stamina = 10;                //スタミナ:減ると特種行動ができなくなる
+    public int sleepiness = 0;              //眠気:蓄積されると移動が遅くなる
+    public bool onTheWall = false;          //壁に張り付いている状態か
+    public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
+    //public float tonguelength = 5.0f;       //舌の判定の長さ
 
+    //public float 
+    //public float
     //Player player = new Player();
     float speed = 0.0f;                     //移動速度:最終的な移動速度この値が移動速度になる
     float fatigue = 1.0f;                   //疲労:この数値をかけてスピードを調整する
@@ -27,66 +36,78 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var player = gameObject.AddComponent<Player>();
+        
         SpeedCalculator();
-        if (player.Cooltime == 0)
+        if (Cooltime == 0)
         {
-            if (player.stamina < 10)
+            if (stamina < 10)
             {
-                player.stamina++;
+                stamina++;
             }
         }
         InputMove();
+        if(Input.GetKey(KeyCode.None))
+        {
+            Stop();
+        }
     }
     //スピード計算
     void SpeedCalculator()
     {
-        var player = gameObject.AddComponent<Player>();
+        
         fatigue = 1.0f;
         for (int i = 0; i < con; i++)
         {
             //マックス値以下なら疲労を代入
-            if(player.stamina < conditions[i].staminamax)
+            if(stamina < conditions[i].staminamax)
             {
                 fatigue = conditions[i].fatigue;
             }
         }
 
-        speed = player.normalSpeed * fatigue;
+        speed = normalSpeed * fatigue;
 
     }
     //キー入力
     void InputMove()
     {
-        var player = gameObject.AddComponent<Player>();
+        
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
             myRigid.AddForce(new Vector3(-speed, 0, 0));
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
             myRigid.AddForce(new Vector3(speed, 0, 0));
         }
-        if (player.onTheWall == true)
+        if (onTheWall == true)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                myRigid.AddForce(new Vector3(0, 0, -speed));
+                myRigid.AddForce(new Vector3(0, -speed, 0));
             }
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
             {
-                myRigid.AddForce(new Vector3(0, 0, speed));
+                myRigid.AddForce(new Vector3(0, speed, 0));
             }
         }
         else
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                player.onTheWall = true;
+                onTheWall = true;
             }
         }
     }
+
+    void Stop()
+    {
+        Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
+        myRigid.velocity = Vector3.zero;
+        //myRigid.angularVelocity = Vector3.zero;
+    }
+
 }

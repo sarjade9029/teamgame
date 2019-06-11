@@ -17,20 +17,20 @@ public class EnemyShot : MonoBehaviour
         // それが３秒より大きいとき自殺する
         if (Time.time - startTime > 5.0f)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //弾に入れるスクリプト弾を自動で殺す
         //Debug.Log(other.gameObject + "当たり！");
-        if (other.gameObject.tag == "player")
+        if (other.gameObject.tag == "Player")
         {
             //使うステを取る
-            Player player = other.gameObject.GetComponent<Player>();
+            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
             //体力減らす
             player.sleepiness++;
-            if (player.sleepiness <= 10)
+            if (player.sleepiness >= 10)
             {
                 Destroy(other.gameObject);
             }
