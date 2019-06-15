@@ -46,10 +46,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
         InputMove();
-        if(Input.GetKey(KeyCode.None))
-        {
-            Stop();
-        }
     }
     //スピード計算
     void SpeedCalculator()
@@ -64,8 +60,9 @@ public class PlayerMove : MonoBehaviour
                 fatigue = conditions[i].fatigue;
             }
         }
-
-        speed = normalSpeed * fatigue;
+        
+            speed = normalSpeed * fatigue;
+        
 
     }
     //キー入力
@@ -78,10 +75,18 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
             myRigid.AddForce(new Vector3(-speed, 0, 0));
         }
+        if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            Stop();
+        }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
             transform.localScale = new Vector3(1, 1, 1);
             myRigid.AddForce(new Vector3(speed, 0, 0));
+        }
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            Stop();
         }
         if (onTheWall == true)
         {
@@ -89,9 +94,17 @@ public class PlayerMove : MonoBehaviour
             {
                 myRigid.AddForce(new Vector3(0, -speed, 0));
             }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                Stop();
+            }
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
             {
                 myRigid.AddForce(new Vector3(0, speed, 0));
+            }
+            if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                Stop();
             }
         }
         else
@@ -106,7 +119,7 @@ public class PlayerMove : MonoBehaviour
     void Stop()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
-        myRigid.velocity = Vector3.zero;
+        myRigid.velocity = Vector2.zero;
         //myRigid.angularVelocity = Vector3.zero;
     }
 

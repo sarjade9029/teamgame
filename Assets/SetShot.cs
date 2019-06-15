@@ -18,7 +18,7 @@ public class SetShot : MonoBehaviour
             GameObject newShot = GameObject.Instantiate(shotPrefab);
             newShot.transform.position = shotPoint.transform.position;
 
-            // プレイヤーが反対を向いている場合は、ショットも反対を向かせる.
+            // 敵が反対を向いている場合は、ショットも反対を向かせる.
             // Xのスケールがマイナスの場合は反対をむく
             if (transform.localScale.x < 0)
             {

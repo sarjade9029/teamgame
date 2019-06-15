@@ -7,7 +7,7 @@ public class EnemyShot : MonoBehaviour
     public Rigidbody2D myRigid;
 
     float startTime;
-    public float xSpeed;
+    public float xSpeed = 0.5f;
 
     // Use this for initialization
     void Start()
