@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class hide : MonoBehaviour
 {
-    public GameObject gameobject;
-    //1.0fで描画0.0fで非表示
-    //float changeRed = 1.0f;
-    //float changeGreen = 1.0f;
-    //float cahngeBlue = 1.0f;
-    //float cahngeAlpha = 1.0f;
-    // Use this for initialization
+    SpriteRenderer spriteRenderer;
+    public float invisible = 0.5f;
+    float normal = 1.0f;
+    public bool hit = false;
+
     void Start()
     {
-        //changeRed = 1.0f;
-        //changeGreen = 1.0f;
-        //cahngeBlue = 1.0f;
-        //cahngeAlpha = 1.0f;
+        //試験的なものこれは後で必ずボタンを押したときという条件
+        //ボタンを押すと元に戻る当たり判定を元に戻す処理を追加する
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        ChangeTransparency(invisible); // 透明にする
+        GetComponent<PolygonCollider2D>().enabled = hit;
     }
-    // Update is called once per frame
-    void Update()
+
+    void ChangeTransparency(float alpha)
     {
-        
+        this.spriteRenderer.color = new Color(1, 1, 1, alpha);
     }
 }

@@ -92,7 +92,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                myRigid.AddForce(new Vector3(0, -speed, 0));
+                myRigid.AddForce(new Vector3(0, speed, 0));
             }
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
             {
@@ -100,7 +100,7 @@ public class PlayerMove : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
             {
-                myRigid.AddForce(new Vector3(0, speed, 0));
+                myRigid.AddForce(new Vector3(0, -speed, 0));
             }
             if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
             {
