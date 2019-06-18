@@ -16,7 +16,8 @@ public class PlayerMove : MonoBehaviour
     public int sleepiness = 0;              //眠気:蓄積されると移動が遅くなる
     public bool onTheWall = false;          //壁に張り付いている状態か
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
-    //public float tonguelength = 5.0f;       //舌の判定の長さ
+    //public float tonguelength = 5.0f;       //舌の判定の長さ画面の3割4割
+    //下を伸ばす時間は大体一秒で伸ばしきる(ヨッシーならば)
 
     //public float 
     //public float
@@ -25,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     float fatigue = 1.0f;                   //疲労:この数値をかけてスピードを調整する
     static int con = 3;
     Condition[] conditions = new Condition[con];
-    void Start()
+    private void Start()
     {
         for (int i = 0; i < con; i++) 
         {
@@ -34,7 +35,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
         SpeedCalculator();
@@ -48,7 +49,7 @@ public class PlayerMove : MonoBehaviour
         InputMove();
     }
     //スピード計算
-    void SpeedCalculator()
+    private void SpeedCalculator()
     {
         
         fatigue = 1.0f;
@@ -66,7 +67,7 @@ public class PlayerMove : MonoBehaviour
 
     }
     //キー入力
-    void InputMove()
+    private void InputMove()
     {
         
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
@@ -116,11 +117,16 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void Stop()
+    private void Stop()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         myRigid.velocity = Vector2.zero;
         //myRigid.angularVelocity = Vector3.zero;
+    }
+
+    private void StretchTongue()
+    {
+
     }
 
 }
