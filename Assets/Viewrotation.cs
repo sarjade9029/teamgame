@@ -36,7 +36,6 @@ public class Viewrotation : MonoBehaviour
                 looktime = 0;
                 lookUp = false;
             }
-
         }
         else
         {

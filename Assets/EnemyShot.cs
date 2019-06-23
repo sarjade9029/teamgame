@@ -35,8 +35,6 @@ public class EnemyShot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //弾に入れるスクリプト弾を自動で殺す
-        //Debug.Log(other.gameObject + "当たり！");
         if (other.gameObject.tag == "Player")
         {
             //使うステを取る

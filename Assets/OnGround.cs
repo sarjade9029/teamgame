@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Update is called once per frame
+    void Update()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
+            player.onTheGround = true;
+            player.onTheWall = false;
+        }
+    }
+    //当たり判定に入った時
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+    //当たり判定から抜けたとき
+    private void OnTriggerExit(Collider other)
     {
         
     }
