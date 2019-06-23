@@ -11,6 +11,15 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        OnGround(other);
+    }
+    //当たり判定から抜けたとき
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        OnTheWall(other);
+    }
+    void OnGround(Collider2D other)
+    {
         if (other.gameObject.tag == "Ground")
         {
             PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
@@ -18,14 +27,14 @@ public class NewBehaviourScript : MonoBehaviour
             player.onTheWall = false;
         }
     }
-    //当たり判定に入った時
-    private void OnTriggerEnter(Collider other)
+    void OnTheWall(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "Ground")
+        {
+            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
+            player.onTheGround = false;
+            player.onTheWall = true;
+        }
     }
-    //当たり判定から抜けたとき
-    private void OnTriggerExit(Collider other)
-    {
-        
-    }
+
 }
