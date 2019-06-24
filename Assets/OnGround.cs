@@ -2,39 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class OnGround : MonoBehaviour
 {
+    GameObject Player1;
+    PlayerMove playermovescript;
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        Player1 = GameObject.Find("player1");
+        playermovescript = Player1.GetComponent<PlayerMove>();
     }
+    //当たり判定に入ったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
-        OnGround(other);
+        if (other.gameObject.tag == "ground")
+        {
+            Onground(other);
+        }
     }
     //当たり判定から抜けたとき
     private void OnTriggerExit2D(Collider2D other)
     {
-        OnTheWall(other);
-    }
-    void OnGround(Collider2D other)
-    {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "ground")
         {
-            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
-            player.onTheGround = true;
-            player.onTheWall = false;
+            OnTheWall(other);
         }
+    }
+    void Onground(Collider2D other)
+    {
+        playermovescript.OnGround();
+        playermovescript.LeaveWall();
     }
     void OnTheWall(Collider2D other)
     {
-        if (other.gameObject.tag == "Ground")
-        {
-            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
-            player.onTheGround = false;
-            player.onTheWall = true;
-        }
+        playermovescript.LeaveGround();
+        playermovescript.OnWall();
     }
-
 }

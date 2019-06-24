@@ -12,18 +12,17 @@ public class PlayerMove : MonoBehaviour
 {
     public int Cooltime = 5;                //クールタイム:スタミナが0になると発生する
     public int witecount = 10;              //スタミナが1回復するまでの時間(フレーム)
-    public int stamina = 10;                //スタミナ:減ると特種行動ができなくなる
+    public int stamina = 10;                //スタミナ:減ると隠れることができなくなる
     public int sleepiness = 0;              //眠気:蓄積されると移動が遅くなる
-    public bool onTheWall = false;          //壁に張り付いている状態か
-    public bool onTheGround = true;
+    private bool onTheWall = false;          //壁に張り付いている状態か
+    private bool onTheGround = true;
     bool movement = false;
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
-    //public float tonguelength = 5.0f;       //舌の判定の長さ画面の3割4割
-    //下を伸ばす時間は大体一秒で伸ばしきる(ヨッシーならば)
-
-    float speed = 0.0f;                     //移動速度:最終的な移動速度この値が移動速度になる
-    float fatigue = 1.0f;                   //疲労:この数値をかけてスピードを調整する
+    private float speed = 0.0f;             //移動速度:最終的な移動速度この値が移動速度になる
+    private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     static int con = 3;
+
+
     Condition[] conditions = new Condition[con];
     private void Start()
     {
@@ -71,11 +70,11 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
             movement = true;
-            if(onTheWall==false)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-                myRigid.AddForce(new Vector3(-speed, 0, 0));
-            }
+            //if(onTheWall==false)
+            //{
+                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                myRigid.AddForce(new Vector3(-speed, 0.0f, 0.0f));
+            //}
         }
         if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.LeftArrow))
         {
@@ -84,11 +83,11 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
             movement = true;
-            if(onTheWall==false)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                myRigid.AddForce(new Vector3(speed, 0, 0));
-            }
+            //if(onTheWall==false)
+            //{
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                myRigid.AddForce(new Vector3(speed, 0.0f, 0.0f));
+            //}
         }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
@@ -96,11 +95,8 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if (onTheWall == true)
-            {
                 movement = true;
-                myRigid.AddForce(new Vector3(0, speed, 0));
-            }
+                myRigid.AddForce(new Vector3(0.0f, speed, 0.0f));
         }
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -108,21 +104,33 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
         {
-            if(onTheGround == true)
-            {
-                movement = true;
-                myRigid.AddForce(new Vector3(0, -speed, 0));
-            }
+            movement = true;
+            myRigid.AddForce(new Vector3(0.0f, -speed, 0.0f));
         }
         if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             movement = false;
         }
     }
-    private void Stop()
+    public void Stop()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         myRigid.velocity = Vector2.zero;
-        //myRigid.angularVelocity = Vector3.zero;
+    }
+    public void OnWall()
+    {
+        onTheWall = true;
+    }
+    public void OnGround()
+    {
+        onTheGround = true;
+    }
+    public void LeaveWall()
+    {
+        onTheWall = false;
+    }
+    public void LeaveGround()
+    {
+        onTheGround = false;
     }
 }

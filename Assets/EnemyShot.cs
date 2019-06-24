@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
-    public Rigidbody2D myRigid;
-
     float startTime;
-    public float xSpeed = 0.5f;
-
+    public float xSpeed = 2f;
     // Use this for initialization
     void Start()
     {
@@ -17,8 +14,9 @@ public class EnemyShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         // 現在時刻から開始時刻を引くと、開始から経過時間がとれる
-        // それが３秒より大きいとき自殺する
+        // それが5秒より大きいとき自殺する
         if (Time.time - startTime > 5.0f)
         {
             Destroy(gameObject);
@@ -26,11 +24,11 @@ public class EnemyShot : MonoBehaviour
         // たまが反対を向いている（スケールがマイナス）なら反対に進ませる
         if (transform.localScale.x < 0)
         {
-            myRigid.velocity = -transform.right * xSpeed;
+            myRigid.velocity = transform.right * xSpeed;
         }
         else
         {
-            myRigid.velocity = transform.right * xSpeed;
+            myRigid.velocity = -transform.right * xSpeed;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

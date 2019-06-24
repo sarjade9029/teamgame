@@ -14,16 +14,15 @@ public class SetShot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            // 生み出した弾の位置をショットポジションと同じにする.
             GameObject newShot = GameObject.Instantiate(shotPrefab);
+            // 生み出した弾の位置をショットポジションと同じにする.
             newShot.transform.position = shotPoint.transform.position;
-
             // 敵が反対を向いている場合は、ショットも反対を向かせる.
             // Xのスケールがマイナスの場合は反対をむく
-            if (transform.localScale.x < 0)
+            if (shotPoint.transform.localScale.x < 0)
             {
                 newShot.transform.localScale =
-                    new Vector3(newShot.transform.localScale.x * -1,
+                    new Vector3(newShot.transform.localScale.x *-1,
                     newShot.transform.localScale.y,
                     newShot.transform.localScale.z);
             }
