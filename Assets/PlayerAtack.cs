@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAtack : MonoBehaviour
 {
-
+    //挙動
     float tongueLength ;//舌を伸ばす最大距離を１秒で割った数を入れる
     public float tongue = 1.0f;       //スケールを１まで伸ばす
     private bool hit = false;
@@ -42,12 +42,24 @@ public class PlayerAtack : MonoBehaviour
             transform.localScale = new Vector3(tongueLength, 1.0f, 1.0f);
             if (tongue == tongueLength)
             {
-                hit = false;
+                tongueLength -= tongue / 1.0f;
+                if(tongueLength ==0.0f)
+                {
+                    hit = false;
+                    Destroy(gameObject);
+                }
             }
         }
         else
         {
             GetComponent<PolygonCollider2D>().enabled = hit;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        //if(tongue == tongueLength)
+        //{
+        //}
+            Destroy(other.gameObject);
     }
 }
