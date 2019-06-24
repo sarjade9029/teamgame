@@ -5,41 +5,36 @@ using UnityEngine;
 public class SetTomgue : MonoBehaviour
 {
     //生成
-    GameObject player;
-    PlayerMove playerscript;
-    float tongueLength;//舌を伸ばす最大距離を１秒で割った数を入れる
-    public float tongue = 1.0f;       //スケールを１まで伸ばす
-    private bool hit = false;
+    public GameObject Tongue;
+    public GameObject PlayerPos;
     private bool extend = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.Find("player1");
-        playerscript = player.GetComponent<PlayerMove>();
-        extend = true;
-        hit = true;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        TongueExtend();
+        KeyInput();
     }
-    void TongueExtend()
+    void KeyInput()
     {
-        if (extend == true)
+        if (Input.GetKeyDown(KeyCode.E) && extend == false)
         {
-            GetComponent<PolygonCollider2D>().enabled = hit;
-            tongueLength += tongue / 1.0f;
-            transform.localScale = new Vector3(tongueLength, 1.0f, 1.0f);
-            if (tongue == tongueLength)
-            {
-                hit = false;
-            }
+            extend = true;
+            //ショットのゲームオブジェクトをコピーする
+            //コピーした物をnewshotに入れる
+            GameObject newAttack = GameObject.Instantiate(Tongue);
+
+            //mewshotの位置をプレイヤーと同じにする
+            newAttack.transform.position = 
+                new Vector3(PlayerPos.transform.position.x,
+                PlayerPos.transform.position.y,
+                PlayerPos.transform.position.z + 1);
+                //PlayerPos.transform.position;
+
+            //向きを同じにする
+            newAttack.transform.rotation = gameObject.transform.rotation;
         }
-        else
-        {
-            GetComponent<PolygonCollider2D>().enabled = hit;
-        }
+    }
+    public void ExtendEnd()
+    {
+        extend = false;
     }
 }

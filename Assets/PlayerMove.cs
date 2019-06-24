@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
     private float speed = 0.0f;             //移動速度:最終的な移動速度この値が移動速度になる
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
+    private bool inputAbort = false;
     static int con = 3;
 
 
@@ -42,7 +43,10 @@ public class PlayerMove : MonoBehaviour
                 stamina++;
             }
         }
-        InputMove();
+        if (inputAbort == false) 
+        {
+            InputMove();
+        }
         if(movement==false)
         {
             Stop();
@@ -132,5 +136,13 @@ public class PlayerMove : MonoBehaviour
     public void LeaveGround()
     {
         onTheGround = false;
+    }
+    public void InputAbort()
+    {
+        inputAbort = true;
+    }
+    public void inputPermit()
+    {
+        inputAbort = false;
     }
 }

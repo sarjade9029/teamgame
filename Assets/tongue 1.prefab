@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2998283796617723271}
   - component: {fileID: 1507904318256917315}
   m_Layer: 0
-  m_Name: tongue (1)
+  m_Name: tongue 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8217953816772311923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.11, y: -3.84, z: -0.9}
+  m_LocalPosition: {x: -4.11, y: -8.4, z: -0.9}
   m_LocalScale: {x: 0.01, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tongue: 1
+  extendTime: 2
