@@ -5,16 +5,17 @@ using UnityEngine;
 public class Hide : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    public float stopperMin = 0.2f;         //この値を0にすると完全に透明になる
-    public float alphaAddSub = 0.01f;
-    public float hideTime = 10.0f;
-    private float nowTime = 0.0f;
-    public float resetTime = 0.0f;
-    public float normal = 1.0f;
-    private bool hit = true;
-    private float stopperMax = 1.0f;
-    private bool prevMimicryFlag = false;
-    private bool mimicryFlag = false;
+    public float stopperMin = 0.2f;         //この値を0にすると完全に透明になるまで色が変わる
+    public float alphaAddSub = 0.01f;       //透明度の変化
+    public float hideTime = 10.0f;          //隠れきるまでの時間
+    public float normal = 1.0f;             //色の状態  
+    private float nowTime = 0.0f;           //擬態開始からの時間
+    private float resetTime = 0.0f;         //擬態開始時のみを取得する
+    private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
+    private bool hit = true;                //当たり判定を変えるtrueで当たる
+    private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
+    private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
+    private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
 
     void Start()
     {
@@ -23,11 +24,14 @@ public class Hide : MonoBehaviour
     void Update()
     {
         //InputKeyTypeB();
-        InputKey();
+        if(canMimicry)
+        {
+            InputKey();
+        }
         Imitation();
         AlphaControl();
         GetComponent<PolygonCollider2D>().enabled = hit;
-        ChangeTransparency(normal); // 透明にする
+        ChangeTransparency(normal);
     }
     //色を変える
     void ChangeTransparency(float alpha)
@@ -39,6 +43,7 @@ public class Hide : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //ここに擬態開始の関数
             ChangeMimicryFlag();
         }
         prevMimicryFlag = mimicryFlag;
@@ -50,7 +55,7 @@ public class Hide : MonoBehaviour
         {
             mimicryFlag = true;
         }
-        if (prevMimicryFlag == true)
+        else
         {
             mimicryFlag = false;
         }
@@ -73,6 +78,7 @@ public class Hide : MonoBehaviour
         if (normal < stopperMax)
         {
             normal += alphaAddSub;
+            //ここに擬態から元に戻った関数を入れる
             hit = true;
             resetTime += GetTime();
         }
@@ -137,4 +143,13 @@ public class Hide : MonoBehaviour
     {
         return (GetTime() > hideTime);
     }
+    public void MimicryOn()
+    {
+        canMimicry = true;
+    }
+    public void MimicryOff()
+    {
+        canMimicry = false;
+    }
+
 }
