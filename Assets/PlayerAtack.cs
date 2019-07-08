@@ -8,7 +8,7 @@ public class PlayerAtack : MonoBehaviour
     float tongueLength = 0;             //舌を伸ばす距離を時間で割った数を入れる
     public float tongueScale = 1.0f;         //舌を伸ばす距離
     public float extendTime = 1.0f;     //時間
-    bool extend = false;
+    bool extend = false;    //伸ばしている途中か？
     GameObject player;
     PlayerMove playerscript;
     SetTomgue tonglescript;
@@ -33,29 +33,38 @@ public class PlayerAtack : MonoBehaviour
         {
             if (transform.localScale.x < 0)
             {
+                //マイナス方向を向いているなら
                 tongueLength -= tongueScale / extendTime;
+                //マイナス方向に伸ばす
             }
             else
             {
+                //プラス方向を向いているなら
                 tongueLength += tongueScale / extendTime;
+                //プラス方向に伸ばす
             }
             transform.localScale = new Vector3(tongueLength, 1.0f, 1.0f);
-            
+            //向いている方向に伸ばす
         }
         else
         {
-            if(transform.localScale.x<0)
+            if (transform.localScale.x < 0)
             {
+                //マイナス方向を向いているなら
                 tongueLength += tongueScale / extendTime;
+                //プラス方向に縮める
             }
             else
             {
+                //プラス方向を向いているなら
                 tongueLength -= tongueScale / extendTime;
+                //マイナス方向に縮める
             }
             transform.localScale = new Vector3(tongueLength, 1.0f, 1.0f);
+            //向いている方向に縮める
         }
-        if ((tongueScale <= tongueLength && player.transform.localScale.x > 0)
-           || (-tongueScale >= tongueLength && player.transform.localScale.x < 0))
+        if ((tongueScale <= tongueLength && player.transform.localScale.x > 0)//プラス方向に伸びきったとき
+           || (-tongueScale >= tongueLength && player.transform.localScale.x < 0))//マイナス方向に伸びきったとき
         {
             extend = true;
         }

@@ -16,9 +16,13 @@ public class Hide : MonoBehaviour
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
     private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
+    GameObject tomgue;
+    SetTomgue tomgleScript;
 
     void Start()
     {
+        tomgue = GameObject.Find("player1");
+        tomgleScript = tomgue.GetComponent<SetTomgue>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
@@ -44,6 +48,7 @@ public class Hide : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //ここに擬態開始の関数
+            tomgleScript.AttackDisallowed();
             ChangeMimicryFlag();
         }
         prevMimicryFlag = mimicryFlag;
@@ -78,9 +83,12 @@ public class Hide : MonoBehaviour
         if (normal < stopperMax)
         {
             normal += alphaAddSub;
-            //ここに擬態から元に戻った関数を入れる
             hit = true;
             resetTime += GetTime();
+        }
+        if (normal == stopperMax)
+        {
+            tomgleScript.AttackPermit();
         }
     }
     //別のキー入力

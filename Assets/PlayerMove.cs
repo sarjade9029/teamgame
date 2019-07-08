@@ -18,7 +18,8 @@ public class PlayerMove : MonoBehaviour
     private bool onTheGround = true;
     bool movement = false;
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
-    private float speed = 0.0f;             //移動速度:最終的な移動速度この値が移動速度になる
+    private float addSpeed = 0.0f;             //移動速度:最終的な移動速度この値が移動速度になる
+    public float posSpeed = 0.01f;
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
     static int con = 3;
@@ -64,20 +65,38 @@ public class PlayerMove : MonoBehaviour
                 fatigue = conditions[i].fatigue;
             }
         }
-            speed = normalSpeed * fatigue;
+            addSpeed = (normalSpeed * fatigue)/100;
     }
     //キー入力
     private void InputMove()
     {
-        
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
             movement = true;
-            //if(onTheWall==false)
+            //if (onTheWall == false)
             //{
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-                myRigid.AddForce(new Vector3(-speed, 0.0f, 0.0f));
+                transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
+            //myRigid.AddForce(new Vector3(-addSpeed, 0.0f, 0.0f));
+            //}
+            //else
+            //{
+            //    //上
+            //    if (transform.rotation.z >= -90 && transform.rotation.z <= 89)
+            //    {
+            //      transform.Rotate(0,0,0);
+            //    }
+            //    //下
+            //    if ((transform.rotation.z >= -180 && transform.rotation.z <= -91) ||
+            //        (transform.rotation.z >= 90 && transform.rotation.z <= 180)) 
+            //    {
+            //
+            //    }
+            //    if(transform.rotation.z==90)
+            //    {
+            //        transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
+            //    }
             //}
         }
         if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.LeftArrow))
@@ -87,10 +106,11 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
             movement = true;
-            //if(onTheWall==false)
+            //if (onTheWall == false)
             //{
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                myRigid.AddForce(new Vector3(speed, 0.0f, 0.0f));
+                transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
+                //myRigid.AddForce(new Vector3(addSpeed, 0.0f, 0.0f));
             //}
         }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
@@ -100,7 +120,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
                 movement = true;
-                myRigid.AddForce(new Vector3(0.0f, speed, 0.0f));
+            transform.position += new Vector3(0.0f, posSpeed, 0.0f);
+            //myRigid.AddForce(new Vector3(0.0f, addSpeed, 0.0f));
         }
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -109,7 +130,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
         {
             movement = true;
-            myRigid.AddForce(new Vector3(0.0f, -speed, 0.0f));
+            transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
+            //myRigid.AddForce(new Vector3(0.0f, -addSpeed, 0.0f));
         }
         if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {

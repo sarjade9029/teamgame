@@ -10,12 +10,16 @@ public class SetTomgue : MonoBehaviour
     private bool extend = false;
     GameObject player;
     Hide hide;
+    private bool canAttack;
     // Update is called once per frame
     void Update()
     {
         //player = GameObject.Find("player1");
         hide = GetComponent<Hide>();
-        KeyInput();
+        if(canAttack)
+        {
+            KeyInput();
+        }
     }
     void KeyInput()
     {
@@ -45,5 +49,13 @@ public class SetTomgue : MonoBehaviour
     public void ExtendEnd()
     {
         extend = false;
+    }
+    public void AttackPermit()
+    {
+        canAttack = true;
+    }
+    public void AttackDisallowed()
+    {
+        canAttack = false;
     }
 }
