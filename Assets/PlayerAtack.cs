@@ -78,6 +78,9 @@ public class PlayerAtack : MonoBehaviour
             //攻撃終了の通知関数
             hide.MimicryOn();
             Destroy(gameObject);
+            //A=0;
+            //animator
+            //charactercontroller
         }
     }
 }
