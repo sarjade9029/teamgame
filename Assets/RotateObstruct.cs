@@ -18,10 +18,17 @@ public class RotateObstruct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time++;
-        if(time<=90)
+        if (defeatobstruct == true)
         {
-            transform.Rotate(new Vector3(0, 0, 1));
+            if(time<=90)
+            {
+                transform.Rotate(new Vector3(0, 0, 1));
+            }
+            else
+            {
+                defeatobstruct = false;
+            }
+            time++;
         }
     }
     
@@ -32,7 +39,7 @@ public class RotateObstruct : MonoBehaviour
             tomgleScript.AttackDisallowed();
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
+                defeatobstruct = true;   
             }
         }
     }

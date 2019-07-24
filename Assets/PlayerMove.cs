@@ -167,4 +167,8 @@ public class PlayerMove : MonoBehaviour
     {
         inputAbort = false;
     }
+    public bool GetOnGround()
+    {
+        return onTheGround;
+    }
 }
