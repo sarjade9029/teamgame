@@ -21,6 +21,7 @@ public class Othergraph : MonoBehaviour
     Transform other2;
     Transform Line;
     Transform HitGraound;
+    Transform HitOther;
     void Start()
     {
         //べつの状態のプレイヤーとその子オブジェクトの取得
@@ -42,6 +43,9 @@ public class Othergraph : MonoBehaviour
         Line = transform.Find("playerLine");
         LinespriteRenderer = Line.GetComponent<SpriteRenderer>(); 
         LinespriteRenderer.color = new Color(1, 1, 1, graphA);
+        //othercollider
+        HitOther = transform.Find("othercollider");
+        HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
         //別の状態のプレイヤーの初期化
         otherSpriteRenderer.color = new Color(1, 1, 1, graphB);
         other.GetComponent<PolygonCollider2D>().enabled = hitB;
@@ -56,6 +60,7 @@ public class Othergraph : MonoBehaviour
         //GetComponent<PolygonCollider2D>().enabled = hit;
         if(playerMove.GetOnGround()==true)
         {
+            //地面についているとき
             //プレイヤーの表示
             spriteRenderer.color = new Color(1, 1, 1, graphA);
             GetComponent<PolygonCollider2D>().enabled = hitA;
@@ -67,15 +72,15 @@ public class Othergraph : MonoBehaviour
             other1.GetComponent<BoxCollider2D>().enabled = hitB;
             //プレイヤーの子オブジェクトの表示
             //groundhit
-            HitGraound = transform.Find("CheckHitGround");
             HitGraound.GetComponent<BoxCollider2D>().enabled = hitA;
             //othercoll
-            Line = transform.Find("playerLine");
             LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
             LinespriteRenderer.color = new Color(1, 1, 1, graphA);
+            HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
         }
         else
         {
+            //宙に浮いているとき
             //プレイヤーの透明化
             spriteRenderer.color = new Color(1, 1, 1, graphB);
             GetComponent<PolygonCollider2D>().enabled = hitB;
@@ -93,6 +98,7 @@ public class Othergraph : MonoBehaviour
             Line = transform.Find("playerLine");
             LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
             LinespriteRenderer.color = new Color(1, 1, 1, graphB);
+            HitOther.GetComponent<BoxCollider2D>().enabled = hitB;
         }
     }
 }
