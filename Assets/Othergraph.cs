@@ -6,10 +6,9 @@ public class Othergraph : MonoBehaviour
 {
     private float graphA = 1.0f;
     private float graphB = 0.0f;
-    private float hidden = 0.0f;
-    private float display = 1.0f;
     private bool hitA = true;
     private bool hitB = false;
+    public bool prevGround = true;
     // Start is called before the first frame update
     SpriteRenderer spriteRenderer;
     GameObject other;
@@ -57,48 +56,52 @@ public class Othergraph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<PolygonCollider2D>().enabled = hit;
         if(playerMove.GetOnGround()==true)
         {
-            //地面についているとき
-            //プレイヤーの表示
-            spriteRenderer.color = new Color(1, 1, 1, graphA);
-            GetComponent<PolygonCollider2D>().enabled = hitA;
-            //別の状態のプレイヤーの透明化
-            otherSpriteRenderer.color = new Color(1, 1, 1, graphB);
-            other.GetComponent<PolygonCollider2D>().enabled = hitB;
-            //別の状態の子オブジェクトの透明化
-            other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
-            other1.GetComponent<BoxCollider2D>().enabled = hitB;
-            //プレイヤーの子オブジェクトの表示
-            //groundhit
-            HitGraound.GetComponent<BoxCollider2D>().enabled = hitA;
-            //othercoll
-            LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
-            LinespriteRenderer.color = new Color(1, 1, 1, graphA);
-            HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
+            if (prevGround == false) 
+            {
+                //地面についているとき
+                //プレイヤーの表示
+                spriteRenderer.color = new Color(1, 1, 1, graphA);
+                GetComponent<PolygonCollider2D>().enabled = hitA;
+                //別の状態のプレイヤーの透明化
+                otherSpriteRenderer.color = new Color(1, 1, 1, graphB);
+                other.GetComponent<PolygonCollider2D>().enabled = hitB;
+                //別の状態の子オブジェクトの透明化
+                other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
+                other1.GetComponent<BoxCollider2D>().enabled = hitB;
+                //プレイヤーの子オブジェクトの表示
+                //groundhit
+                HitGraound.GetComponent<BoxCollider2D>().enabled = hitA;
+                //othercoll
+                LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
+                LinespriteRenderer.color = new Color(1, 1, 1, graphA);
+                HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
+                prevGround = true;
+            }
         }
         else
         {
-            //宙に浮いているとき
-            //プレイヤーの透明化
-            spriteRenderer.color = new Color(1, 1, 1, graphB);
-            GetComponent<PolygonCollider2D>().enabled = hitB;
-            //別の状態のプレイヤーの表示
-            otherSpriteRenderer.color = new Color(1, 1, 1, graphA);
-            other.GetComponent<PolygonCollider2D>().enabled = hitA;
-            //別の状態の子オブジェクトの表示
-            other2SpriteRenderer.color = new Color(1, 1, 1, graphA);
-            other1.GetComponent<BoxCollider2D>().enabled = hitA;
-            //プレイヤーの子オブジェクトの透明化
-            //groundhit
-            HitGraound = transform.Find("CheckHitGround");
-            HitGraound.GetComponent<BoxCollider2D>().enabled = hitB;
-            //othercoll
-            Line = transform.Find("playerLine");
-            LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
-            LinespriteRenderer.color = new Color(1, 1, 1, graphB);
-            HitOther.GetComponent<BoxCollider2D>().enabled = hitB;
+            if (prevGround == true) 
+            {
+                //宙に浮いているとき
+                //プレイヤーの透明化
+                spriteRenderer.color = new Color(1, 1, 1, graphB);
+                GetComponent<PolygonCollider2D>().enabled = hitB;
+                //別の状態のプレイヤーの表示
+                otherSpriteRenderer.color = new Color(1, 1, 1, graphA);
+                other.GetComponent<PolygonCollider2D>().enabled = hitA;
+                //別の状態の子オブジェクトの表示
+                other2SpriteRenderer.color = new Color(1, 1, 1, graphA);
+                other1.GetComponent<BoxCollider2D>().enabled = hitA;
+                //プレイヤーの子オブジェクトの透明化
+                //groundhit
+                HitGraound.GetComponent<BoxCollider2D>().enabled = hitB;
+                //othercoll
+                LinespriteRenderer.color = new Color(1, 1, 1, graphB);
+                HitOther.GetComponent<BoxCollider2D>().enabled = hitB;
+                prevGround = false;
+            }
         }
     }
 }

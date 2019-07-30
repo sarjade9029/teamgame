@@ -23,7 +23,8 @@ public class PlayerMove : MonoBehaviour
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
     static int con = 3;
-
+    private float joystickx;
+    private float joysticky;
 
     Condition[] conditions = new Condition[con];
     private void Start()
@@ -71,7 +72,9 @@ public class PlayerMove : MonoBehaviour
     private void InputMove()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
+        joystickx = Input.GetAxis("joystick button 10");
+        joysticky = Input.GetAxis("joystick button 11");
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (joystickx < 0))
         {
             movement = true;
             //if (onTheWall == false)
@@ -103,7 +106,7 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)||(joystickx > 0))
         {
             movement = true;
             //if (onTheWall == false)
@@ -117,7 +120,7 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)|| (joysticky > 0))
         {
                 movement = true;
             transform.position += new Vector3(0.0f, posSpeed, 0.0f);
@@ -127,7 +130,7 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) )
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || (joysticky < 0))
         {
             movement = true;
             transform.position += new Vector3(0.0f, -posSpeed, 0.0f);

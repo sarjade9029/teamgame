@@ -18,11 +18,14 @@ public class Hide : MonoBehaviour
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
     GameObject tomgue;
     SetTomgue tomgleScript;
+    PlayerMove player;
 
     void Start()
     {
-        tomgue = GameObject.Find("player1");
-        tomgleScript = tomgue.GetComponent<SetTomgue>();
+        //tomgue = GameObject.Find("player1");
+        //tomgleScript = tomgue.GetComponent<SetTomgue>();
+        player = GetComponent<PlayerMove>();
+        tomgleScript = GetComponent<SetTomgue>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
@@ -34,8 +37,11 @@ public class Hide : MonoBehaviour
         }
         Imitation();
         AlphaControl();
-        GetComponent<PolygonCollider2D>().enabled = hit;
-        ChangeTransparency(normal);
+        if(player.GetOnGround())
+        {
+            GetComponent<PolygonCollider2D>().enabled = hit;
+            ChangeTransparency(normal);
+        }
     }
     //色を変える
     void ChangeTransparency(float alpha)
@@ -45,7 +51,7 @@ public class Hide : MonoBehaviour
     //キー入力取得
     void InputKey()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("joystick button 1"))
         {
             //ここに擬態開始の関数
             tomgleScript.AttackDisallowed();

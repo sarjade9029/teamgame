@@ -23,7 +23,7 @@ public class SetTomgue : MonoBehaviour
     }
     void KeyInput()
     {
-        if (Input.GetKeyDown(KeyCode.E) && extend == false)
+        if ((Input.GetKeyDown(KeyCode.E) && extend == false) || (Input.GetButtonDown("joystick button 5") && extend == false)) 
         {
             extend = true;
             //ここに攻撃開始の通知関数を入れる
