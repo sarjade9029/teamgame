@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - enemy
+  - obstruct
+  - ingress prohibited
+  - Kamereon
+  - Hakase
   layers:
   - Default
   - TransparentFX
@@ -13,12 +19,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - eye
+  - ground
+  - shot
+  - doctor
   - 
   - 
   - 
