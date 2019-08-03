@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     public float posSpeed = 0.01f;
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
+    private int score;
     static int con = 3;
     private float joystickx;
     private float joysticky;
@@ -173,5 +174,13 @@ public class PlayerMove : MonoBehaviour
     public bool GetOnGround()
     {
         return onTheGround;
+    }
+    public int GetScore()
+    {
+        return score;
+    }
+    public void AddScore(int n)
+    {
+        score += n;
     }
 }

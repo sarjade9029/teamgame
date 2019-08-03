@@ -18,6 +18,7 @@ public class Othergraph : MonoBehaviour
     PlayerMove playerMove;
     Transform other1;
     Transform other2;
+    Transform other3;
     Transform Line;
     Transform HitGraound;
     Transform HitOther;
@@ -70,9 +71,6 @@ public class Othergraph : MonoBehaviour
                 //別の状態の子オブジェクトの透明化
                 other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
                 other1.GetComponent<BoxCollider2D>().enabled = hitB;
-                //プレイヤーの子オブジェクトの表示
-                //groundhit
-                HitGraound.GetComponent<BoxCollider2D>().enabled = hitA;
                 //othercoll
                 LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
                 LinespriteRenderer.color = new Color(1, 1, 1, graphA);
@@ -94,9 +92,6 @@ public class Othergraph : MonoBehaviour
                 //別の状態の子オブジェクトの表示
                 other2SpriteRenderer.color = new Color(1, 1, 1, graphA);
                 other1.GetComponent<BoxCollider2D>().enabled = hitA;
-                //プレイヤーの子オブジェクトの透明化
-                //groundhit
-                HitGraound.GetComponent<BoxCollider2D>().enabled = hitB;
                 //othercoll
                 LinespriteRenderer.color = new Color(1, 1, 1, graphB);
                 HitOther.GetComponent<BoxCollider2D>().enabled = hitB;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShot : MonoBehaviour
 {
     float startTime;
-    public float xSpeed = 2f;
+    public float xSpeed = 5.0f;
     // Use this for initialization
     void Start()
     {
