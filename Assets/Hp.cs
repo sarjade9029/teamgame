@@ -9,22 +9,35 @@ using UnityEngine.UI;
 
 public class Hp : MonoBehaviour
 {
-    Slider _slider;
+   int max_life_limit = 10;
+   float fillProp = 0.75f;
+    Image Frame;
+    Image Hpgauge;
+    Image GageTerminal;
+    PlayerMove playermove;
+        GameObject player;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        _slider = GameObject.Find("Slider").GetComponent<Slider>();
+        GageTerminal = transform.Find("GageTerminal").GetComponent<Image>();
+        player =GameObject.Find("player1");
+        playermove = player.GetComponent<PlayerMove>(); 
+         Frame = transform.Find("Frame").GetComponent<Image>();
+       Hpgauge  = transform.Find("Hpgauge").GetComponent<Image>();
         
     }
-
-    float _hp = 0;
     void Update()
     {
-        _hp += 0.01f;
-        if (_hp > 1)
-        {
-            _hp = 0;
-        }
+        
+        
+       
+
+        Frame.fillAmount = (10 / max_life_limit) * fillProp;
+        Hpgauge.fillAmount = (playermove.sleepiness / 10) * Frame.fillAmount;//いじる
+
+        GageTerminal.rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, -360f * Frame.fillAmount));
 
         
 
