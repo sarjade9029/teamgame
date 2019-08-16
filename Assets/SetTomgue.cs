@@ -9,6 +9,7 @@ public class SetTomgue : MonoBehaviour
     public GameObject PlayerPos;
     private bool extend = false;
     GameObject player;
+    PlayerMove playerMove;
     Hide hide;
     private bool canAttack;
     // Update is called once per frame

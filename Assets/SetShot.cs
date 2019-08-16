@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SetShot : MonoBehaviour
 {
+    //こっちは働いている
 
     // 生み出すもととなる弾のプレハブ
     public GameObject shotPrefab;

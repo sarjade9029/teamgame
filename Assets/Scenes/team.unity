@@ -112,6 +112,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &389793264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1007316432685178848, guid: 587f10bac5975be448f7b20fff28d1e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305408590000384635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &389793267
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389793264}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &669703196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1847,16 @@ PrefabInstance:
     - target: {fileID: 7595925547258525249, guid: 587f10bac5975be448f7b20fff28d1e3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007316432685178848, guid: 587f10bac5975be448f7b20fff28d1e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007316432685178848, guid: 587f10bac5975be448f7b20fff28d1e3,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

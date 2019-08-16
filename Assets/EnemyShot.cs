@@ -6,9 +6,13 @@ public class EnemyShot : MonoBehaviour
 {
     float startTime;
     public float xSpeed = 5.0f;
+    GameObject Player;
+    PlayerMove Playermove;
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.Find("player1");
+        Playermove = Player.GetComponent<PlayerMove>();
         startTime = Time.time;
     }
     // Update is called once per frame
@@ -36,14 +40,34 @@ public class EnemyShot : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //使うステを取る
-            PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
-            //体力減らす
-            player.sleepiness++;
-            if (player.sleepiness >= 10)
+            if(Playermove.GetOnGround()==true)
             {
-                Destroy(other.gameObject);
+                PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
+                //体力減らす
+                player.sleepiness++;
+                if (player.sleepiness >= 10)
+                {
+                    Destroy(other.gameObject);
+                }
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+            else
+            {
+                //体力減らす
+                Playermove.sleepiness++;
+                if (Playermove.sleepiness >= 10)
+                {
+                    Destroy(other.gameObject);
+                }
+                Destroy(gameObject);
+            }
+            ////体力減らす
+            //player.sleepiness++;
+            //if (player.sleepiness >= 10)
+            //{
+            //    Destroy(other.gameObject);
+            //}
+            //Destroy(gameObject);
         }
     }
 }
