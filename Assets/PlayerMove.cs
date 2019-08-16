@@ -26,10 +26,11 @@ public class PlayerMove : MonoBehaviour
     static int con = 3;
     private float joystickx;
     private float joysticky;
-
+    GameObject player;
     Condition[] conditions = new Condition[con];
     private void Start()
     {
+        player = GameObject.Find("player");
         for (int i = 0; i < con; i++) 
         {
             conditions[i] = new Condition() { staminamax = (i + 1) * 3, fatigue = 1.0f - (0.1f * (i+1)) };

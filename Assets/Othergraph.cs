@@ -70,11 +70,10 @@ public class Othergraph : MonoBehaviour
                 other.GetComponent<PolygonCollider2D>().enabled = hitB;
                 //別の状態の子オブジェクトの透明化
                 other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
-                other1.GetComponent<BoxCollider2D>().enabled = hitB;
                 //othercoll
                 LinespriteRenderer = Line.GetComponent<SpriteRenderer>();
                 LinespriteRenderer.color = new Color(1, 1, 1, graphA);
-                HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
+                HitOther.GetComponent<BoxCollider2D>().transform.localScale = new Vector3(5.3f, 2.4f, 1);
                 prevGround = true;
             }
         }
@@ -91,10 +90,9 @@ public class Othergraph : MonoBehaviour
                 other.GetComponent<PolygonCollider2D>().enabled = hitA;
                 //別の状態の子オブジェクトの表示
                 other2SpriteRenderer.color = new Color(1, 1, 1, graphA);
-                other1.GetComponent<BoxCollider2D>().enabled = hitA;
                 //othercoll
                 LinespriteRenderer.color = new Color(1, 1, 1, graphB);
-                HitOther.GetComponent<BoxCollider2D>().enabled = hitB;
+                HitOther.GetComponent<BoxCollider2D>().transform.localScale = new Vector3(2.2f, 2.5f, 1);
                 prevGround = false;
             }
         }

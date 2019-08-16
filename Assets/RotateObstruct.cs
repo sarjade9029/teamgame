@@ -47,7 +47,10 @@ public class RotateObstruct : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
-            tomgleScript.AttackPermit();
+            if(defeatobstruct == false)
+            {
+                tomgleScript.AttackPermit();
+            }
         }
     }
 }

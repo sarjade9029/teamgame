@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class AttackHit : MonoBehaviour
 {
     GameObject Player;
     PlayerMove playermovescript;
+    EnemyMove enemy;
     void Start()
     {
         Player = GameObject.Find("player1");
@@ -15,8 +17,16 @@ public class AttackHit : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            playermovescript.AddScore(100);
-            Destroy(other.gameObject);
+            //if (other.gameObject.transform.localScale.x == Player.transform.localScale.x)
+            //{
+
+            //}
+
+            if (other.gameObject.transform.localScale.x != Player.transform.localScale.x)
+            {
+                playermovescript.AddScore(100);
+                Destroy(other.gameObject);
+            }
         }
     }
 }

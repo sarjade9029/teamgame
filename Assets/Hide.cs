@@ -16,17 +16,19 @@ public class Hide : MonoBehaviour
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
     private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
-    GameObject tomgue;
+    GameObject Player;
     SetTomgue tomgleScript;
     PlayerMove player;
+    GameObject Player1;
 
     void Start()
     {
-        //tomgue = GameObject.Find("player1");
+        Player = GameObject.Find("player");
+        Player1 = GameObject.Find("player1");
         //tomgleScript = tomgue.GetComponent<SetTomgue>();
         player = GetComponent<PlayerMove>();
         tomgleScript = GetComponent<SetTomgue>();
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        //this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -40,13 +42,18 @@ public class Hide : MonoBehaviour
         if(player.GetOnGround())
         {
             GetComponent<PolygonCollider2D>().enabled = hit;
-            ChangeTransparency(normal);
+            ChangeTransparency(normal,Player1);
+        }
+        else
+        {
+            Player.GetComponent<PolygonCollider2D>().enabled = hit;
+            ChangeTransparency(normal,Player);
         }
     }
     //色を変える
-    void ChangeTransparency(float alpha)
+    void ChangeTransparency(float alpha,GameObject name)
     {
-        this.spriteRenderer.color = new Color(1, 1, 1, alpha);
+        name.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
     }
     //キー入力取得
     void InputKey()
