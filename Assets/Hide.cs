@@ -9,8 +9,9 @@ public class Hide : MonoBehaviour
     public float alphaAddSub = 0.01f;       //透明度の変化
     public float hideTime = 10.0f;          //隠れきるまでの時間
     public float normal = 1.0f;             //色の状態  
-    private float nowTime = 0.0f;           //擬態開始からの時間
-    private float resetTime = 0.0f;         //擬態開始時のみを取得する
+    public float nowTime = 0.0f;           //擬態開始からの時間
+    public float startTime = 0.0f;         //擬態開始時のみを取得する
+    public float count = 0.0f;
     private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
     private bool hit = true;                //当たり判定を変えるtrueで当たる
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
@@ -25,10 +26,9 @@ public class Hide : MonoBehaviour
     {
         Player = GameObject.Find("player");
         Player1 = GameObject.Find("player1");
-        //tomgleScript = tomgue.GetComponent<SetTomgue>();
+
         player = GetComponent<PlayerMove>();
         tomgleScript = GetComponent<SetTomgue>();
-        //this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -97,11 +97,13 @@ public class Hide : MonoBehaviour
         {
             normal += alphaAddSub;
             hit = true;
-            resetTime += GetTime();
+            count += nowTime;
         }
         if (normal == stopperMax)
         {
             tomgleScript.AttackPermit();
+            nowTime = 0;
+            startTime = 0;
         }
     }
     //別のキー入力
@@ -119,14 +121,14 @@ public class Hide : MonoBehaviour
     //擬態するか元に戻るか
     void Imitation()
     {
-        if(resetTime==0.0f)
+        if (startTime == 0.0f && hit == false)
         {
             ImitationStartTime();
         }
-        if(TimeCheck())
+        if (startTime > 0 && hit == false)
         {
-            mimicryFlag = false;
-            resetTime = 0.0f;
+            GetTime();
+            TimeCheck();
         }
         if (mimicryFlag == true)
         {
@@ -152,17 +154,27 @@ public class Hide : MonoBehaviour
     //擬態が完了の時間を取得
     void ImitationStartTime()
     {
-        nowTime = Time.time;
+        startTime = Time.time;
     }
     //擬態開始からの経過時間を取得
-    float GetTime()
+    void GetTime()
     {
-        return Time.time - nowTime ;
+        nowTime = Time.time - startTime + count;
     }
     //経過時間が擬態できる時間を超えていないかを確認
-    bool TimeCheck()
+    void TimeCheck()
     {
-        return (GetTime() > hideTime);
+        if (count > hideTime)
+        {
+            canMimicry = false;
+            mimicryFlag = false;
+            startTime = 0;
+            nowTime = 0;
+        }
+        if (nowTime >= 10)
+        {
+            mimicryFlag = false;
+        }
     }
     public void MimicryOn()
     {
