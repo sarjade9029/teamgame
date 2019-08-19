@@ -12,28 +12,27 @@ public class Hide : MonoBehaviour
     public float nowTime = 0.0f;           //擬態開始からの時間
     public float startTime = 0.0f;         //擬態開始時のみを取得する
     public float count = 0.0f;
+    public float prevcount = 0.0f;
     private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
     private bool hit = true;                //当たり判定を変えるtrueで当たる
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
     private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
+    private bool countrewriting = true;
     GameObject Player;
     SetTomgue tomgleScript;
     PlayerMove player;
     GameObject Player1;
-
     void Start()
     {
         Player = GameObject.Find("player");
         Player1 = GameObject.Find("player1");
-
         player = GetComponent<PlayerMove>();
         tomgleScript = GetComponent<SetTomgue>();
     }
     void Update()
     {
-        //InputKeyTypeB();
-        if(canMimicry)
+        if (canMimicry)
         {
             InputKey();
         }
@@ -97,25 +96,25 @@ public class Hide : MonoBehaviour
         {
             normal += alphaAddSub;
             hit = true;
-            count += nowTime;
+            if (nowTime != 0 && countrewriting == true)
+            {
+                count = nowTime;
+                //一度書き換えたら書き換えられないようにする
+                countrewriting = false;
+            }
+            if (count != prevcount)
+            {
+                prevcount = count;
+                nowTime = 0;
+                startTime = 0;
+            }
         }
         if (normal == stopperMax)
         {
-            tomgleScript.AttackPermit();
-            nowTime = 0;
-            startTime = 0;
-        }
-    }
-    //別のキー入力
-    void InputKeyTypeB()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            ImitationStart();
-        }
-        else
-        {
-            ImitationRevert();
+            if(prevMimicryFlag==true)
+            {
+                tomgleScript.AttackPermit();
+            }
         }
     }
     //擬態するか元に戻るか
@@ -124,6 +123,8 @@ public class Hide : MonoBehaviour
         if (startTime == 0.0f && hit == false)
         {
             ImitationStartTime();
+            //ここに書き換え許可
+            countrewriting = true;
         }
         if (startTime > 0 && hit == false)
         {
@@ -171,7 +172,7 @@ public class Hide : MonoBehaviour
             startTime = 0;
             nowTime = 0;
         }
-        if (nowTime >= 10)
+        if (nowTime >= 10 + count) 
         {
             mimicryFlag = false;
         }
@@ -184,5 +185,8 @@ public class Hide : MonoBehaviour
     {
         canMimicry = false;
     }
-
+    public bool mimicry()
+    {
+        return mimicryFlag;
+    }
 }

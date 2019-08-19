@@ -17,11 +17,6 @@ public class AttackHit : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            //if (other.gameObject.transform.localScale.x == Player.transform.localScale.x)
-            //{
-
-            //}
-
             if (other.gameObject.transform.localScale.x != Player.transform.localScale.x)
             {
                 playermovescript.AddScore(100);

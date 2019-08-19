@@ -10,52 +10,56 @@ public class Viewrotation : MonoBehaviour
     public int lookat;
     public int waittime = 0;
     public int Staringtime = 60;
+    public bool lookloop = true;
     void Start()
     {
         lookat = allTime;   
     }
     void Update()
     {
-        if (lookUp == true)
+        if (lookloop == true)
         {
-            if(looktime != allTime)
+            if (lookUp == true)
             {
-                for(int i=0;i<lookat;i++)
+                if(looktime != allTime)
                 {
-                    if (waittime == 0)
+                    for(int i=0;i<lookat;i++)
                     {
-                        transform.Rotate(new Vector3(0, 0, 1));
-                        looktime++;
-                        waittime = allTime;
+                        if (waittime == 0)
+                        {
+                            transform.Rotate(new Vector3(0, 0, 1));
+                            looktime++;
+                            waittime = allTime;
+                        }
+                        waittime--;
                     }
-                    waittime--;
+                }
+                if(looktime==allTime)
+                {
+                    looktime = 0;
+                    lookUp = false;
                 }
             }
-            if(looktime==allTime)
+            else
             {
-                looktime = 0;
-                lookUp = false;
-            }
-        }
-        else
-        {
-            if (looktime != allTime)
-            {
-                for (int i = 0; i < lookat; i++)
+                if (looktime != allTime)
                 {
-                    if (waittime == 0)
+                    for (int i = 0; i < lookat; i++)
                     {
-                        transform.Rotate(new Vector3(0, 0, -1));
-                        looktime++;
-                        waittime = allTime;
+                        if (waittime == 0)
+                        {
+                            transform.Rotate(new Vector3(0, 0, -1));
+                            looktime++;
+                            waittime = allTime;
+                        }
+                        waittime--;
                     }
-                    waittime--;
                 }
-            }
-            if (looktime == allTime)
-            {
-                looktime = 0;
-                lookUp = true;
+                if (looktime == allTime)
+                {
+                    looktime = 0;
+                    lookUp = true;
+                }
             }
         }
     }

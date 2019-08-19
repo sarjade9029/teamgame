@@ -11,14 +11,14 @@ public class SetTomgue : MonoBehaviour
     GameObject player;
     PlayerMove playerMove;
     Hide hide;
-    private bool canAttack;
+    private bool canAttack = true;
     // Update is called once per frame
     void Update()
     {
         player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
         hide = GetComponent<Hide>();
-        if(canAttack)
+        if (canAttack == true)
         {
             KeyInput();
         }

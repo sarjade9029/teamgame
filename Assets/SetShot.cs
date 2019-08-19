@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class SetShot : MonoBehaviour
 {
-    //こっちは働いている
+    Viewrotation view;
+    GameObject parent;
+    Transform rotate;
+    Shot shot;
 
-    // 生み出すもととなる弾のプレハブ
-    public GameObject shotPrefab;
-
-    // ショットを生み出す場所
-    public GameObject shotPoint;
+    void Start()
+    {
+        parent = transform.root.gameObject;
+        rotate = parent.transform.Find("rotatepoint");
+        view = rotate.GetComponent<Viewrotation>();
+        shot = this.GetComponent<Shot>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            GameObject newShot = GameObject.Instantiate(shotPrefab);
-            // 生み出した弾の位置をショットポジションと同じにする.
-            newShot.transform.position = shotPoint.transform.position;
-            // 敵が反対を向いている場合は、ショットも反対を向かせる.
-            // Xのスケールがマイナスの場合は反対をむく
-            if (shotPoint.transform.localScale.x < 0)
-            {
-                newShot.transform.localScale =
-                    new Vector3(newShot.transform.localScale.x *-1,
-                    newShot.transform.localScale.y,
-                    newShot.transform.localScale.z);
-            }
+            view.lookloop = false;
+            shot.shotflag = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            shot.shotflag = false;
+            view.lookloop = true;
         }
     }
 }
+
