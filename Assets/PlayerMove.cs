@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     public int Cooltime = 5;                //クールタイム:スタミナが0になると発生する
     public int witecount = 10;              //スタミナが1回復するまでの時間(フレーム)
     public int stamina = 10;                //スタミナ:減ると隠れることができなくなる
-    public int sleepiness = 0;              //眠気:蓄積されると移動が遅くなる
+    public int sleepiness = 10;              //眠気:蓄積されると移動が遅くなる
     private bool onTheWall = false;          //壁に張り付いている状態か
     private bool onTheGround = true;
     bool movement = false;
@@ -91,30 +91,30 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                if (rot > 90)
+                if (rot < -90)
                 {
-                    if (rot > 90)
+                    if (rot > -270)
                     {
                         rot--;
                     }
-                    if (rot < 90 && rot > 270)
-                    {
-                        rot++;
-                    }
-                    if (rot < 270)
-                    {
-                        rot--;
-                    }
-                }
-                else
-                {
                     if (rot < -270)
                     {
                         rot++;
                     }
-                    if (rot > -270)
+                }
+                else
+                {
+                    if (rot > 90 && rot < 270)
                     {
                         rot--;
+                    }
+                    if (rot < 90 )
+                    {
+                        rot++;
+                    }
+                    if (rot > 270)
+                    {
+                        rot++;
                     }
                 }
                 if (rot == 90 || rot == -270)

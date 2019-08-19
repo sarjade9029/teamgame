@@ -8,10 +8,12 @@ public class Hp : MonoBehaviour
 {
 
     Slider hpSlider;
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.Find("player1");
         hpSlider = GetComponent<Slider>();
 
         float maxHp = 200f;
@@ -31,7 +33,7 @@ public class Hp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            hpSlider.value -= 10f;
+            hpSlider.value -= 10.0f;
         }
         
     }

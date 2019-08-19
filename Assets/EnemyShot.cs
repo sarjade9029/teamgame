@@ -44,8 +44,8 @@ public class EnemyShot : MonoBehaviour
             {
                 PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
-                player.sleepiness++;
-                if (player.sleepiness >= 10)
+                player.sleepiness--;
+                if (player.sleepiness == 0)
                 {
                     Destroy(other.gameObject);
                 }
@@ -54,8 +54,8 @@ public class EnemyShot : MonoBehaviour
             else
             {
                 //体力減らす
-                Playermove.sleepiness++;
-                if (Playermove.sleepiness >= 10)
+                Playermove.sleepiness--;
+                if (Playermove.sleepiness == 0)
                 {
                     Destroy(other.gameObject);
                 }

@@ -5,8 +5,6 @@ using UnityEngine;
 public class Change : MonoBehaviour
 
 {
-
-
     public GameObject gameObject1;
     public GameObject gameObject2;
     public GameObject gameObject3;
