@@ -16,7 +16,6 @@ public class Othergraph : MonoBehaviour
     SpriteRenderer other2SpriteRenderer;
     SpriteRenderer LinespriteRenderer;
     PlayerMove playerMove;
-    Transform other1;
     Transform other2;
     Transform other3;
     Transform Line;
@@ -28,7 +27,6 @@ public class Othergraph : MonoBehaviour
         other = GameObject.Find("player");
         playerMove = GetComponent<PlayerMove>();
         otherSpriteRenderer = other.GetComponent<SpriteRenderer>();
-        other1 = other.transform.Find("otherCollider");
         other2 = other.transform.Find("playerline");
         other2SpriteRenderer = other2.GetComponent<SpriteRenderer>();
         //プレイヤー本体の初期化
@@ -51,7 +49,6 @@ public class Othergraph : MonoBehaviour
         other.GetComponent<PolygonCollider2D>().enabled = hitB;
         //別の状態の子オブジェクトの初期化
         other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
-        other1.GetComponent<BoxCollider2D>().enabled = hitB;
     }
 
     // Update is called once per frame
