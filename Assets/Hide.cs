@@ -62,8 +62,12 @@ public class Hide : MonoBehaviour
             //ここに擬態開始の関数
             tomgleScript.AttackDisallowed();
             ChangeMimicryFlag();
+            //ここで必ず読まないといけない
+            if (!(prevMimicryFlag == true && mimicryFlag == false))
+            {
+                prevMimicryFlag = mimicryFlag;
+            }
         }
-        prevMimicryFlag = mimicryFlag;
     }
     //擬態フラグの変更
     void ChangeMimicryFlag()
@@ -99,7 +103,6 @@ public class Hide : MonoBehaviour
             if (nowTime != 0 && countrewriting == true)
             {
                 count = nowTime;
-                //一度書き換えたら書き換えられないようにする
                 countrewriting = false;
             }
             if (count != prevcount)
@@ -111,9 +114,11 @@ public class Hide : MonoBehaviour
         }
         if (normal == stopperMax)
         {
+            //ここでtrueじゃないといけない
             if(prevMimicryFlag==true)
             {
                 tomgleScript.AttackPermit();
+                prevMimicryFlag = false;
             }
         }
     }

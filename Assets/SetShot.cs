@@ -7,12 +7,14 @@ public class SetShot : MonoBehaviour
     Viewrotation view;
     GameObject parent;
     Transform rotate;
+    Transform lightcolor;
     Shot shot;
 
     void Start()
     {
         parent = transform.root.gameObject;
         rotate = parent.transform.Find("rotatepoint");
+        lightcolor = rotate.transform.Find("Spot Light (2)");
         view = rotate.GetComponent<Viewrotation>();
         shot = this.GetComponent<Shot>();
     }
@@ -22,6 +24,7 @@ public class SetShot : MonoBehaviour
         {
             view.lookloop = false;
             shot.shotflag = true;
+            lightcolor.GetComponent<Light>().color = new Color(1, 1, 0, 1);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -30,6 +33,7 @@ public class SetShot : MonoBehaviour
         {
             shot.shotflag = false;
             view.lookloop = true;
+            lightcolor.GetComponent<Light>().color = new Color(1, 1, 1, 1);
         }
     }
 }

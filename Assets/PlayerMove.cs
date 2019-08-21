@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
                 }
                 else
                 {
-                    if (rot > 90 && rot < 270)
+                    if (rot > 90 && rot <= 270)
                     {
                         rot--;
                     }
@@ -155,7 +155,7 @@ public class PlayerMove : MonoBehaviour
                     {
                         rot--;
                     }
-                    if (rot < -90 && rot > -270)
+                    if (rot < -90 && rot >= -270)
                     {
                         rot++;
                     }
