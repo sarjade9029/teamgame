@@ -10,11 +10,6 @@ public class Shot : MonoBehaviour
     // ショットを生み出す場所
     public GameObject shotPoint;
     public bool shotflag = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -41,5 +36,9 @@ public class Shot : MonoBehaviour
                 time--;
             }
         }
+    }
+    public void ResetTime()
+    {
+        time = 0;
     }
 }

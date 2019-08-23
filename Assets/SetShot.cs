@@ -9,10 +9,6 @@ public class SetShot : MonoBehaviour
     Transform rotate;
     Transform lightcolor;
     Shot shot;
-    //視界の角度（rotation）とプレイヤーの位置から球の打つ方向を確定させる
-    //具体的には視界より極端に上や下の時に一つずれた場所に打つあまりずれていないなら本来の方向に打つ
-
-
     void Start()
     {
         parent = transform.root.gameObject;
@@ -36,6 +32,7 @@ public class SetShot : MonoBehaviour
         {
             shot.shotflag = false;
             view.lookloop = true;
+            shot.ResetTime();
             lightcolor.GetComponent<Light>().color = new Color(1, 1, 1, 1);
         }
     }

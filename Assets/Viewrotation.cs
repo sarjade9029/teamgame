@@ -29,7 +29,7 @@ public class Viewrotation : MonoBehaviour
                         {
                             transform.Rotate(new Vector3(0, 0, 1));
                             looktime++;
-                            waittime = allTime;
+                            waittime = allTime * 3;
                         }
                         waittime--;
                     }
@@ -50,7 +50,7 @@ public class Viewrotation : MonoBehaviour
                         {
                             transform.Rotate(new Vector3(0, 0, -1));
                             looktime++;
-                            waittime = allTime;
+                            waittime = allTime * 3;
                         }
                         waittime--;
                     }

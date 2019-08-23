@@ -15,7 +15,11 @@ public class Othergraph : MonoBehaviour
     SpriteRenderer otherSpriteRenderer;
     SpriteRenderer other2SpriteRenderer;
     SpriteRenderer LinespriteRenderer;
+    SpriteRenderer regright;
+    SpriteRenderer regleft;
     PlayerMove playerMove;
+    Transform rightreg;
+    Transform leftreg;
     Transform other2;
     Transform other3;
     Transform Line;
@@ -44,6 +48,14 @@ public class Othergraph : MonoBehaviour
         //othercollider
         HitOther = transform.Find("othercollider");
         HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
+        //rightreg
+        rightreg = transform.Find("rightreg");
+        regright = rightreg.GetComponent<SpriteRenderer>();
+        regright.color = new Color(1, 1, 1, graphA);
+        //leftreg
+        leftreg = transform.Find("leftreg");
+        regleft = leftreg.GetComponent<SpriteRenderer>();
+        regleft.color = new Color(1, 1, 1, graphA);
         //別の状態のプレイヤーの初期化
         otherSpriteRenderer.color = new Color(1, 1, 1, graphB);
         other.GetComponent<PolygonCollider2D>().enabled = hitB;
@@ -62,6 +74,8 @@ public class Othergraph : MonoBehaviour
                 //プレイヤーの表示
                 spriteRenderer.color = new Color(1, 1, 1, graphA);
                 GetComponent<PolygonCollider2D>().enabled = hitA;
+                regright.color = new Color(1, 1, 1, graphA);    
+                regleft.color = new Color(1, 1, 1, graphA);
                 //別の状態のプレイヤーの透明化
                 otherSpriteRenderer.color = new Color(1, 1, 1, graphB);
                 other.GetComponent<PolygonCollider2D>().enabled = hitB;
@@ -82,6 +96,8 @@ public class Othergraph : MonoBehaviour
                 //プレイヤーの透明化
                 spriteRenderer.color = new Color(1, 1, 1, graphB);
                 GetComponent<PolygonCollider2D>().enabled = hitB;
+                regright.color = new Color(1, 1, 1, graphB);
+                regleft.color = new Color(1, 1, 1, graphB);
                 //別の状態のプレイヤーの表示
                 otherSpriteRenderer.color = new Color(1, 1, 1, graphA);
                 other.GetComponent<PolygonCollider2D>().enabled = hitA;

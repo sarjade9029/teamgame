@@ -22,7 +22,7 @@ public class NearPlayer : MonoBehaviour
     {
         if(obstruct.InputKey==true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("joystick button 3"))
             {
                 obstruct.defeatobstruct = true;
             }
