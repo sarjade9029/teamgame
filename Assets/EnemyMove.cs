@@ -9,18 +9,14 @@ public class EnemyMove : MonoBehaviour
     public bool leftMove = false;                //移動方向転換
     public int moveingTime = 0;
     public int moveTime = 600;                  //一定方向に移動する時間
-    public float normalSpeed = 8.0f;            //移動速度:通常の移動速度
     public float shotSpeed = 8.0f;              //弾の速度
     public float moveSpeed = 1.0f;              //移動速度
-
     float speed = 0.0f;                         //
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
-
-
     void Move()
     {
         if (sr.isVisible)

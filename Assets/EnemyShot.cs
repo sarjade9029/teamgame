@@ -62,13 +62,6 @@ public class EnemyShot : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
-            ////体力減らす
-            //player.sleepiness++;
-            //if (player.sleepiness >= 10)
-            //{
-            //    Destroy(other.gameObject);
-            //}
-            //Destroy(gameObject);
         }
     }
 }

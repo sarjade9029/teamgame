@@ -11,6 +11,7 @@ public class Viewrotation : MonoBehaviour
     public int waittime = 0;
     public int Staringtime = 60;
     public bool lookloop = true;
+    public int ScopeSpeed = 10;
     void Start()
     {
         lookat = allTime;   
@@ -29,7 +30,7 @@ public class Viewrotation : MonoBehaviour
                         {
                             transform.Rotate(new Vector3(0, 0, 1));
                             looktime++;
-                            waittime = allTime * 3;
+                            waittime = ScopeSpeed * 60;
                         }
                         waittime--;
                     }
@@ -50,7 +51,7 @@ public class Viewrotation : MonoBehaviour
                         {
                             transform.Rotate(new Vector3(0, 0, -1));
                             looktime++;
-                            waittime = allTime * 3;
+                            waittime = ScopeSpeed * 60;
                         }
                         waittime--;
                     }
