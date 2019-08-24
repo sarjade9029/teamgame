@@ -6,6 +6,7 @@ public class EnemyShot : MonoBehaviour
 {
     float startTime;
     public float xSpeed = 5.0f;
+    public int dmg = 1;
     GameObject Player;
     PlayerMove Playermove;
     // Use this for initialization
@@ -44,7 +45,7 @@ public class EnemyShot : MonoBehaviour
             {
                 PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
-                player.sleepiness--;
+                player.sleepiness -= dmg;
                 if (player.sleepiness == 0)
                 {
                     Destroy(other.gameObject);
@@ -54,7 +55,7 @@ public class EnemyShot : MonoBehaviour
             else
             {
                 //体力減らす
-                Playermove.sleepiness--;
+                Playermove.sleepiness -= dmg;
                 if (Playermove.sleepiness == 0)
                 {
                     Destroy(other.gameObject);
