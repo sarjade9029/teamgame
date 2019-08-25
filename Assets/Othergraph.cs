@@ -8,7 +8,7 @@ public class Othergraph : MonoBehaviour
     private float graphB = 0.0f;
     private bool hitA = true;
     private bool hitB = false;
-    public bool prevGround = true;
+    private bool prevGround = true;
     // Start is called before the first frame update
     SpriteRenderer spriteRenderer;
     GameObject other;

@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
 
     public GameObject score_object = null; // Textオブジェクト
-    public int score_num = 0; // スコア変数
+    private int score_num = 0; // スコア変数
     Text score_text;
     GameObject player;
     PlayerMove playerscore;

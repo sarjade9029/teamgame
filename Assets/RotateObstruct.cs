@@ -6,12 +6,8 @@ public class RotateObstruct : MonoBehaviour
 {
     int time = 0;
     public bool defeatobstruct = false;
-    public bool InputKey = false;
+    public bool InputKey;
     // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
     //検知と実行を分ける
     // Update is called once per frame
     void Update()

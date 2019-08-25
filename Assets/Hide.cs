@@ -6,13 +6,13 @@ public class Hide : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     public float stopperMin = 0.2f;         //この値を0にすると完全に透明になるまで色が変わる
-    public float alphaAddSub = 0.01f;       //透明度の変化
-    public float hideTime = 10.0f;          //隠れきるまでの時間
-    public float normal = 1.0f;             //色の状態  
-    public float nowTime = 0.0f;           //擬態開始からの時間
-    public float startTime = 0.0f;         //擬態開始時のみを取得する
-    public float count = 0.0f;
-    public float prevcount = 0.0f;
+    public float alphaAddSub = 0.01f;       //透明度の変化の仕方
+    public float hideTime = 10.0f;          //隠れられる時間
+    private float normal = 1.0f;             //色の状態  
+    private float nowTime = 0.0f;           //擬態開始からの時間
+    private float startTime = 0.0f;         //擬態開始時のみを取得する
+    private float count = 0.0f;
+    private float prevcount = 0.0f;
     private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
     private bool hit = true;                //当たり判定を変えるtrueで当たる
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
