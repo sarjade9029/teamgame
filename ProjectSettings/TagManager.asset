@@ -9,6 +9,7 @@ TagManager:
   - obstruct
   - ingress prohibited
   - collider
+  - GasCollider
   layers:
   - Default
   - TransparentFX
