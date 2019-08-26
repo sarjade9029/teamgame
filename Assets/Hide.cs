@@ -9,10 +9,10 @@ public class Hide : MonoBehaviour
     public float alphaAddSub = 0.01f;       //透明度の変化の仕方
     public float hideTime = 10.0f;          //隠れられる時間
     private float normal = 1.0f;             //色の状態  
-    private float nowTime = 0.0f;           //擬態開始からの時間
-    private float startTime = 0.0f;         //擬態開始時のみを取得する
-    private float count = 0.0f;
-    private float prevcount = 0.0f;
+    public float nowTime = 0.0f;           //擬態開始からの時間
+    public float startTime = 0.0f;         //擬態開始時のみを取得する
+    public float count = 0.0f;
+    public float prevcount = 0.0f;
     private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
     private bool hit = true;                //当たり判定を変えるtrueで当たる
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
@@ -170,11 +170,12 @@ public class Hide : MonoBehaviour
     //経過時間が擬態できる時間を超えていないかを確認
     void TimeCheck()
     {
-        if (count > hideTime)
+        if (nowTime > hideTime)
         {
             canMimicry = false;
             mimicryFlag = false;
             startTime = 0;
+            count = nowTime;
             nowTime = 0;
         }
         if (nowTime >= 10 + count) 
@@ -193,5 +194,13 @@ public class Hide : MonoBehaviour
     public bool mimicry()
     {
         return mimicryFlag;
+    }
+    public float GetCount()
+    {
+        return count;
+    }
+    public float Getnowtime()
+    {
+        return nowTime;
     }
 }

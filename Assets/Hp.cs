@@ -27,8 +27,18 @@ public class Hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //スライダーの現在値の設定
-        hpSlider.value = hide.hideTime - hide.GetCount();
+        if(hide.mimicry()==true)
+        {
+            if (hide.Getnowtime() != 0)
+            {
+                //スライダーの現在値の設定
+                hpSlider.value = hide.hideTime - hide.Getnowtime();
+            }
+        }
+        else
+        {
+            hpSlider.value = hide.hideTime - hide.GetCount();
+        }
 
     }
 }
