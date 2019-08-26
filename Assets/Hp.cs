@@ -9,32 +9,26 @@ public class Hp : MonoBehaviour
 
     Slider hpSlider;
     GameObject player;
+    Hide hide;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("player1");
+        hide = player.GetComponent<Hide>();
         hpSlider = GetComponent<Slider>();
-
-        float maxHp = 200f;
-        float nowHp = 200f;
 
 
         //スライダーの最大値の設定
-        hpSlider.maxValue = maxHp;
-
-        //スライダーの現在値の設定
-        hpSlider.value = nowHp;
+        hpSlider.maxValue = hide.hideTime;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            hpSlider.value -= 10.0f;
-        }
-        
+        //スライダーの現在値の設定
+        hpSlider.value = hide.hideTime - hide.GetCount();
+
     }
 }
