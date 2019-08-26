@@ -7,12 +7,12 @@ public class Lightning : MonoBehaviour
     GameObject player;
     PlayerMove playermove;
     private bool fall = false;
-    public int count = 5;
-    private int StopTime = 0;
+    private int count = 0;
+    public int StopTime = 2;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player1");
+        player = GameObject.Find("player1");
         playermove = player.GetComponent<PlayerMove>();
     }
     // Update is called once per frame
@@ -22,15 +22,17 @@ public class Lightning : MonoBehaviour
         {
             if (playermove.GetOnGround() == false)
             {
-                playermove.inputPermit();
+                playermove.InputAbort();
                 player.transform.position += new Vector3(0.0f, -playermove.posSpeed, 0.0f);
             }
             else
             {
-                if (StopTime == count)
+                count++;
+                if (StopTime * 60 == count)
                 {
-                    playermove.InputAbort();
-
+                    playermove.inputPermit();
+                    count = 0;
+                    fall = false;
                 }
             }
         }
