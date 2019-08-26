@@ -42,7 +42,7 @@ public class EnemyShot : MonoBehaviour
             {
                 myRigid.velocity = new Vector2(xSpeed * 0.7f, xSpeed * 0.7f);
             }
-            if (playerpos >= 2 && playerpos <= 4)
+            if (playerpos >= 2 && playerpos <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
             }
@@ -58,7 +58,7 @@ public class EnemyShot : MonoBehaviour
             {
                 myRigid.velocity = new Vector2(-xSpeed * 0.7f, xSpeed * 0.7f);
             }
-            if (playerpos >= 2 && playerpos <= 4)
+            if (playerpos >= 2 && playerpos <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
             }
