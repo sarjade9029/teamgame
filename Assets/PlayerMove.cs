@@ -124,7 +124,7 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || (joystickx == 0))
         {
             movement = false;
         }
@@ -171,7 +171,7 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)||(joystickx == 0))
         {
             movement = false;
         }
@@ -213,7 +213,7 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)||(joysticky == 0))
         {
             movement = false;
         }
@@ -255,7 +255,7 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)||(joysticky == 0))
         {
             movement = false;
         }

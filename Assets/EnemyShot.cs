@@ -8,6 +8,7 @@ public class EnemyShot : MonoBehaviour
     public float xSpeed = 5.0f;
     public int dmg = 1;
     GameObject Player;
+    GameObject Player1;
     PlayerMove Playermove;
     private float playerpos;
     // Use this for initialization
@@ -17,6 +18,7 @@ public class EnemyShot : MonoBehaviour
         Playermove = Player.GetComponent<PlayerMove>();
         playerpos = Player.transform.localPosition.y;
         startTime = Time.time;
+        Player1 = GameObject.Find("player");
     }
     // Update is called once per frame
     void Update()
@@ -28,12 +30,11 @@ public class EnemyShot : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         // たまが反対を向いている（スケールがマイナス）なら反対に進ませる
         if (transform.localScale.x < 0)
         {
             //右向き
-            if(playerpos>=-5&&playerpos<=-2)
+            if (playerpos >= -5 && playerpos <= -2)
             {
                 myRigid.velocity = transform.right * xSpeed;
             }
@@ -62,12 +63,7 @@ public class EnemyShot : MonoBehaviour
                 myRigid.velocity = transform.up * xSpeed;
             }
         }
-
-
     }
-
-
-
     //以下不変
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -79,9 +75,10 @@ public class EnemyShot : MonoBehaviour
                 PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
                 player.sleepiness -= dmg;
-                if (player.sleepiness == 0)
+                if (player.sleepiness <= 0)
                 {
                     Destroy(other.gameObject);
+                    Destroy(Player1.gameObject);
                 }
                 Destroy(gameObject);
             }
@@ -89,9 +86,10 @@ public class EnemyShot : MonoBehaviour
             {
                 //体力減らす
                 Playermove.sleepiness -= dmg;
-                if (Playermove.sleepiness == 0)
+                if (Playermove.sleepiness <= 0)
                 {
                     Destroy(other.gameObject);
+                    Destroy(Player.gameObject);
                 }
                 Destroy(gameObject);
             }
