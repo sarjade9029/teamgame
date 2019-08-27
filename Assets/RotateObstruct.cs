@@ -5,14 +5,14 @@ using UnityEngine;
 public class RotateObstruct : MonoBehaviour
 {
     int time = 0;
-    public bool defeatobstruct = false;
+    public int defeatobstruct = 0;
     public bool InputKey;
     // Start is called before the first frame update
     //検知と実行を分ける
     // Update is called once per frame
     void Update()
     {
-        if (defeatobstruct == true)
+        if (defeatobstruct == 1)
         {
             if(time<90)
             {
@@ -20,7 +20,7 @@ public class RotateObstruct : MonoBehaviour
             }
             else
             {
-                defeatobstruct = false;
+                defeatobstruct = 2;
             }
             time++;
         }

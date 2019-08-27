@@ -24,7 +24,7 @@ public class NearPlayer : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("joystick button 3"))
             {
-                obstruct.defeatobstruct = true;
+                obstruct.defeatobstruct = 1;
             }
         }
     }
@@ -35,13 +35,17 @@ public class NearPlayer : MonoBehaviour
             tomgleScript.AttackDisallowed();
             //キーが反応しない
             obstruct.InputKey = true;
+            if (obstruct.defeatobstruct == 2)
+            {
+                tomgleScript.AttackPermit();
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (obstruct.defeatobstruct == false)
+            if (obstruct.defeatobstruct == 2)
             {
                 if (hide.mimicry() != true)
                 {

@@ -10,7 +10,16 @@ public class Shot : MonoBehaviour
     // ショットを生み出す場所
     public GameObject shotPoint;
     public bool shotflag = false;
+    GameObject Player;
+    PlayerMove Playermove;
+    private float playerpos;
     // Update is called once per frame
+    void Start()
+    {
+        Player = GameObject.Find("player1");
+        Playermove = Player.GetComponent<PlayerMove>();
+        playerpos = Player.transform.localPosition.y;
+    }
     void Update()
     {
         if (shotflag == true)
