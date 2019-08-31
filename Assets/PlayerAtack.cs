@@ -6,9 +6,9 @@ public class PlayerAtack : MonoBehaviour
 {
     //挙動
     float tongueLength = 0;             //舌を伸ばす距離を時間で割った数を入れる
-    private float tongueScale = 1.0f;         //舌を伸ばす距離
-    private float extendTime = 1.0f;     //時間
-    bool extend = false;               //伸ばしている途中か？
+    private float tongueScale = 1.0f;   //舌を伸ばす距離
+    public float extendTime = 1.0f;     //時間
+    bool extend = false;                //伸ばしている途中か？
     GameObject player;
     PlayerMove playerscript;
     SetTomgue tonglescript;

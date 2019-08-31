@@ -12,13 +12,15 @@ public class Shot : MonoBehaviour
     public bool shotflag = false;
     GameObject Player;
     PlayerMove Playermove;
-    private float playerpos;
+    private float playerposy;
+    private float playerposx;
     // Update is called once per frame
     void Start()
     {
         Player = GameObject.Find("player1");
         Playermove = Player.GetComponent<PlayerMove>();
-        playerpos = Player.transform.localPosition.y;
+        playerposy = Player.transform.localPosition.y;
+        playerposx = Player.transform.localPosition.x;
     }
     void Update()
     {
@@ -30,7 +32,6 @@ public class Shot : MonoBehaviour
                 // 生み出した弾の位置をショットポジションと同じにする.
                 newShot.transform.position = shotPoint.transform.position;
                 // 敵が反対を向いている場合は、ショットも反対を向かせる.
-                // Xのスケールがマイナスの場合は反対をむく
                 if (shotPoint.transform.localScale.x < 0)
                 {
                     newShot.transform.localScale =

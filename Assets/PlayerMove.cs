@@ -26,11 +26,12 @@ public class PlayerMove : MonoBehaviour
     static int con = 3;
     private float joystickx;
     private float joysticky;
-    private float joystickx2;
-    private float joysticky2;
+    private int count = 0;
+    public float rigortime = 120;
+    private bool move = false;
     GameObject player;
     Condition[] conditions = new Condition[con];
-    public float rot=0;
+    public float rot = 0;
     private void Start()
     {
         player = GameObject.Find("player");
@@ -62,6 +63,10 @@ public class PlayerMove : MonoBehaviour
         {
             Stop();
         }
+        if (move == true)
+        {
+            count++;
+        }
     }
     //スピード計算
     private void SpeedCalculator()
@@ -84,55 +89,23 @@ public class PlayerMove : MonoBehaviour
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         joystickx = Input.GetAxis("joystick button 10");
         joysticky = Input.GetAxis("joystick button 11");
-        joystickx2 = Input.GetAxis("Horizontal");
-        joysticky2 = Input.GetAxis("Vertical");
         //左
         if (Input.GetKey(KeyCode.A) ||
             Input.GetKey(KeyCode.LeftArrow) ||
-            (((joysticky == 0) && (joystickx < 0)) &&
-            ((joysticky2 == 0) && (joystickx2 == 0))) ||
-            (((joysticky2 == 0) && (joystickx2 < 0)) &&
-            ((joysticky == 0) && (joystickx == 0))))
+            ((joystickx < 0) && (joysticky == 0)))
         {
             movement = true;
             if (onTheWall == false)
             {
+                //
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
             }
             else
             {
-                if (rot < -90)
-                {
-                    if (rot > -270)
-                    {
-                        rot--;
-                    }
-                    if (rot < -270)
-                    {
-                        rot++;
-                    }
-                }
-                else
-                {
-                    if (rot > 90 && rot <= 270)
-                    {
-                        rot--;
-                    }
-                    if (rot < 90 )
-                    {
-                        rot++;
-                    }
-                    if (rot > 270)
-                    {
-                        rot++;
-                    }
-                }
-                if (rot == 90 || rot == -270)
-                {
-                    transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
-                }
-                player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
+                //
+                transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
             }
         }
         if (Input.GetKeyUp(KeyCode.A) ||
@@ -143,50 +116,20 @@ public class PlayerMove : MonoBehaviour
         //右
         if (Input.GetKey(KeyCode.D) ||
             Input.GetKey(KeyCode.RightArrow) ||
-            (((joysticky == 0) && (joystickx > 0)) &&
-            ((joysticky2 == 0) && (joystickx2 == 0))) ||
-            (((joysticky2 == 0) && (joystickx2 > 0)) &&
-            ((joysticky == 0) && (joystickx == 0))))
+            ((joystickx > 0) && (joysticky == 0)))
         {
             movement = true;
             if (onTheWall == false)
             {
+                //
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
             }
             else
             {
-                if(rot >90)
-                {
-                    if (rot < 270)
-                    {
-                        rot++;
-                    }
-                    if (rot > 270)
-                    {
-                        rot--;
-                    }
-                }
-                else
-                {
-                    if (rot > -90)
-                    {
-                        rot--;
-                    }
-                    if (rot < -90 && rot >= -270)
-                    {
-                        rot++;
-                    }
-                    if (rot < -270)
-                    {
-                        rot--;
-                    }
-                }
-                if (rot == -90 || rot == 270)
-                {
-                    transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
-                }
-                player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
+                //
+                transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
             }
         }
         if (Input.GetKeyUp(KeyCode.D) ||
@@ -197,10 +140,7 @@ public class PlayerMove : MonoBehaviour
         //上
         if (Input.GetKey(KeyCode.W) ||
             Input.GetKey(KeyCode.UpArrow) ||
-            (((joysticky > 0) && (joystickx == 0)) &&
-            ((joysticky2 == 0) && (joystickx2 == 0))) ||
-            (((joysticky2 > 0) && (joystickx2 == 0)) &&
-            ((joysticky == 0) && (joystickx == 0))))
+            ((joysticky > 0) && (joystickx == 0)))
         {
             movement = true;
             if (onTheWall == false) 
@@ -209,33 +149,9 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                if (rot > 0)
-                {
-                    if (rot > 0&&rot < 180)
-                    {
-                        rot--;
-                    }
-                    if(rot >= 180)
-                    {
-                        rot++;
-                    }
-                }
-                else
-                {
-                    if (rot < 0&&rot > -180)
-                    {
-                        rot++;
-                    }
-                    if(rot <= -180)
-                    {
-                        rot--;
-                    }
-                }
-                if (rot == 0)
-                {
-                    transform.position += new Vector3(0.0f, posSpeed, 0.0f);
-                }
-                player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
+                //
+                transform.position += new Vector3(0.0f, posSpeed, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
             }
         }
         if (Input.GetKeyUp(KeyCode.W) ||
@@ -246,10 +162,7 @@ public class PlayerMove : MonoBehaviour
         //下
         if (Input.GetKey(KeyCode.S) ||
             Input.GetKey(KeyCode.DownArrow) ||
-            (((joysticky < 0) && (joystickx == 0)) &&
-            ((joysticky2 == 0) && (joystickx2 == 0))) ||
-            (((joysticky2 < 0) && (joystickx2 == 0)) &&
-            ((joysticky == 0) && (joystickx == 0))))
+            ((joysticky < 0) && (joystickx == 0)))
         {
             movement = true;
             if (onTheWall == false)
@@ -258,33 +171,9 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                if(rot <0)
-                {
-                    if (rot > -180)
-                    {
-                        rot--;
-                    }
-                    if(rot < -180)
-                    {
-                        rot++;
-                    }
-                }
-                else
-                {
-                    if (rot < 180)
-                    {
-                        rot++;
-                    }
-                    if(rot > 180)
-                    {
-                        rot--;
-                    }
-                }
-                if (rot == 180||rot == -180)
-                {
-                    transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
-                }
-                player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
+                //
+                transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
             }
         }
         if (Input.GetKeyUp(KeyCode.S) ||

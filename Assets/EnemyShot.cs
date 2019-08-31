@@ -10,13 +10,13 @@ public class EnemyShot : MonoBehaviour
     GameObject Player;
     GameObject Player1;
     PlayerMove Playermove;
-    private float playerpos;
+    private float playerposy;
     // Use this for initialization
     void Start()
     {
         Player = GameObject.Find("player1");
         Playermove = Player.GetComponent<PlayerMove>();
-        playerpos = Player.transform.localPosition.y;
+        playerposy = Player.transform.localPosition.y;
         startTime = Time.time;
         Player1 = GameObject.Find("player");
     }
@@ -34,15 +34,15 @@ public class EnemyShot : MonoBehaviour
         if (transform.localScale.x < 0)
         {
             //右向き
-            if (playerpos >= -5 && playerpos <= -2)
+            if (playerposy >= -5 && playerposy <= -2)
             {
                 myRigid.velocity = transform.right * xSpeed;
             }
-            if (playerpos > -2 && playerpos < 2)
+            if (playerposy > -2 && playerposy < 2)
             {
                 myRigid.velocity = new Vector2(xSpeed * 0.7f, xSpeed * 0.7f);
             }
-            if (playerpos >= 2 && playerpos <= 6)
+            if (playerposy >= 2 && playerposy <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
             }
@@ -50,15 +50,15 @@ public class EnemyShot : MonoBehaviour
         else
         {
             //左向き
-            if (playerpos >= -5 && playerpos <= -2)
+            if (playerposy >= -5 && playerposy <= -2)
             {
                 myRigid.velocity = -transform.right * xSpeed;
             }
-            if (playerpos > -2 && playerpos < 2)
+            if (playerposy > -2 && playerposy < 2)
             {
                 myRigid.velocity = new Vector2(-xSpeed * 0.7f, xSpeed * 0.7f);
             }
-            if (playerpos >= 2 && playerpos <= 6)
+            if (playerposy >= 2 && playerposy <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
             }
