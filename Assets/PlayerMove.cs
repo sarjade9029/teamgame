@@ -26,6 +26,8 @@ public class PlayerMove : MonoBehaviour
     static int con = 3;
     private float joystickx;
     private float joysticky;
+    private float joystickx2;
+    private float joysticky2;
     GameObject player;
     Condition[] conditions = new Condition[con];
     public float rot=0;
@@ -56,7 +58,7 @@ public class PlayerMove : MonoBehaviour
         {
             InputMove();
         }
-        if(movement==false)
+        if (movement == false || joystickx == 0 || joysticky == 0)
         {
             Stop();
         }
@@ -75,13 +77,22 @@ public class PlayerMove : MonoBehaviour
         }
             addSpeed = (normalSpeed * fatigue)/100;
     }
+    //1,1右上  1,-1右下  -1,1左上  -1,-1左下
     //キー入力(斜めなし)
     private void InputMove()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         joystickx = Input.GetAxis("joystick button 10");
         joysticky = Input.GetAxis("joystick button 11");
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (joystickx < 0))
+        joystickx2 = Input.GetAxis("Horizontal");
+        joysticky2 = Input.GetAxis("Vertical");
+        //左
+        if (Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.LeftArrow) ||
+            (((joysticky == 0) && (joystickx < 0)) &&
+            ((joysticky2 == 0) && (joystickx2 == 0))) ||
+            (((joysticky2 == 0) && (joystickx2 < 0)) &&
+            ((joysticky == 0) && (joystickx == 0))))
         {
             movement = true;
             if (onTheWall == false)
@@ -124,11 +135,18 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || (joystickx == 0))
+        if (Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyUp(KeyCode.LeftArrow))
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)||(joystickx > 0))
+        //右
+        if (Input.GetKey(KeyCode.D) ||
+            Input.GetKey(KeyCode.RightArrow) ||
+            (((joysticky == 0) && (joystickx > 0)) &&
+            ((joysticky2 == 0) && (joystickx2 == 0))) ||
+            (((joysticky2 == 0) && (joystickx2 > 0)) &&
+            ((joysticky == 0) && (joystickx == 0))))
         {
             movement = true;
             if (onTheWall == false)
@@ -171,11 +189,18 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)||(joystickx == 0))
+        if (Input.GetKeyUp(KeyCode.D) ||
+            Input.GetKeyUp(KeyCode.RightArrow))
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)|| (joysticky > 0))
+        //上
+        if (Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.UpArrow) ||
+            (((joysticky > 0) && (joystickx == 0)) &&
+            ((joysticky2 == 0) && (joystickx2 == 0))) ||
+            (((joysticky2 > 0) && (joystickx2 == 0)) &&
+            ((joysticky == 0) && (joystickx == 0))))
         {
             movement = true;
             if (onTheWall == false) 
@@ -213,11 +238,18 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)||(joysticky == 0))
+        if (Input.GetKeyUp(KeyCode.W) ||
+            Input.GetKeyUp(KeyCode.UpArrow))
         {
             movement = false;
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || (joysticky < 0))
+        //下
+        if (Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.DownArrow) ||
+            (((joysticky < 0) && (joystickx == 0)) &&
+            ((joysticky2 == 0) && (joystickx2 == 0))) ||
+            (((joysticky2 < 0) && (joystickx2 == 0)) &&
+            ((joysticky == 0) && (joystickx == 0))))
         {
             movement = true;
             if (onTheWall == false)
@@ -255,7 +287,8 @@ public class PlayerMove : MonoBehaviour
                 player.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));
             }
         }
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)||(joysticky == 0))
+        if (Input.GetKeyUp(KeyCode.S) ||
+            Input.GetKeyUp(KeyCode.DownArrow))
         {
             movement = false;
         }
