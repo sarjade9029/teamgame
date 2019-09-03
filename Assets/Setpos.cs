@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Setpos : MonoBehaviour
 {
-    public GameObject player;
+    public PlayerMove playerMove;
     public GameObject wallplayer;
+    public Animator anim;
     // Update is called once per frame
     void Update()
     {
-        wallplayer.transform.position = player.transform.position;
+        wallplayer.transform.position = playerMove.transform.position;
+        anim.SetBool("Walk", playerMove.movement);
     }
 }

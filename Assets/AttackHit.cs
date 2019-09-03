@@ -7,7 +7,6 @@ public class AttackHit : MonoBehaviour
 {
     GameObject Player;
     PlayerMove playermovescript;
-    EnemyMove enemy;
     void Start()
     {
         Player = GameObject.Find("player1");
@@ -19,8 +18,10 @@ public class AttackHit : MonoBehaviour
         {
             if (other.gameObject.transform.localScale.x != Player.transform.localScale.x)
             {
+                Player.GetComponent<Animator>().SetTrigger("Eat");
                 playermovescript.AddScore(100);
                 Destroy(other.gameObject);
+                Destroy(this.gameObject);
             }
         }
     }

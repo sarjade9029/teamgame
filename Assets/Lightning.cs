@@ -30,7 +30,7 @@ public class Lightning : MonoBehaviour
                 count++;
                 if (StopTime * 60 == count)
                 {
-                    playermove.inputPermit();
+                    playermove.InputPermit();
                     count = 0;
                     fall = false;
                 }

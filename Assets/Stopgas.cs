@@ -44,7 +44,7 @@ public class Stopgas : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (hide.mimicry() != true)
+            if (hide.Mimicry() != true)
             {
                 tomgleScript.AttackPermit();
                 InputKey = false;

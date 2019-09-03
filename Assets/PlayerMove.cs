@@ -16,22 +16,23 @@ public class PlayerMove : MonoBehaviour
     public int sleepiness = 10;              //眠気:蓄積されると移動が遅くなる
     private bool onTheWall = false;          //壁に張り付いている状態か
     private bool onTheGround = true;
-    bool movement = false;
+    public bool movement = false;
     public float normalSpeed = 10.0f;       //移動速度:通常の移動速度
     private float addSpeed = 0.0f;             //移動速度:最終的な移動速度この値が移動速度になる
     public float posSpeed = 0.01f;
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
     private int score;
-    static int con = 3;
+    static readonly int con = 3;
     private float joystickx;
     private float joysticky;
     private int count = 0;
     public float rigortime = 120;
     private bool move = false;
     GameObject player;
-    Condition[] conditions = new Condition[con];
+    readonly Condition[] conditions = new Condition[con];
     public float rot = 0;
+    public Animator anim;
     private void Start()
     {
         player = GameObject.Find("player");
@@ -97,13 +98,13 @@ public class PlayerMove : MonoBehaviour
             movement = true;
             if (onTheWall == false)
             {
-                //
+                //動きを遅くするか止める
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
             }
             else
             {
-                //
+                //動きを遅くするか止める
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
             }
@@ -121,13 +122,13 @@ public class PlayerMove : MonoBehaviour
             movement = true;
             if (onTheWall == false)
             {
-                //
+                //動きを遅くするか止める
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
             }
             else
             {
-                //
+                //動きを遅くするか止める
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
             }
@@ -149,7 +150,7 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                //
+                //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, posSpeed, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
             }
@@ -165,13 +166,9 @@ public class PlayerMove : MonoBehaviour
             ((joysticky < 0) && (joystickx == 0)))
         {
             movement = true;
-            if (onTheWall == false)
+            if (onTheWall == true)
             {
-                transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
-            }
-            else
-            {
-                //
+                //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
             }
@@ -181,6 +178,7 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
+        anim.SetBool("Walk", movement);
     }
     public void Stop()
     {
@@ -207,7 +205,7 @@ public class PlayerMove : MonoBehaviour
     {
         inputAbort = true;
     }
-    public void inputPermit()
+    public void InputPermit()
     {
         inputAbort = false;
     }

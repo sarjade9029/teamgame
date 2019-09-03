@@ -20,7 +20,7 @@ public class Hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hide.mimicry()==true)
+        if(hide.Mimicry()==true)
         {
             if (hide.Getnowtime() != 0)
             {

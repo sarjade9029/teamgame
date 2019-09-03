@@ -72,7 +72,7 @@ public class PlayerAtack : MonoBehaviour
             || (tongueLength >= 0.0f && player.transform.localScale.x < 0))
         {
             //キー入力の許可
-            playerscript.inputPermit();
+            playerscript.InputPermit();
             //次の舌を出す許可
             tonglescript.ExtendEnd();
             //攻撃終了の通知関数

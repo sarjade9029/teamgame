@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    //SpriteRenderer spriteRenderer;
     public float stopperMin = 0.2f;         //この値を0にすると完全に透明になるまで色が変わる
     public float alphaAddSub = 0.01f;       //透明度の変化の仕方
     public float hideTime = 10.0f;          //隠れられる時間
@@ -52,7 +52,10 @@ public class Hide : MonoBehaviour
     //色を変える
     void ChangeTransparency(float alpha,GameObject name)
     {
-        name.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
+        foreach (var item in name.GetComponentsInChildren<SpriteRenderer>())
+        {
+            item.color = new Color(1, 1, 1, alpha);
+        }
     }
     //キー入力取得
     void InputKey()
@@ -191,7 +194,7 @@ public class Hide : MonoBehaviour
     {
         canMimicry = false;
     }
-    public bool mimicry()
+    public bool Mimicry()
     {
         return mimicryFlag;
     }
