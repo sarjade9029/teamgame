@@ -91,6 +91,7 @@ public class PlayerMove : MonoBehaviour
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         joystickx = Input.GetAxis("joystick button 10");
         joysticky = Input.GetAxis("joystick button 11");
+
         //左
         if (Input.GetKey(KeyCode.A) ||
             Input.GetKey(KeyCode.LeftArrow) ||
