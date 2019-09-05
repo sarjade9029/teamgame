@@ -16,6 +16,7 @@ public class GetCoin : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             playermovescript.AddScore(100);
+            playermovescript.AddCoin(1);
             Destroy(this.gameObject);
         }
     }

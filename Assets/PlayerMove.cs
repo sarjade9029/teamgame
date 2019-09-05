@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     private float fatigue = 1.0f;           //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
     private int score;
+    private int coin;
     static readonly int con = 3;
     private float joystickx;
     private float joysticky;
@@ -36,9 +37,9 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("player");
-        for (int i = 0; i < con; i++) 
+        for (int i = 0; i < con; i++)
         {
-            conditions[i] = new Condition() { staminamax = (i + 1) * 3, fatigue = 1.0f - (0.1f * (i+1)) };
+            conditions[i] = new Condition() { staminamax = (i + 1) * 3, fatigue = 1.0f - (0.1f * (i + 1)) };
         }
     }
     // Update is called once per frame
@@ -56,7 +57,7 @@ public class PlayerMove : MonoBehaviour
                 stamina++;
             }
         }
-        if (inputAbort == false) 
+        if (inputAbort == false)
         {
             InputMove();
         }
@@ -76,12 +77,12 @@ public class PlayerMove : MonoBehaviour
         for (int i = 0; i < con; i++)
         {
             //マックス値以下なら疲労を代入
-            if(stamina < conditions[i].staminamax)
+            if (stamina < conditions[i].staminamax)
             {
                 fatigue = conditions[i].fatigue;
             }
         }
-            addSpeed = (normalSpeed * fatigue)/100;
+        addSpeed = (normalSpeed * fatigue) / 100;
     }
     //1,1右上  1,-1右下  -1,1左上  -1,-1左下
     //キー入力(斜めなし)
@@ -144,7 +145,7 @@ public class PlayerMove : MonoBehaviour
             ((joysticky > 0) && (joystickx == 0)))
         {
             movement = true;
-            if (onTheWall == false) 
+            if (onTheWall == false)
             {
                 transform.position += new Vector3(0.0f, posSpeed, 0.0f);
             }
@@ -220,5 +221,13 @@ public class PlayerMove : MonoBehaviour
     public void AddScore(int n)
     {
         score += n;
+    }
+    public int GetCoin()
+    {
+        return coin;
+    }
+    public void AddCoin(int n)
+    {
+        coin += n;
     }
 }
