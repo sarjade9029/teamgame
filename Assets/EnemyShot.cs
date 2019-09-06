@@ -11,6 +11,7 @@ public class EnemyShot : MonoBehaviour
     GameObject Player1;
     PlayerMove Playermove;
     private float playerposy;
+    public float deletetime = 2.0f;
     // Use this for initialization
     void Start()
     {
@@ -26,9 +27,12 @@ public class EnemyShot : MonoBehaviour
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         // 現在時刻から開始時刻を引くと、開始から経過時間がとれる
         // それが5秒より大きいとき自殺する
-        if (Time.time - startTime > 2.0f)
+        if (Time.time - startTime > deletetime)
         {
-            Destroy(gameObject);
+            if (deletetime > 0)
+            {
+                Destroy(gameObject);
+            }
         }
         // たまが反対を向いている（スケールがマイナス）なら反対に進ませる
         if (transform.localScale.x < 0)

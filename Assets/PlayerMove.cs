@@ -26,15 +26,15 @@ public class PlayerMove : MonoBehaviour
     static readonly int con = 3;                                    
     private float joystickx;                                        
     private float joysticky;                                        
-    private int count = 0;                                          //
-    public float rigortime = 120;                                   //
+    private int count = 60;                                          //
+    public float rigortime = 60;                                   //
     private bool move = false;                                      
     GameObject player;                                              
     readonly Condition[] conditions = new Condition[con];           
     public float rot = 0;                                           
     public Animator anim;
     private float prevrotz = 0;
-    private float prevscalex = 0;
+    private float prevscalex = 1;
     private void Start()
     {
         player = GameObject.Find("player");
@@ -70,6 +70,10 @@ public class PlayerMove : MonoBehaviour
         {
             count++;
         }
+        if(count==rigortime)
+        {
+           move = false;
+        }
     }
     //スピード計算
     private void SpeedCalculator()
@@ -94,6 +98,7 @@ public class PlayerMove : MonoBehaviour
         joysticky = Input.GetAxis("joystick button 11");
         if (count == rigortime)
         {
+
             //左
             if (Input.GetKey(KeyCode.A) ||
                 Input.GetKey(KeyCode.LeftArrow) ||
@@ -116,9 +121,9 @@ public class PlayerMove : MonoBehaviour
                     //動きを遅くするか止める
                     transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
                     player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
-                    if (transform.localRotation.z == prevrotz)
+                    if (player.transform.localRotation.z != prevrotz)
                     {
-                        prevrotz = transform.localRotation.z;
+                        prevrotz = player.transform.localRotation.z;
                         Stopmove();
                     }
                 }
@@ -150,9 +155,9 @@ public class PlayerMove : MonoBehaviour
                     //動きを遅くするか止める
                     transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
                     player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
-                    if (transform.localRotation.z == prevrotz)
+                    if (player.transform.localRotation.z != prevrotz)
                     {
-                        prevrotz = transform.localRotation.z;
+                        prevrotz = player.transform.localRotation.z;
                         Stopmove();
                     }
                 }
@@ -177,9 +182,9 @@ public class PlayerMove : MonoBehaviour
                     //動きを遅くするか止める
                     transform.position += new Vector3(0.0f, posSpeed, 0.0f);
                     player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-                    if (transform.localRotation.z == prevrotz)
+                    if (player.transform.localRotation.z != prevrotz)
                     {
-                        prevrotz = transform.localRotation.z;
+                        prevrotz = player.transform.localRotation.z;
                         Stopmove();
                     }
                 }
@@ -200,9 +205,9 @@ public class PlayerMove : MonoBehaviour
                     //動きを遅くするか止める
                     transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
                     player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-                    if (transform.localRotation.z == prevrotz)
+                    if (player.transform.localRotation.z != prevrotz)
                     {
-                        prevrotz = transform.localRotation.z;
+                        prevrotz = player.transform.localRotation.z;
                         Stopmove();
                     }
                 }
@@ -212,6 +217,7 @@ public class PlayerMove : MonoBehaviour
             {
                 movement = false;
             }
+
         }
         else
         {

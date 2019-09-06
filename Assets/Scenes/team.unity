@@ -118,6 +118,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 885074323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &151577444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5844929429148134542, guid: e15df3c0eb70a744dad68229b97c9966,
+    type: 3}
+  m_PrefabInstance: {fileID: 885074323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &175626145
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +203,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &277915842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5844929430523497628, guid: e15df3c0eb70a744dad68229b97c9966,
+    type: 3}
+  m_PrefabInstance: {fileID: 885074323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &277915844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277915842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e99fe209cd37b74bb31c6a502960264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMae: {fileID: 151577444}
+  spriteNak: {fileID: 547191967}
+  spriteAto: {fileID: 928557987}
+  player: {fileID: 1105422342}
+  alpha: 1
+  zero: 0
 --- !u!1001 &310050446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,6 +323,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &547191967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5844929429929249035, guid: e15df3c0eb70a744dad68229b97c9966,
+    type: 3}
+  m_PrefabInstance: {fileID: 885074323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &567209527
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1018,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e15df3c0eb70a744dad68229b97c9966, type: 3}
+--- !u!1 &928557987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5844929429129228114, guid: e15df3c0eb70a744dad68229b97c9966,
+    type: 3}
+  m_PrefabInstance: {fileID: 885074323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &933006978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,10 +3507,15 @@ PrefabInstance:
       propertyPath: posSpeed
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 7388673542703949672, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
+        type: 3}
+      propertyPath: rigortime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7388673542847666258, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7388673542847666258, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
         type: 3}
