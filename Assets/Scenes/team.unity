@@ -3628,6 +3628,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: edb0a94d957e5ce41b4e5c9e0b24b304,
         type: 3}
+    - target: {fileID: 7388673542197566386, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7388673542197566387, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
     - {fileID: 7388673543117346968, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
