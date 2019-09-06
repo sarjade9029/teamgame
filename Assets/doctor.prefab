@@ -49,7 +49,9 @@ MonoBehaviour:
   lookUp: 1
   allTime: 70
   looktime: 0
+  lookat: 0
   waittime: 0
+  Staringtime: 60
   lookloop: 1
   ScopeSpeed: 10
 --- !u!114 &5898363303791185169
@@ -269,7 +271,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 2.73}
+  m_Size: {x: 1.7, y: 2.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -309,7 +311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftMove: 0
+  moveingTime: 0
   moveTime: 600
+  normalSpeed: 8
+  shotSpeed: 8
   moveSpeed: 0
 --- !u!60 &5898363304380169027
 PolygonCollider2D:
@@ -328,8 +333,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 2.73}
-    newSize: {x: 4, y: 2.73}
+    oldSize: {x: 1.7, y: 2.73}
+    newSize: {x: 1.7, y: 2.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
