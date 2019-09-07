@@ -1,0 +1,561 @@
+fileFormatVersion: 2
+guid: ecd80da57bf8e504ba262eac1fb239e2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: c1aa7447c4cd5f26_0
+    21300002: c1aa7447c4cd5f26_1
+    21300004: c1aa7447c4cd5f26_2
+    21300006: c1aa7447c4cd5f26_3
+    21300008: c1aa7447c4cd5f26_4
+    21300010: c1aa7447c4cd5f26_5
+    21300012: c1aa7447c4cd5f26_6
+    21300014: c1aa7447c4cd5f26_7
+    21300016: c1aa7447c4cd5f26_8
+    21300018: c1aa7447c4cd5f26_9
+    21300020: c1aa7447c4cd5f26_10
+    21300022: c1aa7447c4cd5f26_11
+    21300024: c1aa7447c4cd5f26_12
+    21300026: c1aa7447c4cd5f26_13
+    21300028: c1aa7447c4cd5f26_14
+    21300030: c1aa7447c4cd5f26_15
+    21300032: c1aa7447c4cd5f26_16
+    21300034: c1aa7447c4cd5f26_17
+    21300036: c1aa7447c4cd5f26_18
+    21300038: c1aa7447c4cd5f26_19
+    21300040: c1aa7447c4cd5f26_20
+    21300042: c1aa7447c4cd5f26_21
+    21300044: c1aa7447c4cd5f26_22
+    21300046: c1aa7447c4cd5f26_23
+    21300048: c1aa7447c4cd5f26_24
+    21300050: c1aa7447c4cd5f26_25
+    21300052: c1aa7447c4cd5f26_26
+    21300054: c1aa7447c4cd5f26_27
+    21300056: c1aa7447c4cd5f26_28
+    21300058: c1aa7447c4cd5f26_29
+    21300060: c1aa7447c4cd5f26_30
+    21300062: c1aa7447c4cd5f26_31
+    21300064: c1aa7447c4cd5f26_32
+    21300066: c1aa7447c4cd5f26_33
+    21300068: c1aa7447c4cd5f26_34
+    21300070: c1aa7447c4cd5f26_35
+    21300072: c1aa7447c4cd5f26_36
+    21300074: c1aa7447c4cd5f26_37
+    21300076: c1aa7447c4cd5f26_38
+    21300078: c1aa7447c4cd5f26_39
+    21300080: c1aa7447c4cd5f26_40
+    21300082: c1aa7447c4cd5f26_41
+    21300084: c1aa7447c4cd5f26_42
+    21300086: c1aa7447c4cd5f26_43
+    21300088: c1aa7447c4cd5f26_44
+    21300090: c1aa7447c4cd5f26_45
+    21300092: c1aa7447c4cd5f26_46
+    21300094: c1aa7447c4cd5f26_47
+    21300096: c1aa7447c4cd5f26_48
+    21300098: c1aa7447c4cd5f26_49
+    21300100: c1aa7447c4cd5f26_50
+    21300102: c1aa7447c4cd5f26_51
+    21300104: c1aa7447c4cd5f26_52
+    21300106: c1aa7447c4cd5f26_53
+    21300108: c1aa7447c4cd5f26_54
+    21300110: c1aa7447c4cd5f26_55
+    21300112: c1aa7447c4cd5f26_56
+    21300114: c1aa7447c4cd5f26_57
+    21300116: c1aa7447c4cd5f26_58
+    21300118: c1aa7447c4cd5f26_59
+    21300120: c1aa7447c4cd5f26_60
+    21300122: c1aa7447c4cd5f26_61
+    21300124: c1aa7447c4cd5f26_62
+    21300126: c1aa7447c4cd5f26_63
+    21300128: c1aa7447c4cd5f26_64
+    21300130: c1aa7447c4cd5f26_65
+    21300132: c1aa7447c4cd5f26_66
+    21300134: c1aa7447c4cd5f26_67
+    21300136: c1aa7447c4cd5f26_68
+    21300138: c1aa7447c4cd5f26_69
+    21300140: c1aa7447c4cd5f26_70
+    21300142: c1aa7447c4cd5f26_71
+    21300144: c1aa7447c4cd5f26_72
+    21300146: c1aa7447c4cd5f26_73
+    21300148: c1aa7447c4cd5f26_74
+    21300150: c1aa7447c4cd5f26_75
+    21300152: c1aa7447c4cd5f26_76
+    21300154: c1aa7447c4cd5f26_77
+    21300156: c1aa7447c4cd5f26_78
+    21300158: c1aa7447c4cd5f26_79
+    21300160: c1aa7447c4cd5f26_80
+    21300162: c1aa7447c4cd5f26_81
+    21300164: c1aa7447c4cd5f26_82
+    21300166: c1aa7447c4cd5f26_83
+    21300168: c1aa7447c4cd5f26_84
+    21300170: c1aa7447c4cd5f26_85
+    21300172: c1aa7447c4cd5f26_86
+    21300174: c1aa7447c4cd5f26_87
+    21300176: c1aa7447c4cd5f26_88
+    21300178: c1aa7447c4cd5f26_89
+    21300180: c1aa7447c4cd5f26_90
+    21300182: c1aa7447c4cd5f26_91
+    21300184: c1aa7447c4cd5f26_92
+    21300186: c1aa7447c4cd5f26_93
+    21300188: c1aa7447c4cd5f26_94
+    21300190: c1aa7447c4cd5f26_95
+    21300192: c1aa7447c4cd5f26_96
+    21300194: c1aa7447c4cd5f26_97
+    21300196: c1aa7447c4cd5f26_98
+    21300198: c1aa7447c4cd5f26_99
+    21300200: c1aa7447c4cd5f26_100
+    21300202: c1aa7447c4cd5f26_101
+    21300204: c1aa7447c4cd5f26_102
+    21300206: c1aa7447c4cd5f26_103
+    21300208: c1aa7447c4cd5f26_104
+    21300210: c1aa7447c4cd5f26_105
+    21300212: c1aa7447c4cd5f26_106
+    21300214: c1aa7447c4cd5f26_107
+    21300216: c1aa7447c4cd5f26_108
+    21300218: c1aa7447c4cd5f26_109
+    21300220: c1aa7447c4cd5f26_110
+    21300222: c1aa7447c4cd5f26_111
+    21300224: c1aa7447c4cd5f26_112
+    21300226: c1aa7447c4cd5f26_113
+    21300228: c1aa7447c4cd5f26_114
+    21300230: c1aa7447c4cd5f26_115
+    21300232: c1aa7447c4cd5f26_116
+    21300234: c1aa7447c4cd5f26_117
+    21300236: c1aa7447c4cd5f26_118
+    21300238: c1aa7447c4cd5f26_119
+    21300240: c1aa7447c4cd5f26_120
+    21300242: c1aa7447c4cd5f26_121
+    21300244: c1aa7447c4cd5f26_122
+    21300246: c1aa7447c4cd5f26_123
+    21300248: c1aa7447c4cd5f26_124
+    21300250: c1aa7447c4cd5f26_125
+    21300252: c1aa7447c4cd5f26_126
+    21300254: c1aa7447c4cd5f26_127
+    21300256: c1aa7447c4cd5f26_128
+    21300258: c1aa7447c4cd5f26_129
+    21300260: c1aa7447c4cd5f26_130
+    21300262: c1aa7447c4cd5f26_131
+    21300264: c1aa7447c4cd5f26_132
+    21300266: c1aa7447c4cd5f26_133
+    21300268: c1aa7447c4cd5f26_134
+    21300270: c1aa7447c4cd5f26_135
+    21300272: c1aa7447c4cd5f26_136
+    21300274: c1aa7447c4cd5f26_137
+    21300276: c1aa7447c4cd5f26_138
+    21300278: c1aa7447c4cd5f26_139
+    21300280: c1aa7447c4cd5f26_140
+    21300282: c1aa7447c4cd5f26_141
+    21300284: c1aa7447c4cd5f26_142
+    21300286: c1aa7447c4cd5f26_143
+    21300288: c1aa7447c4cd5f26_144
+    21300290: c1aa7447c4cd5f26_145
+    21300292: c1aa7447c4cd5f26_146
+    21300294: c1aa7447c4cd5f26_147
+    21300296: c1aa7447c4cd5f26_148
+    21300298: c1aa7447c4cd5f26_149
+    21300300: c1aa7447c4cd5f26_150
+    21300302: c1aa7447c4cd5f26_151
+    21300304: c1aa7447c4cd5f26_152
+    21300306: c1aa7447c4cd5f26_153
+    21300308: c1aa7447c4cd5f26_154
+    21300310: c1aa7447c4cd5f26_155
+    21300312: c1aa7447c4cd5f26_156
+    21300314: c1aa7447c4cd5f26_157
+    21300316: c1aa7447c4cd5f26_158
+    21300318: c1aa7447c4cd5f26_159
+    21300320: c1aa7447c4cd5f26_160
+    21300322: c1aa7447c4cd5f26_161
+    21300324: c1aa7447c4cd5f26_162
+    21300326: c1aa7447c4cd5f26_163
+    21300328: c1aa7447c4cd5f26_164
+    21300330: c1aa7447c4cd5f26_165
+    21300332: c1aa7447c4cd5f26_166
+    21300334: c1aa7447c4cd5f26_167
+    21300336: c1aa7447c4cd5f26_168
+    21300338: c1aa7447c4cd5f26_169
+    21300340: c1aa7447c4cd5f26_170
+    21300342: c1aa7447c4cd5f26_171
+    21300344: c1aa7447c4cd5f26_172
+    21300346: c1aa7447c4cd5f26_173
+    21300348: c1aa7447c4cd5f26_174
+    21300350: c1aa7447c4cd5f26_175
+    21300352: c1aa7447c4cd5f26_176
+    21300354: c1aa7447c4cd5f26_177
+    21300356: c1aa7447c4cd5f26_178
+    21300358: c1aa7447c4cd5f26_179
+    21300360: c1aa7447c4cd5f26_180
+    21300362: c1aa7447c4cd5f26_181
+    21300364: c1aa7447c4cd5f26_182
+    21300366: c1aa7447c4cd5f26_183
+    21300368: c1aa7447c4cd5f26_184
+    21300370: c1aa7447c4cd5f26_185
+    21300372: c1aa7447c4cd5f26_186
+    21300374: c1aa7447c4cd5f26_187
+    21300376: c1aa7447c4cd5f26_188
+    21300378: c1aa7447c4cd5f26_189
+    21300380: c1aa7447c4cd5f26_190
+    21300382: c1aa7447c4cd5f26_191
+    21300384: c1aa7447c4cd5f26_192
+    21300386: c1aa7447c4cd5f26_193
+    21300388: c1aa7447c4cd5f26_194
+    21300390: c1aa7447c4cd5f26_195
+    21300392: c1aa7447c4cd5f26_196
+    21300394: c1aa7447c4cd5f26_197
+    21300396: c1aa7447c4cd5f26_198
+    21300398: c1aa7447c4cd5f26_199
+    21300400: c1aa7447c4cd5f26_200
+    21300402: c1aa7447c4cd5f26_201
+    21300404: c1aa7447c4cd5f26_202
+    21300406: c1aa7447c4cd5f26_203
+    21300408: c1aa7447c4cd5f26_204
+    21300410: c1aa7447c4cd5f26_205
+    21300412: c1aa7447c4cd5f26_206
+    21300414: c1aa7447c4cd5f26_207
+    21300416: c1aa7447c4cd5f26_208
+    21300418: c1aa7447c4cd5f26_209
+    21300420: c1aa7447c4cd5f26_210
+    21300422: c1aa7447c4cd5f26_211
+    21300424: c1aa7447c4cd5f26_212
+    21300426: c1aa7447c4cd5f26_213
+    21300428: c1aa7447c4cd5f26_214
+    21300430: c1aa7447c4cd5f26_215
+    21300432: c1aa7447c4cd5f26_216
+    21300434: c1aa7447c4cd5f26_217
+    21300436: c1aa7447c4cd5f26_218
+    21300438: c1aa7447c4cd5f26_219
+    21300440: c1aa7447c4cd5f26_220
+    21300442: c1aa7447c4cd5f26_221
+    21300444: c1aa7447c4cd5f26_222
+    21300446: c1aa7447c4cd5f26_223
+    21300448: c1aa7447c4cd5f26_224
+    21300450: c1aa7447c4cd5f26_225
+    21300452: c1aa7447c4cd5f26_226
+    21300454: c1aa7447c4cd5f26_227
+    21300456: c1aa7447c4cd5f26_228
+    21300458: c1aa7447c4cd5f26_229
+    21300460: c1aa7447c4cd5f26_230
+    21300462: c1aa7447c4cd5f26_231
+    21300464: c1aa7447c4cd5f26_232
+    21300466: c1aa7447c4cd5f26_233
+    21300468: c1aa7447c4cd5f26_234
+    21300470: c1aa7447c4cd5f26_235
+    21300472: c1aa7447c4cd5f26_236
+    21300474: c1aa7447c4cd5f26_237
+    21300476: c1aa7447c4cd5f26_238
+    21300478: c1aa7447c4cd5f26_239
+    21300480: c1aa7447c4cd5f26_240
+    21300482: c1aa7447c4cd5f26_241
+    21300484: c1aa7447c4cd5f26_242
+    21300486: c1aa7447c4cd5f26_243
+    21300488: c1aa7447c4cd5f26_244
+    21300490: c1aa7447c4cd5f26_245
+    21300492: c1aa7447c4cd5f26_246
+    21300494: c1aa7447c4cd5f26_247
+    21300496: c1aa7447c4cd5f26_248
+    21300498: c1aa7447c4cd5f26_249
+    21300500: c1aa7447c4cd5f26_250
+    21300502: c1aa7447c4cd5f26_251
+    21300504: c1aa7447c4cd5f26_252
+    21300506: c1aa7447c4cd5f26_253
+    21300508: c1aa7447c4cd5f26_254
+    21300510: c1aa7447c4cd5f26_255
+    21300512: c1aa7447c4cd5f26_256
+    21300514: c1aa7447c4cd5f26_257
+    21300516: c1aa7447c4cd5f26_258
+    21300518: c1aa7447c4cd5f26_259
+    21300520: c1aa7447c4cd5f26_260
+    21300522: c1aa7447c4cd5f26_261
+    21300524: c1aa7447c4cd5f26_262
+    21300526: c1aa7447c4cd5f26_263
+    21300528: c1aa7447c4cd5f26_264
+    21300530: c1aa7447c4cd5f26_265
+    21300532: c1aa7447c4cd5f26_266
+    21300534: c1aa7447c4cd5f26_267
+    21300536: c1aa7447c4cd5f26_268
+    21300538: c1aa7447c4cd5f26_269
+    21300540: c1aa7447c4cd5f26_270
+    21300542: c1aa7447c4cd5f26_271
+    21300544: c1aa7447c4cd5f26_272
+    21300546: c1aa7447c4cd5f26_273
+    21300548: c1aa7447c4cd5f26_274
+    21300550: c1aa7447c4cd5f26_275
+    21300552: c1aa7447c4cd5f26_276
+    21300554: c1aa7447c4cd5f26_277
+    21300556: c1aa7447c4cd5f26_278
+    21300558: c1aa7447c4cd5f26_279
+    21300560: c1aa7447c4cd5f26_280
+    21300562: c1aa7447c4cd5f26_281
+    21300564: c1aa7447c4cd5f26_282
+    21300566: c1aa7447c4cd5f26_283
+    21300568: c1aa7447c4cd5f26_284
+    21300570: c1aa7447c4cd5f26_285
+    21300572: c1aa7447c4cd5f26_286
+    21300574: c1aa7447c4cd5f26_287
+    21300576: c1aa7447c4cd5f26_288
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4597f5387d48f740b52a2c1b4a255ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed51222bc144aca4caaf439d2ee40f01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85916a80e8bdcb4da7846735d177204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bcbdd8afec5a1439492d6b7b689c14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16596e02773fc0a4d89021dd4b975fa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_5
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c964193de7ae64bbf631111c1a4792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c1aa7447c4cd5f26_6
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21406583c823397499233b67ae925ee8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 87eaa03402711c4428547532663246f5
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

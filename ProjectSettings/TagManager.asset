@@ -10,6 +10,7 @@ TagManager:
   - ingress prohibited
   - collider
   - GasCollider
+  - enemy2
   layers:
   - Default
   - TransparentFX

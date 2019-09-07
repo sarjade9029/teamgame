@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 8
   dmg: 1
+  deletetime: 2
 --- !u!50 &7484594898991198136
 Rigidbody2D:
   serializedVersion: 4

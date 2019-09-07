@@ -39,6 +39,9 @@ public class Shot : MonoBehaviour
                         newShot.transform.localScale.y,
                         newShot.transform.localScale.z);
                 }
+                else
+                {
+                }
                 time = 180;
             }
             if (time > 0)

@@ -41,14 +41,17 @@ public class EnemyShot : MonoBehaviour
             if (playerposy >= -5 && playerposy <= -2)
             {
                 myRigid.velocity = transform.right * xSpeed;
+                transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
             }
             if (playerposy > -2 && playerposy < 2)
             {
                 myRigid.velocity = new Vector2(xSpeed * 0.7f, xSpeed * 0.7f);
+                transform.rotation = Quaternion.AngleAxis(45, new Vector3(0, 0, 1));
             }
             if (playerposy >= 2 && playerposy <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
+                transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
             }
         }
         else
@@ -57,14 +60,17 @@ public class EnemyShot : MonoBehaviour
             if (playerposy >= -5 && playerposy <= -2)
             {
                 myRigid.velocity = -transform.right * xSpeed;
+                transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
             }
             if (playerposy > -2 && playerposy < 2)
             {
                 myRigid.velocity = new Vector2(-xSpeed * 0.7f, xSpeed * 0.7f);
+                transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0, 0, 1));
             }
             if (playerposy >= 2 && playerposy <= 6)
             {
                 myRigid.velocity = transform.up * xSpeed;
+                transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
             }
         }
     }

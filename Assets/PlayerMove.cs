@@ -20,9 +20,9 @@ public class PlayerMove : MonoBehaviour
     private float addSpeed = 0.0f;                                  //移動速度:最終的な移動速度この値が移動速度になる
     public float posSpeed = 0.01f;
     private float fatigue = 1.0f;                                   //疲労:この数値をかけてスピードを調整する
-    private bool inputAbort = false;                                
-    private int score;                                              
-    private int coin;                                               
+    private bool inputAbort = false;
+    private int score = 0;
+    private int coin = 0;                                               
     static readonly int con = 3;                                    
     private float joystickx;                                        
     private float joysticky;                                        
@@ -35,6 +35,7 @@ public class PlayerMove : MonoBehaviour
     public Animator anim;
     private float prevrotz = 0;
     private float prevscalex = 1;
+    private bool havekey = false;
     private void Start()
     {
         player = GameObject.Find("player");
@@ -217,7 +218,6 @@ public class PlayerMove : MonoBehaviour
             {
                 movement = false;
             }
-
         }
         else
         {
@@ -273,6 +273,14 @@ public class PlayerMove : MonoBehaviour
     public void AddCoin(int n)
     {
         coin += n;
+    }
+    public void GetKey()
+    {
+        havekey = true;
+    }
+    public bool GetKeyState()
+    {
+        return havekey;
     }
     private void Stopmove()
     {

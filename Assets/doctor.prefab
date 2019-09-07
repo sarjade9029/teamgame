@@ -49,9 +49,7 @@ MonoBehaviour:
   lookUp: 1
   allTime: 70
   looktime: 0
-  lookat: 0
   waittime: 0
-  Staringtime: 60
   lookloop: 1
   ScopeSpeed: 10
 --- !u!114 &5898363303791185169
@@ -266,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a90ca9306f95df4418c7658cebdec15c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cafead27c342664493eb03386198d77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -311,10 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftMove: 0
-  moveingTime: 0
   moveTime: 600
-  normalSpeed: 8
-  shotSpeed: 8
   moveSpeed: 0
 --- !u!60 &5898363304380169027
 PolygonCollider2D:
