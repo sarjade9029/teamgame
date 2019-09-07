@@ -47,7 +47,7 @@ public class NearPlayer : MonoBehaviour
         {
             if (obstruct.defeatobstruct == 2)
             {
-                if (hide.Mimicry() != true)
+                if (hide.Mimicry() == false)
                 {
                     tomgleScript.AttackPermit();
                     obstruct.InputKey = false;

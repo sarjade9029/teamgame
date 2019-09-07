@@ -9,14 +9,18 @@ public class Shot : MonoBehaviour
     public GameObject shotPrefab;
     // ショットを生み出す場所
     public GameObject shotPoint;
+    GameObject parent;
     public bool shotflag = false;
     GameObject Player;
     PlayerMove Playermove;
     private float playerposy;
     private float playerposx;
+    public Animator anim;
     // Update is called once per frame
     void Start()
     {
+        parent = shotPoint.transform.root.gameObject;
+        anim = parent.GetComponent<Animator>();
         Player = GameObject.Find("player1");
         Playermove = Player.GetComponent<PlayerMove>();
         playerposy = Player.transform.localPosition.y;
@@ -26,6 +30,7 @@ public class Shot : MonoBehaviour
     {
         if (shotflag == true)
         {
+            anim.SetTrigger("Attack");
             if (time == 0)
             {
                 GameObject newShot = GameObject.Instantiate(shotPrefab);
@@ -36,11 +41,8 @@ public class Shot : MonoBehaviour
                 {
                     newShot.transform.localScale =
                         new Vector3(newShot.transform.localScale.x * -1,
-                        newShot.transform.localScale.y,
-                        newShot.transform.localScale.z);
-                }
-                else
-                {
+                                    newShot.transform.localScale.y,
+                                    newShot.transform.localScale.z);
                 }
                 time = 180;
             }

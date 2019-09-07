@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//158//81 17
 public class GetCoin : MonoBehaviour
 {
     GameObject Player;

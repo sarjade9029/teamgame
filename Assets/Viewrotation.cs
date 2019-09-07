@@ -9,7 +9,6 @@ public class Viewrotation : MonoBehaviour
     public int looktime = 0;
     private int lookat;
     public int waittime = 0;
-    //public int Staringtime = 60;
     public bool lookloop = true;
     public int ScopeSpeed = 10;
     void Start()
