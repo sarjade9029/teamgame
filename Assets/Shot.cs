@@ -30,7 +30,10 @@ public class Shot : MonoBehaviour
     {
         if (shotflag == true)
         {
-            anim.SetTrigger("Attack");
+            if (shotPrefab.tag != "enemy2")
+            {
+                anim.SetTrigger("Attack");
+            }
             if (time == 0)
             {
                 GameObject newShot = GameObject.Instantiate(shotPrefab);

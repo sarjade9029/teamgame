@@ -90,7 +90,10 @@ public class EnemyShot : MonoBehaviour
                     Destroy(other.gameObject);
                     Destroy(Player1.gameObject);
                 }
-                Destroy(gameObject);
+                if (this.tag != "girochin")
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
@@ -101,7 +104,10 @@ public class EnemyShot : MonoBehaviour
                     Destroy(other.gameObject);
                     Destroy(Player.gameObject);
                 }
-                Destroy(gameObject);
+                if (this.tag != "girochin")
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

@@ -29,7 +29,7 @@ public class AttackHit : MonoBehaviour
                 }
                 playermovescript.AddScore(100);
                 Destroy(other.gameObject);
-                parent.GetComponent<PlayerAtack>().SetTongue(0.0f);
+                parent.GetComponent<PlayerAtack>().hit = true;
                 Destroy(this.gameObject);
             }
         }

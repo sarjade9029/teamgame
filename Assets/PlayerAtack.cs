@@ -10,6 +10,7 @@ public class PlayerAtack : MonoBehaviour
     bool extend = false;                //伸ばしている途中か？
     public float animtime = 120;
     public float count = 0;
+    public bool hit = false;
     GameObject player;
     PlayerMove playerscript;
     SetTomgue tonglescript;
@@ -72,7 +73,7 @@ public class PlayerAtack : MonoBehaviour
         if ((tongueLength <= 0.0f && player.transform.localScale.x > 0)
             || (tongueLength >= 0.0f && player.transform.localScale.x < 0))
         {
-            if(count >= animtime)
+            if (count >= animtime || hit == false)
             {
                 //キー入力の許可
                 playerscript.InputPermit();
@@ -80,6 +81,7 @@ public class PlayerAtack : MonoBehaviour
                 tonglescript.ExtendEnd();
                 //攻撃終了の通知関数
                 hide.MimicryOn();
+                hit = false;
                 Destroy(gameObject);
             }
             count++;

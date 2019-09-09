@@ -10,6 +10,7 @@ public class ShowUI : MonoBehaviour
     public string Text;
     Image flameimage;
     Text ui_text;
+    public int textnum = 0;
     private float alpha = 1;
     private float zero = 0;
     // Start is called before the first frame update
@@ -21,12 +22,59 @@ public class ShowUI : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        flameimage.color = new Color(1, 1, 1, alpha);
-        ui_text.color = new Color(1, 1, 1, alpha);
+        if (textnum == 1)
+        {
+            flameimage.color = new Color(1, 1, 1, alpha);
+            ui_text.color = new Color(0, 0, 0, alpha);
+        }
+        if (textnum == 2)
+        {
+            flameimage.color = new Color(1, 1, 1, alpha);
+            ui_text.color = new Color(0, 0, 0, alpha);
+        }
+        if (textnum == 3)
+        {
+            flameimage.color = new Color(1, 1, 1, alpha);
+            ui_text.color = new Color(0, 0, 0, alpha);
+        }
+        if (textnum == 4)
+        {
+            flameimage.color = new Color(1, 1, 1, alpha);
+            ui_text.color = new Color(0, 0, 0, alpha);
+        }
+        if (textnum == 5)
+        {
+            flameimage.color = new Color(1, 1, 1, alpha);
+            ui_text.color = new Color(0, 0, 0, alpha);
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        flameimage.color = new Color(1, 1, 1, zero);
-        ui_text.color = new Color(1, 1, 1, zero);
+        if (textnum == 1)
+        {
+            flameimage.color = new Color(1, 1, 1, zero);
+            ui_text.color = new Color(1, 1, 1, zero);
+        }
+        if (textnum == 2)
+        {
+            flameimage.color = new Color(1, 1, 1, zero);
+            ui_text.color = new Color(1, 1, 1, zero);
+        }
+        if (textnum == 3)
+        {
+            flameimage.color = new Color(1, 1, 1, zero);
+            ui_text.color = new Color(1, 1, 1, zero);
+        }
+        if (textnum == 4)
+        {
+            flameimage.color = new Color(1, 1, 1, zero);
+            ui_text.color = new Color(1, 1, 1, zero);
+        }
+        if (textnum == 5)
+        {
+            flameimage.color = new Color(1, 1, 1, zero);
+            ui_text.color = new Color(1, 1, 1, zero);
+        }
     }
+
 }
