@@ -6,10 +6,12 @@ public class AttackHit : MonoBehaviour
 {
     GameObject Player;
     PlayerMove playermovescript;
+    GameObject parent;
     void Start()
     {
         Player = GameObject.Find("player1");
         playermovescript = Player.GetComponent<PlayerMove>();
+        parent = transform.root.gameObject;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,6 +29,7 @@ public class AttackHit : MonoBehaviour
                 }
                 playermovescript.AddScore(100);
                 Destroy(other.gameObject);
+                parent.GetComponent<PlayerAtack>().SetTongue(0.0f);
                 Destroy(this.gameObject);
             }
         }

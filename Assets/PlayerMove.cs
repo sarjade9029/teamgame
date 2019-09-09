@@ -26,8 +26,8 @@ public class PlayerMove : MonoBehaviour
     static readonly int con = 3;                                    
     private float joystickx;                                        
     private float joysticky;                                        
-    private int count = 60;                                          //
-    public float rigortime = 60;                                   //
+    private int count = 30;                                          //
+    public float rigortime = 30;                                   //
     private bool move = false;                                      
     GameObject player;                                              
     readonly Condition[] conditions = new Condition[con];           
@@ -50,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         if (rot >= 360 || rot <= -360 || onTheWall == false)
         {
             rot = 0;
+            prevrotz = 0;
         }
         SpeedCalculator();
         if (Cooltime == 0)
@@ -99,7 +100,6 @@ public class PlayerMove : MonoBehaviour
         joysticky = Input.GetAxis("joystick button 11");
         if (count == rigortime)
         {
-
             //左
             if (Input.GetKey(KeyCode.A) ||
                 Input.GetKey(KeyCode.LeftArrow) ||

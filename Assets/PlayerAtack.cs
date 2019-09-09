@@ -8,7 +8,7 @@ public class PlayerAtack : MonoBehaviour
     private float tongueScale = 1.0f;   //舌を伸ばす距離
     public float extendTime = 1.0f;     //時間
     bool extend = false;                //伸ばしている途中か？
-    public float animtime = 60;
+    public float animtime = 120;
     public float count = 0;
     GameObject player;
     PlayerMove playerscript;
@@ -30,7 +30,7 @@ public class PlayerAtack : MonoBehaviour
     {
         playerscript.Stop();
         playerscript.InputAbort();
-        if(extend==false)
+        if (extend == false)
         {
             if (transform.localScale.x < 0)
             {
@@ -72,7 +72,7 @@ public class PlayerAtack : MonoBehaviour
         if ((tongueLength <= 0.0f && player.transform.localScale.x > 0)
             || (tongueLength >= 0.0f && player.transform.localScale.x < 0))
         {
-            if(count <= animtime)
+            if(count >= animtime)
             {
                 //キー入力の許可
                 playerscript.InputPermit();
@@ -85,4 +85,9 @@ public class PlayerAtack : MonoBehaviour
             count++;
         }
     }
+    public void SetTongue(float n)
+    {
+        tongueLength = n;
+    }
+
 }
