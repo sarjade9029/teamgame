@@ -22,59 +22,12 @@ public class ShowUI : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (textnum == 1)
-        {
-            flameimage.color = new Color(1, 1, 1, alpha);
-            ui_text.color = new Color(0, 0, 0, alpha);
-        }
-        if (textnum == 2)
-        {
-            flameimage.color = new Color(1, 1, 1, alpha);
-            ui_text.color = new Color(0, 0, 0, alpha);
-        }
-        if (textnum == 3)
-        {
-            flameimage.color = new Color(1, 1, 1, alpha);
-            ui_text.color = new Color(0, 0, 0, alpha);
-        }
-        if (textnum == 4)
-        {
-            flameimage.color = new Color(1, 1, 1, alpha);
-            ui_text.color = new Color(0, 0, 0, alpha);
-        }
-        if (textnum == 5)
-        {
-            flameimage.color = new Color(1, 1, 1, alpha);
-            ui_text.color = new Color(0, 0, 0, alpha);
-        }
+        flameimage.color = new Color(1, 1, 1, alpha);
+        ui_text.color = new Color(0, 0, 0, alpha);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (textnum == 1)
-        {
-            flameimage.color = new Color(1, 1, 1, zero);
-            ui_text.color = new Color(1, 1, 1, zero);
-        }
-        if (textnum == 2)
-        {
-            flameimage.color = new Color(1, 1, 1, zero);
-            ui_text.color = new Color(1, 1, 1, zero);
-        }
-        if (textnum == 3)
-        {
-            flameimage.color = new Color(1, 1, 1, zero);
-            ui_text.color = new Color(1, 1, 1, zero);
-        }
-        if (textnum == 4)
-        {
-            flameimage.color = new Color(1, 1, 1, zero);
-            ui_text.color = new Color(1, 1, 1, zero);
-        }
-        if (textnum == 5)
-        {
-            flameimage.color = new Color(1, 1, 1, zero);
-            ui_text.color = new Color(1, 1, 1, zero);
-        }
+        flameimage.color = new Color(1, 1, 1, zero);
+        ui_text.color = new Color(1, 1, 1, zero);
     }
-
 }
