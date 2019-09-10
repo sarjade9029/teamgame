@@ -14,14 +14,17 @@ public class Scene_Stage3toStage4 : MonoBehaviour
         playerMove = player.GetComponent<PlayerMove>();
     }
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //stage3から
-        if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
+        if (other.gameObject.tag == "Player")
         {
-            if (playerMove.GetKeyState() == true)
+            //stage3から
+            if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
             {
-                SceneManager.LoadScene("stage4");
+                if (playerMove.GetKeyState() == true)
+                {
+                    SceneManager.LoadScene("stage4");
+                }
             }
         }
     }

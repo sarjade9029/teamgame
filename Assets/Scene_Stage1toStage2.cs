@@ -13,15 +13,17 @@ public class Scene_Stage1toStage2 : MonoBehaviour
         player = GameObject.Find("player");
         playerMove = player.GetComponent<PlayerMove>();
     }
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //stage1から
-        if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
+        if(other.gameObject.tag == "Player")
         {
-            if (playerMove.GetKeyState() == true)
+            //stage1から
+            if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
             {
-                SceneManager.LoadScene("stage2");
+                if (playerMove.GetKeyState() == true)
+                {
+                    SceneManager.LoadScene("stage2");
+                }
             }
         }
     }

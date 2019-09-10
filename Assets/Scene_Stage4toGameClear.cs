@@ -14,14 +14,17 @@ public class Scene_Stage4toGameClear : MonoBehaviour
         playerMove = player.GetComponent<PlayerMove>();
     }
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //stage4から
-        if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
+        if (other.gameObject.tag == "Player")
         {
-            if (playerMove.GetKeyState() == true)
+            //stage4から
+            if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
             {
-                SceneManager.LoadScene("GameClear");
+                if (playerMove.GetKeyState() == true)
+                {
+                    SceneManager.LoadScene("GameClear");
+                }
             }
         }
     }

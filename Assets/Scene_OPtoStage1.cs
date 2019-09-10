@@ -14,14 +14,17 @@ public class Scene_OPtoStage1 : MonoBehaviour
         playerMove = player.GetComponent<PlayerMove>();
     }
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //op
-        if (Input.GetButton("joystick button 3")|| Input.GetKey(KeyCode.Q))
+        if (other.gameObject.tag == "Player")
         {
-            if (playerMove.GetKeyState() == true)
+            //op
+            if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
             {
-                SceneManager.LoadScene("stage1");
+                if (playerMove.GetKeyState() == true)
+                {
+                    SceneManager.LoadScene("stage1");
+                }
             }
         }
     }
