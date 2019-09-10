@@ -12,18 +12,22 @@ public class Brightness : MonoBehaviour
     Image Y;
     Image RB;
     Image Keyimage;
-    public float red;
-    public float gree;
-    public float blue;
-    public float alpha;
+    public float red = 0;
+    public float gree = 0;
+    public float blue = 0;
+    public float alpha = 1;
     public float foll = 0;
+    GameObject player;
+    PlayerMove playermove;
     // Start is called before the first frame update
     void Start()
     {
-      B = buttonB.GetComponent<Image>();
-      Y = buttonY.GetComponent<Image>();
-      RB = buttonRb.GetComponent<Image>();
-      Keyimage = Key.GetComponent<Image>();
+        player = GameObject.Find("player1");
+        playermove = player.GetComponent<PlayerMove>();
+        B = buttonB.GetComponent<Image>();
+        Y = buttonY.GetComponent<Image>();
+        RB = buttonRb.GetComponent<Image>();
+        Keyimage = Key.GetComponent<Image>();
     }
     // Update is called once per frame
     void Update()
@@ -31,6 +35,13 @@ public class Brightness : MonoBehaviour
         B.color = new Color(red, gree, blue, alpha);
         Y.color = new Color(red, gree, blue, alpha);
         RB.color = new Color(red, gree, blue, alpha);
-        Keyimage.color = new Color(red, gree, blue, alpha);
+        if (playermove.GetKeyState() == true)
+        {
+            Keyimage.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            Keyimage.color = new Color(0.43f, 0.43f, 0.43f, 1);
+        }
     }
 }
