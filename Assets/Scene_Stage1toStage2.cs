@@ -10,7 +10,7 @@ public class Scene_Stage1toStage2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("player");
+        player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
     }
     private void OnTriggerEnter2D(Collider2D other)
