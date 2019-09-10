@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hitgas : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Hitgas : MonoBehaviour
                     {
                         Destroy(Player.gameObject);
                         Destroy(Player1.gameObject);
+                        SceneManager.LoadScene("GameOver");
                     }
                     count = 0;
                 }
@@ -48,6 +50,7 @@ public class Hitgas : MonoBehaviour
                     {
                         Destroy(Player1.gameObject);
                         Destroy(Player.gameObject);
+                        SceneManager.LoadScene("GameOver");
                     }
                     count = 0;
                 }
@@ -68,6 +71,7 @@ public class Hitgas : MonoBehaviour
                 {
                     Destroy(Player.gameObject);
                     Destroy(Player1.gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
                 count = 0;
                 hit = true;
@@ -80,6 +84,7 @@ public class Hitgas : MonoBehaviour
                 {
                     Destroy(Player1.gameObject);
                     Destroy(Player.gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
                 count = 0;
                 hit = true;

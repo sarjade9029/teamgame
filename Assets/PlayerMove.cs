@@ -21,8 +21,8 @@ public class PlayerMove : MonoBehaviour
     public float posSpeed = 0.01f;
     private float fatigue = 1.0f;                                   //疲労:この数値をかけてスピードを調整する
     private bool inputAbort = false;
-    private int score = 0;
-    private int coin = 0;                                               
+    static private int score = 0;
+    static private int coin = 0;                                               
     static readonly int con = 3;                                    
     private float joystickx;                                        
     private float joysticky;                                        

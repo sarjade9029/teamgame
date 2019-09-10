@@ -32,9 +32,9 @@ public class Brightness : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        B.color = new Color(red, gree, blue, alpha);
-        Y.color = new Color(red, gree, blue, alpha);
-        RB.color = new Color(red, gree, blue, alpha);
+        B.color = new Color(red, gree, blue, foll);
+        Y.color = new Color(red, gree, blue, foll);
+        RB.color = new Color(red, gree, blue, foll);
         if (playermove.GetKeyState() == true)
         {
             Keyimage.color = new Color(1, 1, 1, 1);

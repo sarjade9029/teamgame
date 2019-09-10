@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyShot : MonoBehaviour
 {
@@ -89,6 +90,7 @@ public class EnemyShot : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                     Destroy(Player1.gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
                 if (this.tag != "girochin")
                 {
@@ -103,6 +105,7 @@ public class EnemyShot : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                     Destroy(Player.gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
                 if (this.tag != "girochin")
                 {
