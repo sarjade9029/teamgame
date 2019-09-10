@@ -287,4 +287,9 @@ public class PlayerMove : MonoBehaviour
         count = 0;
         move = true;
     }
+    public void scorecoininit()
+    {
+        coin = 0;
+        score = 0;
+    }
 }

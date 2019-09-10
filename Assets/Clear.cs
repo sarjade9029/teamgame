@@ -8,6 +8,7 @@ public class Clear  : MonoBehaviour
 {
 
     public GameObject score_object = null; // Textオブジェクト
+    public float time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class Clear  : MonoBehaviour
     void Update()
     {
         Text score_text = score_object.GetComponent<Text>();
-        score_text.text = "タイム:" + Time.time;
+        score_text.text = "タイム:" + (Time.time - time);
         score_object.GetComponent<Text>().text = Time.time.ToString("F2");//小数2桁にして表示
     }
 }

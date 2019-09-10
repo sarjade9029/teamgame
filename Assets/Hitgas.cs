@@ -38,6 +38,7 @@ public class Hitgas : MonoBehaviour
                     {
                         Destroy(Player.gameObject);
                         Destroy(Player1.gameObject);
+                        Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
                     count = 0;
@@ -50,6 +51,7 @@ public class Hitgas : MonoBehaviour
                     {
                         Destroy(Player1.gameObject);
                         Destroy(Player.gameObject);
+                        Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
                     count = 0;
@@ -71,6 +73,7 @@ public class Hitgas : MonoBehaviour
                 {
                     Destroy(Player.gameObject);
                     Destroy(Player1.gameObject);
+                    Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
                 count = 0;
@@ -84,6 +87,7 @@ public class Hitgas : MonoBehaviour
                 {
                     Destroy(Player1.gameObject);
                     Destroy(Player.gameObject);
+                    Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
                 count = 0;

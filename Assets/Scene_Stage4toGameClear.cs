@@ -10,19 +10,19 @@ public class Scene_Stage4toGameClear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("player");
+        player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
     }
-    // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            //stage4から
+            //stage1から
             if (Input.GetButton("joystick button 3") || Input.GetKey(KeyCode.Q))
             {
                 if (playerMove.GetKeyState() == true)
                 {
+                    playerMove.scorecoininit();
                     SceneManager.LoadScene("GameClear");
                 }
             }

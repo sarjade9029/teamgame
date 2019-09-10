@@ -90,6 +90,7 @@ public class EnemyShot : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                     Destroy(Player1.gameObject);
+                    Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
                 if (this.tag != "girochin")
@@ -105,6 +106,7 @@ public class EnemyShot : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                     Destroy(Player.gameObject);
+                    Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
                 if (this.tag != "girochin")
