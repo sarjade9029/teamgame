@@ -47,6 +47,7 @@ MonoBehaviour:
   extendTime: 1
   animtime: 60
   count: 0
+  hit: 0
 --- !u!1 &2184737978836034886
 GameObject:
   m_ObjectHideFlags: 0
