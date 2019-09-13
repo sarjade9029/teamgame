@@ -103,7 +103,7 @@ public class PlayerMove : MonoBehaviour
             //左
             if (Input.GetKey(KeyCode.A) ||
                 Input.GetKey(KeyCode.LeftArrow) ||
-                ((joystickx < 0) && (joysticky == 0)))
+                ((joystickx < 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
             {
                 movement = true;
                 if (onTheWall == false)
@@ -134,10 +134,10 @@ public class PlayerMove : MonoBehaviour
             {
                 movement = false;
             }
-            //右
-            if (Input.GetKey(KeyCode.D) ||
-                Input.GetKey(KeyCode.RightArrow) ||
-                ((joystickx > 0) && (joysticky == 0)))
+        //右
+        if (Input.GetKey(KeyCode.D) ||
+            Input.GetKey(KeyCode.RightArrow) ||
+            ((joystickx > 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
             {
                 movement = true;
                 if (onTheWall == false)
@@ -171,7 +171,7 @@ public class PlayerMove : MonoBehaviour
             //上
             if (Input.GetKey(KeyCode.W) ||
                 Input.GetKey(KeyCode.UpArrow) ||
-                ((joysticky > 0) && (joystickx == 0)))
+                ((joysticky > 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
             {
                 movement = true;
                 if (onTheWall == false)
@@ -198,7 +198,7 @@ public class PlayerMove : MonoBehaviour
             //下
             if (Input.GetKey(KeyCode.S) ||
                 Input.GetKey(KeyCode.DownArrow) ||
-                ((joysticky < 0) && (joystickx == 0)))
+                ((joysticky < 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
             {
                 movement = true;
                 if (onTheWall == true)

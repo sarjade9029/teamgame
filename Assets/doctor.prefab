@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d994dcd61e39342b14bdd5b43307f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftMove: 0
+  leftMove: 1
   moveTime: 600
   moveSpeed: 0
   anim: {fileID: 8834586416337505074}
