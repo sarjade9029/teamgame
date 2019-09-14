@@ -96,133 +96,133 @@ public class PlayerMove : MonoBehaviour
     private void InputMove()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
-        joystickx = Input.GetAxis("joystick button 10");
-        joysticky = Input.GetAxis("joystick button 11");
+        joystickx = Input.GetAxis("Horizontal");
+        joysticky = Input.GetAxis("Vertical");
         //if (count == rigortime)
         //{
-            //左
-            if (Input.GetKey(KeyCode.A) ||
-                Input.GetKey(KeyCode.LeftArrow) ||
-                ((joystickx < 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
+        //左
+        if (/*Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.LeftArrow) ||*/
+            ((joystickx < 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
+        {
+            movement = true;
+            if (onTheWall == false)
             {
-                movement = true;
-                if (onTheWall == false)
-                {
-                    //動きを遅くするか止める
-                    transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-                    transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
-                    //if (transform.localScale.x != prevscalex)
-                    //{
-                        prevscalex = transform.localScale.x;
-                    //    Stopmove();
-                    //}
-                }
-                else
-                {
-                    //動きを遅くするか止める
-                    transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
-                    player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
-                    //if (player.transform.localRotation.z != prevrotz)
-                    //{
-                        prevrotz = player.transform.localRotation.z;
-                    //    Stopmove();
-                    //}
-                }
+                //動きを遅くするか止める
+                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
+                //if (transform.localScale.x != prevscalex)
+                //{
+                    prevscalex = transform.localScale.x;
+                //    Stopmove();
+                //}
             }
-            if (Input.GetKeyUp(KeyCode.A) ||
-                Input.GetKeyUp(KeyCode.LeftArrow))
+            else
             {
-                movement = false;
+                //動きを遅くするか止める
+                transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
+                //if (player.transform.localRotation.z != prevrotz)
+                //{
+                    prevrotz = player.transform.localRotation.z;
+                //    Stopmove();
+                //}
             }
-        //右
-        if (Input.GetKey(KeyCode.D) ||
-            Input.GetKey(KeyCode.RightArrow) ||
-            ((joystickx > 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
-            {
-                movement = true;
-                if (onTheWall == false)
-                {
-                    //動きを遅くするか止める
-                    transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                    transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
-                    //if (transform.localScale.x != prevscalex)
-                    //{
-                        prevscalex = transform.localScale.x;
-                    //    Stopmove();
-                    //}
-                }
-                else
-                {
-                    //動きを遅くするか止める
-                    transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
-                    player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
-                    //if (player.transform.localRotation.z != prevrotz)
-                    //{
-                        prevrotz = player.transform.localRotation.z;
-                    //    Stopmove();
-                    //}
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.D) ||
-                Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                movement = false;
-            }
-            //上
-            if (Input.GetKey(KeyCode.W) ||
-                Input.GetKey(KeyCode.UpArrow) ||
-                ((joysticky > 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
-            {
-                movement = true;
-                if (onTheWall == false)
-                {
-                    transform.position += new Vector3(0.0f, posSpeed, 0.0f);
-                }
-                else
-                {
-                    //動きを遅くするか止める
-                    transform.position += new Vector3(0.0f, posSpeed, 0.0f);
-                    player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-                    //if (player.transform.localRotation.z != prevrotz)
-                    //{
-                        prevrotz = player.transform.localRotation.z;
-                    //    Stopmove();
-                    //}
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.W) ||
-                Input.GetKeyUp(KeyCode.UpArrow))
-            {
-                movement = false;
-            }
-            //下
-            if (Input.GetKey(KeyCode.S) ||
-                Input.GetKey(KeyCode.DownArrow) ||
-                ((joysticky < 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
-            {
-                movement = true;
-                if (onTheWall == true)
-                {
-                    //動きを遅くするか止める
-                    transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
-                    player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-                    //if (player.transform.localRotation.z != prevrotz)
-                    //{
-                        prevrotz = player.transform.localRotation.z;
-                    //    Stopmove();
-                    //}
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.S) ||
-                Input.GetKeyUp(KeyCode.DownArrow))
-            {
-                movement = false;
-            }
-        //}
-        else
+        }
+        if (Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyUp(KeyCode.LeftArrow))
         {
             movement = false;
         }
+    //右
+        if (/*Input.GetKey(KeyCode.D) ||
+        I   nput.GetKey(KeyCode.RightArrow) ||*/
+            ((joystickx > 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
+        {
+            movement = true;
+            if (onTheWall == false)
+            {
+                //動きを遅くするか止める
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
+                //if (transform.localScale.x != prevscalex)
+                //{
+                    prevscalex = transform.localScale.x;
+                //    Stopmove();
+                //}
+            }
+            else
+            {
+                //動きを遅くするか止める
+                transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
+                //if (player.transform.localRotation.z != prevrotz)
+                //{
+                    prevrotz = player.transform.localRotation.z;
+                //    Stopmove();
+                //}
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.D) ||
+            Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            movement = false;
+        }
+        //上
+        if (/*Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.UpArrow) ||*/
+            ((joysticky > 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
+        {
+            movement = true;
+            if (onTheWall == false)
+            {
+                transform.position += new Vector3(0.0f, posSpeed, 0.0f);
+            }
+            else
+            {
+                //動きを遅くするか止める
+                transform.position += new Vector3(0.0f, posSpeed, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+                //if (player.transform.localRotation.z != prevrotz)
+                //{
+                    prevrotz = player.transform.localRotation.z;
+                //    Stopmove();
+                //}
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.W) ||
+            Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            movement = false;
+        }
+        //下
+        if (/*Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.DownArrow) ||*/
+            ((joysticky < 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
+        {
+            movement = true;
+            if (onTheWall == true)
+            {
+                //動きを遅くするか止める
+                transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
+                player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                //if (player.transform.localRotation.z != prevrotz)
+                //{
+                    prevrotz = player.transform.localRotation.z;
+                //    Stopmove();
+                //}
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.S) ||
+            Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            movement = false;
+        }
+        //}
+        //else
+        //{
+        //    movement = false;
+        //}
         anim.SetBool("Walk", movement);
     }
 

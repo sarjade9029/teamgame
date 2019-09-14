@@ -13,5 +13,17 @@ public class Scene_toOP : MonoBehaviour
         {
             SceneManager.LoadScene("OP");
         }
+        if (Input.GetKey(KeyCode.Escape) || Input.GetButton("joystick button 3"))
+        {
+            Quit();
+        }
+    }
+    void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE
+    UnityEngine.Application.Quit();
+#endif
     }
 }
