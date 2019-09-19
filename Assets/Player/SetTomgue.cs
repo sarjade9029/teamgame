@@ -8,7 +8,7 @@ public class SetTomgue : MonoBehaviour
     public GameObject Tongue;
     public GameObject PlayerPos;
     private bool extend = false;
-    GameObject player;
+    [SerializeField] GameObject player;
     PlayerMove playerMove;
     Hide hide;
     private bool canAttack = true;

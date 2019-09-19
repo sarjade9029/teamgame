@@ -7,8 +7,8 @@ public class EnemyShot : MonoBehaviour
 {
     public float xSpeed = 5.0f;         //弾の速度
     public int dmg = 1;                 //弾が当たった時のプレイヤーへのダメージ
-    GameObject Player;                  //
-    GameObject Player1;                 //
+    [SerializeField] GameObject Player;                  //
+    [SerializeField] GameObject Player1;                 //
     PlayerMove Playermove;              //
     private float playerposy;           //プレイヤーの高さで弾の角度と移動を変える
     float startTime;                    //生まれたタイミングの時間を取得

@@ -19,10 +19,10 @@ public class Hide : MonoBehaviour
     private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
     private bool countrewriting = true;
-    GameObject Player;
+    [SerializeField] GameObject Player;
     SetTomgue tomgleScript;
     PlayerMove player;
-    GameObject Player1;
+    [SerializeField] GameObject Player1;
     void Start()
     {
         Player = GameObject.Find("player");

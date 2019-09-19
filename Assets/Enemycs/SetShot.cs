@@ -6,10 +6,10 @@ public class SetShot : MonoBehaviour
 {
     Shot shot;              //
     EnemyMove enemy;        //
-    Transform rotate;       //
+    [SerializeField] Transform rotate;       //
     GameObject parent;
     Viewrotation view;      //
-    Transform lightcolor;   //
+    [SerializeField] Transform lightcolor;   //
     void Start()
     {
         shot = this.GetComponent<Shot>();
@@ -41,4 +41,3 @@ public class SetShot : MonoBehaviour
         }
     }
 }
-

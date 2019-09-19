@@ -5,9 +5,9 @@ using UnityEngine;
 public class Stopgas : MonoBehaviour
 {
     SetTomgue tomgleScript;
-    GameObject Player;
-    Transform gas;
-    Transform gaseffect;
+    [SerializeField] GameObject Player;
+    [SerializeField] Transform gas;
+    [SerializeField] Transform gaseffect;
     RotateObstruct obstruct;
     Hide hide;
     private bool InputKey = false;

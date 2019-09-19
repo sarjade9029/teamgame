@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrushEnemy : MonoBehaviour
 {
-    GameObject Player;
+    [SerializeField] GameObject Player;
     PlayerMove playermovescript;
     EnemyMove enemy;
     void Start()

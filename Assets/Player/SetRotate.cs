@@ -6,7 +6,7 @@ public class SetRotate : MonoBehaviour
 {
     public GameObject wallplayer;
     public GameObject collder;
-    GameObject player;
+    [SerializeField] GameObject player;
     PlayerMove playerMove;
     // Update is called once per frame
     void Start()

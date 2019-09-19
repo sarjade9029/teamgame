@@ -11,7 +11,7 @@ public class PlayerAtack : MonoBehaviour
     public float animtime = 120;
     public float count = 0;
     public bool hit = false;
-    GameObject player;
+    [SerializeField] GameObject player;
     PlayerMove playerscript;
     SetTomgue tonglescript;
     Hide hide;

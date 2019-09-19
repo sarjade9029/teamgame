@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
-    GameObject player;
+    [SerializeField] GameObject player;
     PlayerMove playermove;
     private bool fall = false;
     private int count = 0;

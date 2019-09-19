@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
     public GameObject cointext;
     Text coin_text;
     Text score_text;
-    GameObject player;
+    [SerializeField] GameObject player;
     PlayerMove playerscore;
 
     // Start is called before the first frame update

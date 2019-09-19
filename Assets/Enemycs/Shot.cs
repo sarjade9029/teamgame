@@ -5,11 +5,11 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     private float time = 0;          //弾を撃った後の待機時間
-    public GameObject shotPrefab;    //生み出すもととなる弾のプレハブ
-    public GameObject shotPoint;     //ショットを生み出す場所
+    [SerializeField] GameObject shotPrefab;    //生み出すもととなる弾のプレハブ
+    [SerializeField] GameObject shotPoint;     //ショットを生み出す場所
     GameObject parent;               //アニメーションを取得する場所
     public bool shotflag = false;    //そもそも球を撃つかどうか
-    public Animator animator;        //
+    [SerializeField] Animator animator;        //
     void Start()
     {
         parent = shotPoint.transform.root.gameObject;

@@ -8,8 +8,8 @@ public class Hitgas : MonoBehaviour
     float startTime;
     public float xSpeed = 5.0f;
     public int dmg = 1;
-    GameObject Player;
-    GameObject Player1;
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject Player1;
     PlayerMove Playermove;
     private float playerpos;
     private bool hit = false;

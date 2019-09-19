@@ -5,7 +5,7 @@ using UnityEngine;
 public class NearPlayer : MonoBehaviour
 {
     SetTomgue tomgleScript;
-    GameObject Player;
+    [SerializeField] GameObject Player;
     GameObject parent;
     RotateObstruct obstruct;
     Hide hide;

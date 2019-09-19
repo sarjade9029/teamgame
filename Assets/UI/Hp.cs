@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Hp : MonoBehaviour
 {
     Slider hpSlider;
-    GameObject player;
+    [SerializeField] GameObject player;
     Hide hide;
     // Start is called before the first frame update
     void Start()

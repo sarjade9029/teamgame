@@ -11,20 +11,20 @@ public class Othergraph : MonoBehaviour
     private bool prevGround = true;
     // Start is called before the first frame update
     SpriteRenderer spriteRenderer;
-    GameObject other;
+    [SerializeField] GameObject other;
     SpriteRenderer otherSpriteRenderer;
     SpriteRenderer other2SpriteRenderer;
     SpriteRenderer LinespriteRenderer;
     SpriteRenderer regright;
     SpriteRenderer regleft;
     PlayerMove playerMove;
-    Transform rightreg;
-    Transform leftreg;
+    [SerializeField] Transform rightreg;
+    [SerializeField] Transform leftreg;
     Transform other2;
     Transform other3;
-    Transform Line;
-    Transform HitGraound;
-    Transform HitOther;
+    [SerializeField] Transform Line;
+    [SerializeField] Transform HitGraound;
+    [SerializeField] Transform HitOther;
     void Start()
     {
         //べつの状態のプレイヤーとその子オブジェクトの取得

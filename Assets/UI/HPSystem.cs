@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HPSystem : MonoBehaviour
 {
-    GameObject image;
+    [SerializeField] GameObject image;
     // Start is called before the first frame update
     void Start()
     {

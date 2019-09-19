@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackHit : MonoBehaviour
 {
-    GameObject Player;
+    [SerializeField] GameObject Player;
     PlayerMove playermovescript;
     GameObject parent;
     void Start()

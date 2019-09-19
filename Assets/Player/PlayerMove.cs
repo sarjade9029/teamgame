@@ -28,8 +28,8 @@ public class PlayerMove : MonoBehaviour
     private float joysticky;                                        
     private int count = 30;                                          //
     public float rigortime = 30;                                   //
-    private bool move = false;                                      
-    GameObject player;                                              
+    private bool move = false;
+    [SerializeField] GameObject player;                                              
     readonly Condition[] conditions = new Condition[con];           
     public float rot = 0;                                           
     public Animator anim;
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
         {
             InputMove();
         }
-        if (movement == false || (joystickx == 0 && joysticky == 0))
+        if (movement == false || joystickx == 0 || joysticky == 0)
         {
             Stop();
         }
@@ -230,6 +230,7 @@ public class PlayerMove : MonoBehaviour
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         myRigid.velocity = Vector2.zero;
+        movement = false;
     }
 
     public void OnWall()

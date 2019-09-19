@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnGround : MonoBehaviour
 {
-    GameObject Player1;
+    [SerializeField] GameObject Player1;
     PlayerMove playermovescript;
     // Update is called once per frame
     void Start()
