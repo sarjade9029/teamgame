@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GetKey : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
     PlayerMove playermovescript;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
         playermovescript = Player.GetComponent<PlayerMove>();
     }
     private void OnTriggerEnter2D(Collider2D other)

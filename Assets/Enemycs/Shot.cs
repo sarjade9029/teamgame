@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    private float time = 0;          //弾を撃った後の待機時間
-    [SerializeField] GameObject shotPrefab;    //生み出すもととなる弾のプレハブ
-    [SerializeField] GameObject shotPoint;     //ショットを生み出す場所
-    GameObject parent;               //アニメーションを取得する場所
     public bool shotflag = false;    //そもそも球を撃つかどうか
-    [SerializeField] Animator animator;        //
+    private float time = 0;          //弾を撃った後の待機時間
+    GameObject parent;               //アニメーションを取得する場所
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject shotPoint;     //ショットを生み出す場所
+    [SerializeField] GameObject shotPrefab;    //生み出すもととなる弾のプレハブ
     void Start()
     {
         parent = shotPoint.transform.root.gameObject;
@@ -19,7 +19,7 @@ public class Shot : MonoBehaviour
     {
         if (shotflag == true)
         {
-            if (shotPrefab.tag != "enemy2")
+            if(shotPrefab.tag != "enemy2")
             {
                 animator.SetTrigger("Attack");
             }

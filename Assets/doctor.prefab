@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10c76dcfed3724ca0d07e2400862ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: {fileID: 3948313475850640272}
+  lightcolor: {fileID: 6364447410016272696}
 --- !u!114 &3819375232335102875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,11 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3b4330a85e4b1498a2d0924e56c5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotflag: 0
+  animator: {fileID: 8834586416337505074}
+  shotPoint: {fileID: 8834586416337505076}
   shotPrefab: {fileID: 7661112291677449533, guid: b0546e4315d1da147bf3ac73935ea474,
     type: 3}
-  shotPoint: {fileID: 8834586416337505076}
-  shotflag: 0
-  anim: {fileID: 0}
 --- !u!1 &2731245927298622774
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3948313475850640272}
-  - component: {fileID: 3284153784612561955}
-  - component: {fileID: 7521975358373876155}
+  - component: {fileID: 2181527962987995330}
+  - component: {fileID: 251563115640038778}
   m_Layer: 0
   m_Name: rotatepoint
   m_TagString: Untagged
@@ -308,7 +310,7 @@ Transform:
   m_Father: {fileID: 736218595195910523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3284153784612561955
+--- !u!114 &2181527962987995330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,28 +319,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 8374041443992938176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a7157cbaf149640ab1442ed5245148, type: 3}
+  m_Script: {fileID: 11500000, guid: e6806ad1ad17db24ba2033affb91df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookUp: 1
-  allTime: 70
+  lookRange: 1
+--- !u!114 &251563115640038778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374041443992938176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d2faa10b4b7434ba82ef4ab646477e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   looktime: 0
   waittime: 0
-  lookloop: 1
+  allTime: 120
   ScopeSpeed: 10
---- !u!114 &7521975358373876155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374041443992938176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0d0a9b83575fd4ba0ba7a2593f7fc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookRange: 1.6
+  lookUp: 1
+  lookloop: 1
 --- !u!1 &8834586416337505076
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ GameObject:
   - component: {fileID: 736218595195910523}
   - component: {fileID: 8973957690908140173}
   - component: {fileID: 9034381108975453366}
-  - component: {fileID: 3348083130675804695}
+  - component: {fileID: 4566408114376190661}
   - component: {fileID: 3170480310662389814}
   - component: {fileID: 8834586416337505074}
   m_Layer: 9
@@ -445,7 +447,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &3348083130675804695
+--- !u!114 &4566408114376190661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,13 +456,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8834586416337505076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d994dcd61e39342b14bdd5b43307f4, type: 3}
+  m_Script: {fileID: 11500000, guid: a9a0382e68c9f5d45b1031a10fbe35da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftMove: 1
   moveTime: 600
-  moveSpeed: 0
-  anim: {fileID: 8834586416337505074}
+  moveSpeed: 1
+  leftMove: 0
+  animator: {fileID: 8834586416337505074}
 --- !u!60 &3170480310662389814
 PolygonCollider2D:
   m_ObjectHideFlags: 0

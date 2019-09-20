@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CrushEnemy : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-    PlayerMove playermovescript;
     EnemyMove enemy;
+    PlayerMove playermovescript;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
         playermovescript = Player.GetComponent<PlayerMove>();
     }
     private void OnTriggerEnter2D(Collider2D other)

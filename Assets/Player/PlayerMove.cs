@@ -10,41 +10,39 @@ public struct Condition
 public class PlayerMove : MonoBehaviour
 {
     public int Cooltime = 5;                                        //クールタイム:スタミナが0になると発生する
-    public int witecount = 10;                                      //スタミナが1回復するまでの時間(フレーム)
     public int stamina = 10;                                        //スタミナ:減ると隠れることができなくなる
+    public int witecount = 10;                                      //スタミナが1回復するまでの時間(フレーム)
     public int sleepiness = 10;                                     //眠気:蓄積されると移動が遅くなる
-    private bool onTheWall = false;                                 //壁に張り付いている状態か
-    private bool onTheGround = true;                                
-    public bool movement = false;                                   
-    public float normalSpeed = 10.0f;                               //移動速度:通常の移動速度
-    private float addSpeed = 0.0f;                                  //移動速度:最終的な移動速度この値が移動速度になる
+    public float rot = 0;
+    public float rigortime = 30;
     public float posSpeed = 0.01f;
-    private float fatigue = 1.0f;                                   //疲労:この数値をかけてスピードを調整する
-    private bool inputAbort = false;
-    static private int score = 0;
-    static private int coin = 0;                                               
-    static readonly int con = 3;                                    
-    private float joystickx;                                        
-    private float joysticky;                                        
-    private int count = 30;                                          //
-    public float rigortime = 30;                                   //
-    private bool move = false;
-    [SerializeField] GameObject player;                                              
-    readonly Condition[] conditions = new Condition[con];           
-    public float rot = 0;                                           
-    public Animator anim;
+    public float normalSpeed = 10.0f;                               //移動速度:通常の移動速度
+    public bool movement = false;
+    private int count = 30;
+    private float joysticky;
+    private float joystickx;
     private float prevrotz = 0;
     private float prevscalex = 1;
+    private float fatigue = 1.0f;                                   //疲労:この数値をかけてスピードを調整する
+    private float addSpeed = 0.0f;                                  //移動速度:最終的な移動速度この値が移動速度になる
+    private bool move = false;
+    private bool onTheWall = false;                                 //壁に張り付いている状態か
+    private bool onTheGround = true;
+    private bool inputAbort = false;
+    static private int coin = 0;
+    static private int score = 0;
+    static readonly int con = 3;
     private bool havekey = false;
+    readonly Condition[] conditions = new Condition[con];
+    [SerializeField] Animator anim;
+    [SerializeField] GameObject player;
     private void Start()
     {
-        player = GameObject.Find("player");
         for (int i = 0; i < con; i++)
         {
             conditions[i] = new Condition() { staminamax = (i + 1) * 3, fatigue = 1.0f - (0.1f * (i + 1)) };
         }
     }
-    // Update is called once per frame
     private void Update()
     {
         if (rot >= 360 || rot <= -360 || onTheWall == false)
@@ -68,14 +66,6 @@ public class PlayerMove : MonoBehaviour
         {
             Stop();
         }
-        //if (move == true)
-        //{
-        //    count++;
-        //}
-        //if(count==rigortime)
-        //{
-        //   move = false;
-        //}
     }
     //スピード計算
     private void SpeedCalculator()
@@ -101,8 +91,8 @@ public class PlayerMove : MonoBehaviour
         //if (count == rigortime)
         //{
         //左
-        if (/*Input.GetKey(KeyCode.A) ||
-            Input.GetKey(KeyCode.LeftArrow) ||*/
+        if (Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.LeftArrow) ||
             ((joystickx < 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
         {
             movement = true;
@@ -111,22 +101,14 @@ public class PlayerMove : MonoBehaviour
                 //動きを遅くするか止める
                 transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
-                //if (transform.localScale.x != prevscalex)
-                //{
-                    prevscalex = transform.localScale.x;
-                //    Stopmove();
-                //}
+                prevscalex = transform.localScale.x;
             }
             else
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
-                //if (player.transform.localRotation.z != prevrotz)
-                //{
-                    prevrotz = player.transform.localRotation.z;
-                //    Stopmove();
-                //}
+                prevrotz = player.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.A) ||
@@ -134,7 +116,7 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
-    //右
+        //右
         if (/*Input.GetKey(KeyCode.D) ||
         I   nput.GetKey(KeyCode.RightArrow) ||*/
             ((joystickx > 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
@@ -145,22 +127,14 @@ public class PlayerMove : MonoBehaviour
                 //動きを遅くするか止める
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
-                //if (transform.localScale.x != prevscalex)
-                //{
-                    prevscalex = transform.localScale.x;
-                //    Stopmove();
-                //}
+                prevscalex = transform.localScale.x;
             }
             else
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
-                //if (player.transform.localRotation.z != prevrotz)
-                //{
-                    prevrotz = player.transform.localRotation.z;
-                //    Stopmove();
-                //}
+                prevrotz = player.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.D) ||
@@ -183,11 +157,7 @@ public class PlayerMove : MonoBehaviour
                 //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, posSpeed, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-                //if (player.transform.localRotation.z != prevrotz)
-                //{
-                    prevrotz = player.transform.localRotation.z;
-                //    Stopmove();
-                //}
+                prevrotz = player.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.W) ||
@@ -206,11 +176,7 @@ public class PlayerMove : MonoBehaviour
                 //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
                 player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-                //if (player.transform.localRotation.z != prevrotz)
-                //{
-                    prevrotz = player.transform.localRotation.z;
-                //    Stopmove();
-                //}
+                prevrotz = player.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.S) ||
@@ -218,21 +184,14 @@ public class PlayerMove : MonoBehaviour
         {
             movement = false;
         }
-        //}
-        //else
-        //{
-        //    movement = false;
-        //}
         anim.SetBool("Walk", movement);
     }
-
     public void Stop()
     {
         Rigidbody2D myRigid = GetComponent<Rigidbody2D>();
         myRigid.velocity = Vector2.zero;
         movement = false;
     }
-
     public void OnWall()
     {
         onTheWall = true;

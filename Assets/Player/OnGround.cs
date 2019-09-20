@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class OnGround : MonoBehaviour
 {
-    [SerializeField] GameObject Player1;
     PlayerMove playermovescript;
-    // Update is called once per frame
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player1 = GameObject.Find("player1");
-        playermovescript = Player1.GetComponent<PlayerMove>();
+        playermovescript = Player.GetComponent<PlayerMove>();
     }
     //当たり判定に入ったとき
     private void OnTriggerEnter2D(Collider2D other)

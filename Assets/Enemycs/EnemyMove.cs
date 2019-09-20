@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2d = null;             //敵を移動させる
-    private SpriteRenderer spriterenderer = null;       //カメラに写っている間だけ動く
-    public bool leftMove = false;                       //移動方向転換
-    private int moveingTime = 0;                        //動いた時間
     public int moveTime = 600;                          //一定方向に移動する時間
     public float moveSpeed = 1.0f;                      //移動速度
-    float speed = 0.0f;                                 //スピードの値
-    private bool move = true;                           //動いているかどうか
+    public bool leftMove = false;                       //移動方向転換
     public Animator animator;                           //アニメーション
+    private int moveingTime = 0;                        //動いた時間
+    private float speed = 0.0f;                         //スピードの値
+    private bool move = true;                           //動いているかどうか
+    private Rigidbody2D rigidbody2d = null;             //敵を移動させる
+    private SpriteRenderer spriterenderer = null;       //カメラに写っている間だけ動く
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();

@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class SetTomgue : MonoBehaviour
 {
-    //生成
     public GameObject Tongue;
     public GameObject PlayerPos;
     private bool extend = false;
-    [SerializeField] GameObject player;
-    PlayerMove playerMove;
-    Hide hide;
     private bool canAttack = true;
-    // Update is called once per frame
+    Hide hide;
+    PlayerMove playerMove;
+    [SerializeField] GameObject player;
     void Update()
     {
-        player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
         hide = GetComponent<Hide>();
         if (canAttack == true)
@@ -40,7 +37,7 @@ public class SetTomgue : MonoBehaviour
                     PlayerPos.transform.position.z + 1);
 
                 //向きを同じにする
-                //newAttack.transform.rotation = gameObject.transform.rotation;
+                newAttack.transform.rotation = gameObject.transform.rotation;
                 if (PlayerPos.transform.localScale.x < 0)
                 {
                     newAttack.transform.localScale =

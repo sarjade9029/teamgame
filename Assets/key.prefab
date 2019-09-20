@@ -155,3 +155,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd66c779d3092d408aafa162b1ab10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}

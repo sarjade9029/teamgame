@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class MyCamera : MonoBehaviour {
 
-    public GameObject target;
-    public float StageStart = -12.8f;
     public float StageEnd=0.0f;
-	// Update is called once per frame
+    public float StageStart = -12.8f;
+    public GameObject target;
 	void Update () {
         // ターゲットを追いかける
         if (target.transform.position.x > StageStart && target.transform.position.x < StageEnd)

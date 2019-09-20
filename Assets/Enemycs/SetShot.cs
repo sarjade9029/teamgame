@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class SetShot : MonoBehaviour
 {
-    Shot shot;              //
-    EnemyMove enemy;        //
-    [SerializeField] Transform rotate;       //
+    Shot shot;
+    EnemyMove enemy;
     GameObject parent;
-    Viewrotation view;      //
-    [SerializeField] Transform lightcolor;   //
+    Viewrotation view;
+    [SerializeField] Transform rotate;
+    [SerializeField] Transform lightcolor;
     void Start()
     {
         shot = this.GetComponent<Shot>();
         parent = transform.root.gameObject;
         enemy = parent.GetComponent<EnemyMove>();
-        rotate = parent.transform.Find("rotatepoint");
         view = rotate.GetComponent<Viewrotation>();
-        lightcolor = rotate.transform.Find("Spot Light (2)");
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

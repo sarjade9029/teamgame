@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class AttackHit : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-    PlayerMove playermovescript;
     GameObject parent;
+    PlayerMove playermovescript;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
         playermovescript = Player.GetComponent<PlayerMove>();
         parent = transform.root.gameObject;
     }

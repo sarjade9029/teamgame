@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Viewrotation : MonoBehaviour
 {
-    public bool lookUp = true;      //視界を上に動かすか下に動かすか
-    public int allTime = 120;       //上下に動かす時間
     public int looktime = 0;        //カウントアップ式
     public int waittime = 0;        //カウントダウン式
-    public bool lookloop = true;    //そもそも視界が動くのかどうか
+    public int allTime = 120;       //上下に動かす時間
     public int ScopeSpeed = 10;     //一回動かすたびに待つ時間
+    public bool lookUp = true;      //視界を上に動かすか下に動かすか
+    public bool lookloop = true;    //そもそも視界が動くのかどうか
     void Update()
     {
         if (lookloop == true)

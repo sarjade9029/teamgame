@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class NearPlayer : MonoBehaviour
 {
-    SetTomgue tomgleScript;
-    [SerializeField] GameObject Player;
-    GameObject parent;
-    RotateObstruct obstruct;
     Hide hide;
-    // Start is called before the first frame update
+    GameObject parent;
+    SetTomgue tomgleScript;
+    RotateObstruct obstruct;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
         tomgleScript = Player.GetComponent<SetTomgue>();
         hide = Player.GetComponent<Hide>();
         parent = transform.root.gameObject;

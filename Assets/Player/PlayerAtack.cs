@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class PlayerAtack : MonoBehaviour
 {
-    float tongueLength = 0;             //舌を伸ばす距離を時間で割った数を入れる
-    private float tongueScale = 1.0f;   //舌を伸ばす距離
-    public float extendTime = 1.0f;     //時間
-    bool extend = false;                //伸ばしている途中か？
+    public float extendTime = 1.0f;         //時間
     public float animtime = 120;
     public float count = 0;
     public bool hit = false;
-    [SerializeField] GameObject player;
-    PlayerMove playerscript;
-    SetTomgue tonglescript;
+    private float tongueLength = 0;         //舌を伸ばす距離を時間で割った数を入れる
+    private float tongueScale = 1.0f;       //舌を伸ばす距離
+    private bool extend = false;            //伸ばしている途中か？
     Hide hide;
+    SetTomgue tonglescript;
+    PlayerMove playerscript;
+    [SerializeField] GameObject player;
     void Start()
     {
-        player = GameObject.Find("player1");
-        playerscript = player.GetComponent<PlayerMove>();
-        tonglescript = player.GetComponent<SetTomgue>();
         hide = player.GetComponent<Hide>();
+        tonglescript = player.GetComponent<SetTomgue>();
+        playerscript = player.GetComponent<PlayerMove>();
     }
-    // Update is called once per frame
     void Update()
     {
         TongueExtend();
@@ -65,8 +63,8 @@ public class PlayerAtack : MonoBehaviour
             transform.localScale = new Vector3(tongueLength, 1.0f, 1.0f);
             //向いている方向に縮める
         }
-        if ((tongueScale <= tongueLength && player.transform.localScale.x > 0)//プラス方向に伸びきったとき
-           || (-tongueScale >= tongueLength && player.transform.localScale.x < 0))//マイナス方向に伸びきったとき
+        if ((tongueScale <= tongueLength && player.transform.localScale.x > 0)
+           || (-tongueScale >= tongueLength && player.transform.localScale.x < 0))
         {
             extend = true;
         }
@@ -91,5 +89,4 @@ public class PlayerAtack : MonoBehaviour
     {
         tongueLength = n;
     }
-
 }

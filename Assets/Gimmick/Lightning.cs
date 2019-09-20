@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    PlayerMove playermove;
-    private bool fall = false;
-    private int count = 0;
     public int StopTime = 2;
-    // Start is called before the first frame update
+    private int count = 0;
+    private bool fall = false;
+    PlayerMove playermove;
+    [SerializeField] GameObject player;
     void Start()
     {
-        player = GameObject.Find("player1");
         playermove = player.GetComponent<PlayerMove>();
     }
-    // Update is called once per frame
     void Update()
     {
         if (fall == true)

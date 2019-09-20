@@ -9,29 +9,25 @@ public class Othergraph : MonoBehaviour
     private bool hitA = true;
     private bool hitB = false;
     private bool prevGround = true;
-    // Start is called before the first frame update
+    Transform other2;
+    PlayerMove playerMove;
+    SpriteRenderer regleft;
+    SpriteRenderer regright;
     SpriteRenderer spriteRenderer;
-    [SerializeField] GameObject other;
+    SpriteRenderer LinespriteRenderer;
     SpriteRenderer otherSpriteRenderer;
     SpriteRenderer other2SpriteRenderer;
-    SpriteRenderer LinespriteRenderer;
-    SpriteRenderer regright;
-    SpriteRenderer regleft;
-    PlayerMove playerMove;
-    [SerializeField] Transform rightreg;
-    [SerializeField] Transform leftreg;
-    Transform other2;
-    Transform other3;
+    [SerializeField] GameObject other;
     [SerializeField] Transform Line;
-    [SerializeField] Transform HitGraound;
+    [SerializeField] Transform leftreg;
+    [SerializeField] Transform rightreg;
     [SerializeField] Transform HitOther;
+    [SerializeField] Transform HitGraound;
     void Start()
     {
         //べつの状態のプレイヤーとその子オブジェクトの取得
-        other = GameObject.Find("player");
         playerMove = GetComponent<PlayerMove>();
         otherSpriteRenderer = other.GetComponent<SpriteRenderer>();
-        other2 = other.transform.Find("playerline");
         other2SpriteRenderer = other2.GetComponent<SpriteRenderer>();
         //プレイヤー本体の初期化
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,21 +35,16 @@ public class Othergraph : MonoBehaviour
         GetComponent<PolygonCollider2D>().enabled = hitA;
         //プレイヤーの子オブジェクトの初期化
         //groundhit
-        HitGraound = transform.Find("CheckHitGround");
         HitGraound.GetComponent<BoxCollider2D>().enabled = hitA;
         //othercoll
-        Line = transform.Find("playerLine");
         LinespriteRenderer = Line.GetComponent<SpriteRenderer>(); 
         LinespriteRenderer.color = new Color(1, 1, 1, graphA);
         //othercollider
-        HitOther = transform.Find("othercollider");
         HitOther.GetComponent<BoxCollider2D>().enabled = hitA;
         //rightreg
-        rightreg = transform.Find("rightreg");
         regright = rightreg.GetComponent<SpriteRenderer>();
         regright.color = new Color(1, 1, 1, graphA);
         //leftreg
-        leftreg = transform.Find("leftreg");
         regleft = leftreg.GetComponent<SpriteRenderer>();
         regleft.color = new Color(1, 1, 1, graphA);
         //別の状態のプレイヤーの初期化
@@ -62,8 +53,6 @@ public class Othergraph : MonoBehaviour
         //別の状態の子オブジェクトの初期化
         other2SpriteRenderer.color = new Color(1, 1, 1, graphB);
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(playerMove.GetOnGround()==true)

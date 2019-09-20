@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class RotateObstruct : MonoBehaviour
 {
-    int time = 0;
     public int defeatobstruct = 0;
     public bool InputKey;
-    // Start is called before the first frame update
-    //検知と実行を分ける
-    // Update is called once per frame
+    private int time = 0;
     void Update()
     {
         if (defeatobstruct == 1)

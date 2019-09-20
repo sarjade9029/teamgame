@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Stopgas : MonoBehaviour
 {
+    private bool InputKey = false;
+    Hide hide;
     SetTomgue tomgleScript;
+    RotateObstruct obstruct;
     [SerializeField] GameObject Player;
     [SerializeField] Transform gas;
     [SerializeField] Transform gaseffect;
-    RotateObstruct obstruct;
-    Hide hide;
-    private bool InputKey = false;
-    // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("player1");
         tomgleScript = Player.GetComponent<SetTomgue>();
         hide = Player.GetComponent<Hide>();
-        gas = transform.Find("gas");
-        gaseffect = transform.Find("WhiteSmoke");
     }
     void Update()
     {

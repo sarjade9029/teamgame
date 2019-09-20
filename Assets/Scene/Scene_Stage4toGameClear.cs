@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Stage4toGameClear : MonoBehaviour
 {
-    GameObject player;
     PlayerMove playerMove;
-    // Start is called before the first frame update
+    [SerializeField] GameObject player;
     void Start()
     {
-        player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
     }
     private void OnTriggerStay2D(Collider2D other)

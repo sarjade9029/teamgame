@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Stage3toStage4 : MonoBehaviour
 {
-    GameObject player;
     PlayerMove playerMove;
-    // Start is called before the first frame update
+    [SerializeField] GameObject player;
     void Start()
     {
-        player = GameObject.Find("player1");
         playerMove = player.GetComponent<PlayerMove>();
     }
-    // Update is called once per frame
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")

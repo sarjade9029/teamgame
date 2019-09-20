@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class HealPoint : MonoBehaviour
 {
-    GameObject player;
-    PlayerMove playerm;
     private int time = 0;
     private int cooltime = 300;
-    // Start is called before the first frame update
+    PlayerMove playerm;
+    [SerializeField] GameObject player;
     void Start()
     {
-        player = GameObject.Find("player1");
         playerm = player.GetComponent<PlayerMove>();
     }
     void Update()

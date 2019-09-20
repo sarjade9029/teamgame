@@ -5,21 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class EnemyShot : MonoBehaviour
 {
-    public float xSpeed = 5.0f;         //弾の速度
     public int dmg = 1;                 //弾が当たった時のプレイヤーへのダメージ
-    [SerializeField] GameObject Player;                  //
-    [SerializeField] GameObject Player1;                 //
-    PlayerMove Playermove;              //
-    private float playerposy;           //プレイヤーの高さで弾の角度と移動を変える
-    float startTime;                    //生まれたタイミングの時間を取得
+    public float xSpeed = 5.0f;         //弾の速度
     public float deletetime = 2.0f;     //弾を殺す時間
+    private float startTime;            //生まれたタイミングの時間を取得
+    private float playerposy;           //プレイヤーの高さで弾の角度と移動を変える
+    PlayerMove Playermove;
+    [SerializeField] GameObject WallPlayer;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
         Playermove = Player.GetComponent<PlayerMove>();
         playerposy = Player.transform.localPosition.y;
         startTime = Time.time;
-        Player1 = GameObject.Find("player");
     }
     void Update()
     {
@@ -81,13 +79,14 @@ public class EnemyShot : MonoBehaviour
             //使うステを取る
             if(Playermove.GetOnGround()==true)
             {
+                //大地に立つ
                 PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
                 player.sleepiness -= dmg;
                 if (player.sleepiness <= 0)
                 {
                     Destroy(other.gameObject);
-                    Destroy(Player1.gameObject);
+                    Destroy(WallPlayer.gameObject);
                     Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
@@ -98,6 +97,7 @@ public class EnemyShot : MonoBehaviour
             }
             else
             {
+                //壁
                 //体力減らす
                 Playermove.sleepiness -= dmg;
                 if (Playermove.sleepiness <= 0)

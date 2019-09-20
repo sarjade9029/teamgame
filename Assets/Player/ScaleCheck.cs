@@ -5,8 +5,6 @@ using UnityEngine;
 public class ScaleCheck : MonoBehaviour
 {
     public GameObject Player;
-
-    // Update is called once per frame
     void Update()
     {
         UpdateScale();

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1468874586964407342}
-  - component: {fileID: 7808750447927239499}
+  - component: {fileID: 3117342286477806850}
   m_Layer: 0
   m_Name: tongue1
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7808750447927239499
+--- !u!114 &3117342286477806850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120416339969903017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a361fc8677505534e835fdefa40d8567, type: 3}
+  m_Script: {fileID: 11500000, guid: dee76213c5ca49242be4008638152d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   extendTime: 1
-  animtime: 60
+  animtime: 120
   count: 0
   hit: 0
+  player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
 --- !u!1 &2184737978836034886
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad690d03f707a842a317fa6dfee311e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
 --- !u!1001 &2097208819087125133
 PrefabInstance:
   m_ObjectHideFlags: 0

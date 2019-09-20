@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10c76dcfed3724ca0d07e2400862ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: {fileID: 4537210942446670693}
+  lightcolor: {fileID: 7215624725561774780}
 --- !u!114 &3024718661204191245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,11 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3b4330a85e4b1498a2d0924e56c5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotflag: 0
+  animator: {fileID: 7797803294192499524}
+  shotPoint: {fileID: 7797803294192499534}
   shotPrefab: {fileID: 7484594898991198133, guid: 6cf24e81a69434d439dc9a52e3183e61,
     type: 3}
-  shotPoint: {fileID: 7797803294192499534}
-  shotflag: 0
-  anim: {fileID: 0}
 --- !u!1 &5932065875518452695
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,8 +159,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4537210942446670693}
-  - component: {fileID: 6550635025548027800}
-  - component: {fileID: 5926167294854123352}
+  - component: {fileID: 5529077441545643009}
+  - component: {fileID: 5818326495266760030}
   m_Layer: 0
   m_Name: rotatepoint
   m_TagString: Untagged
@@ -182,7 +184,7 @@ Transform:
   m_Father: {fileID: 3691727085397050039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6550635025548027800
+--- !u!114 &5529077441545643009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,16 +193,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5932065875518452695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a7157cbaf149640ab1442ed5245148, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d2faa10b4b7434ba82ef4ab646477e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookUp: 1
-  allTime: 70
   looktime: 0
   waittime: 0
-  lookloop: 1
+  allTime: 120
   ScopeSpeed: 10
---- !u!114 &5926167294854123352
+  lookUp: 1
+  lookloop: 1
+--- !u!114 &5818326495266760030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +211,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5932065875518452695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0d0a9b83575fd4ba0ba7a2593f7fc9, type: 3}
+  m_Script: {fileID: 11500000, guid: e6806ad1ad17db24ba2033affb91df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRange: 1.6
+  lookRange: 1
 --- !u!1 &6083617951820879112
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,13 +361,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3691727085397050039}
   - component: {fileID: 235281069952753268}
-  - component: {fileID: 1876915544689397618}
+  - component: {fileID: 6418176686032594800}
   - component: {fileID: 5104375194298584929}
   - component: {fileID: 804292773558667084}
   - component: {fileID: 7797803294192499524}
   m_Layer: 9
   m_Name: doctor2
-  m_TagString: enemy2
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +437,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1876915544689397618
+--- !u!114 &6418176686032594800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,13 +446,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7797803294192499534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d994dcd61e39342b14bdd5b43307f4, type: 3}
+  m_Script: {fileID: 11500000, guid: a9a0382e68c9f5d45b1031a10fbe35da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftMove: 0
   moveTime: 600
   moveSpeed: 1
-  anim: {fileID: 7797803294192499524}
+  leftMove: 0
+  animator: {fileID: 7797803294192499524}
 --- !u!60 &5104375194298584929
 PolygonCollider2D:
   m_ObjectHideFlags: 0

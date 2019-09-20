@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    //SpriteRenderer spriteRenderer;
+    public float hideTime = 10.0f;          //隠れられる時間
     public float stopperMin = 0.2f;         //この値を0にすると完全に透明になるまで色が変わる
     public float alphaAddSub = 0.01f;       //透明度の変化の仕方
-    public float hideTime = 10.0f;          //隠れられる時間
+    private float count = 0.0f;
     private float normal = 1.0f;             //色の状態  
     private float nowTime = 0.0f;           //擬態開始からの時間
     private float startTime = 0.0f;         //擬態開始時のみを取得する
-    private float count = 0.0f;
     private float prevcount = 0.0f;
     private float stopperMax = 1.0f;        //透明度変化の最大この状態は完全に見えている状態
     private bool hit = true;                //当たり判定を変えるtrueで当たる
-    private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
-    private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool canMimicry = true;         //擬態可能かどうかの状態trueが可
+    private bool mimicryFlag = false;       //現在擬態しているかどうかの状態trueが擬態中
     private bool countrewriting = true;
-    [SerializeField] GameObject Player;
-    SetTomgue tomgleScript;
+    private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
     PlayerMove player;
-    [SerializeField] GameObject Player1;
+    SetTomgue tomgleScript;
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject WallPlayer;
     void Start()
     {
-        Player = GameObject.Find("player");
-        Player1 = GameObject.Find("player1");
         player = GetComponent<PlayerMove>();
         tomgleScript = GetComponent<SetTomgue>();
     }
@@ -41,7 +38,7 @@ public class Hide : MonoBehaviour
         if(player.GetOnGround())
         {
             GetComponent<PolygonCollider2D>().enabled = hit;
-            ChangeTransparency(normal,Player1);
+            ChangeTransparency(normal,WallPlayer);
         }
         else
         {

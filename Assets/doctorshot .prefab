@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8946209702027897931}
   - component: {fileID: 5213168662602158260}
-  - component: {fileID: 8532888898325772108}
   - component: {fileID: 7163350433384719789}
   - component: {fileID: 4506797539582730865}
+  - component: {fileID: 1834446255927826254}
   m_Layer: 12
   m_Name: 'doctorshot '
   m_TagString: Untagged
@@ -82,20 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8532888898325772108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661112291677449533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6089532db8d0f11468b7500f5bf0e7a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xSpeed: 12
-  dmg: 3
 --- !u!50 &7163350433384719789
 Rigidbody2D:
   serializedVersion: 4
@@ -169,3 +155,20 @@ PolygonCollider2D:
       - {x: 0.92665607, y: -0.10610938}
       - {x: 0.93443733, y: 0.12054682}
       - {x: 0.8805467, y: 0.17054677}
+--- !u!114 &1834446255927826254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661112291677449533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047a5eb433ce36245ad649db1bec9800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  xSpeed: 5
+  deletetime: 2
+  Player: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b, type: 3}
+  Player1: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}

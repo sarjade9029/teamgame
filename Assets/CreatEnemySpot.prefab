@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4165280254061923632}
   m_Layer: 0
   m_Name: CreatEnemySpot
-  m_TagString: Untagged
+  m_TagString: enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,11 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3b4330a85e4b1498a2d0924e56c5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 66495402690141168, guid: 78000411f8fed2f4788145bf882128c9,
-    type: 3}
-  shotPoint: {fileID: 4165280255015195080}
   shotflag: 0
-  anim: {fileID: 0}
+  animator: {fileID: 0}
+  shotPoint: {fileID: 4165280255015195080}
+  shotPrefab: {fileID: 4165280254061923639}
 --- !u!114 &4165280254812777194
 MonoBehaviour:
   m_ObjectHideFlags: 0

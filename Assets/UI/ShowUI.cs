@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    public GameObject flame = null;
-    public GameObject text = null;
     public string Text;
-    Image flameimage;
-    Text ui_text;
-    private float alpha = 1;
+    [SerializeField] GameObject text = null;
+    [SerializeField] GameObject flame = null;
     private float zero = 0;
-    // Start is called before the first frame update
+    private float alpha = 1;
+    Text ui_text;
+    Image flameimage;
     void Start()
     {
         flameimage = flame.GetComponent<Image>();

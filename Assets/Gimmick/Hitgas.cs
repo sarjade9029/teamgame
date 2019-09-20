@@ -5,22 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Hitgas : MonoBehaviour
 {
-    float startTime;
-    public float xSpeed = 5.0f;
     public int dmg = 1;
-    [SerializeField] GameObject Player;
-    [SerializeField] GameObject Player1;
-    PlayerMove Playermove;
+    public int hittime = 6;
+    public float xSpeed = 5.0f;
+    private int count;
+    private float startTime;
     private float playerpos;
     private bool hit = false;
-    public int hittime = 6;
-    private int count;
-    // Use this for initialization
+    PlayerMove Playermove;
+    [SerializeField] GameObject WallPlayer;
+    [SerializeField] GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("player1");
-        Playermove = Player.GetComponent<PlayerMove>();
-        Player1 = GameObject.Find("player");
+        Playermove = WallPlayer.GetComponent<PlayerMove>();
     }
     void Update()
     {
@@ -31,13 +28,13 @@ public class Hitgas : MonoBehaviour
             {
                 if (Playermove.GetOnGround() == true)
                 {
-                    PlayerMove player = Player.gameObject.GetComponent<PlayerMove>();
+                    PlayerMove player = WallPlayer.gameObject.GetComponent<PlayerMove>();
                     //体力減らす
                     player.sleepiness -= dmg;
                     if (player.sleepiness == 0)
                     {
+                        Destroy(WallPlayer.gameObject);
                         Destroy(Player.gameObject);
-                        Destroy(Player1.gameObject);
                         Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
@@ -49,8 +46,8 @@ public class Hitgas : MonoBehaviour
                     Playermove.sleepiness -= dmg;
                     if (Playermove.sleepiness == 0)
                     {
-                        Destroy(Player1.gameObject);
                         Destroy(Player.gameObject);
+                        Destroy(WallPlayer.gameObject);
                         Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
@@ -59,20 +56,19 @@ public class Hitgas : MonoBehaviour
             }
         }
     }
-    //以下不変
     private void OnTriggerEnter2D(Collider2D other)
     {
         if ((other.gameObject.tag == "Player") || other.gameObject.tag == "GasCollider")
         {
             if (Playermove.GetOnGround() == true)
             {
-                PlayerMove player = Player.gameObject.GetComponent<PlayerMove>();
+                PlayerMove player = WallPlayer.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
                 player.sleepiness -= dmg;
                 if (player.sleepiness == 0)
                 {
+                    Destroy(WallPlayer.gameObject);
                     Destroy(Player.gameObject);
-                    Destroy(Player1.gameObject);
                     Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
@@ -85,8 +81,8 @@ public class Hitgas : MonoBehaviour
                 Playermove.sleepiness -= dmg;
                 if (Playermove.sleepiness == 0)
                 {
-                    Destroy(Player1.gameObject);
                     Destroy(Player.gameObject);
+                    Destroy(WallPlayer.gameObject);
                     Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }

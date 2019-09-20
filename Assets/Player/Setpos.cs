@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Setpos : MonoBehaviour
 {
+    public Animator anim;
     public PlayerMove playerMove;
     public GameObject wallplayer;
-    public Animator anim;
-    // Update is called once per frame
     void Update()
     {
         wallplayer.transform.position = playerMove.transform.position;
