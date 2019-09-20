@@ -11,8 +11,8 @@ public class EnemyShot : MonoBehaviour
     private float startTime;            //生まれたタイミングの時間を取得
     private float playerposy;           //プレイヤーの高さで弾の角度と移動を変える
     PlayerMove Playermove;
-    [SerializeField] GameObject WallPlayer;
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject WallPlayer;
     void Start()
     {
         Playermove = Player.GetComponent<PlayerMove>();

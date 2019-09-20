@@ -13,11 +13,11 @@ public class Hitgas : MonoBehaviour
     private float playerpos;
     private bool hit = false;
     PlayerMove Playermove;
-    [SerializeField] GameObject WallPlayer;
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject WallPlayer;
     void Start()
     {
-        Playermove = WallPlayer.GetComponent<PlayerMove>();
+        Playermove = Player.GetComponent<PlayerMove>();
     }
     void Update()
     {
@@ -28,13 +28,13 @@ public class Hitgas : MonoBehaviour
             {
                 if (Playermove.GetOnGround() == true)
                 {
-                    PlayerMove player = WallPlayer.gameObject.GetComponent<PlayerMove>();
+                    PlayerMove player = Player.gameObject.GetComponent<PlayerMove>();
                     //体力減らす
                     player.sleepiness -= dmg;
                     if (player.sleepiness == 0)
                     {
-                        Destroy(WallPlayer.gameObject);
                         Destroy(Player.gameObject);
+                        Destroy(WallPlayer.gameObject);
                         Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
@@ -46,8 +46,8 @@ public class Hitgas : MonoBehaviour
                     Playermove.sleepiness -= dmg;
                     if (Playermove.sleepiness == 0)
                     {
-                        Destroy(Player.gameObject);
                         Destroy(WallPlayer.gameObject);
+                        Destroy(Player.gameObject);
                         Playermove.scorecoininit();
                         SceneManager.LoadScene("GameOver");
                     }
@@ -62,13 +62,13 @@ public class Hitgas : MonoBehaviour
         {
             if (Playermove.GetOnGround() == true)
             {
-                PlayerMove player = WallPlayer.gameObject.GetComponent<PlayerMove>();
+                PlayerMove player = Player.gameObject.GetComponent<PlayerMove>();
                 //体力減らす
                 player.sleepiness -= dmg;
                 if (player.sleepiness == 0)
                 {
-                    Destroy(WallPlayer.gameObject);
                     Destroy(Player.gameObject);
+                    Destroy(WallPlayer.gameObject);
                     Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }
@@ -81,8 +81,8 @@ public class Hitgas : MonoBehaviour
                 Playermove.sleepiness -= dmg;
                 if (Playermove.sleepiness == 0)
                 {
-                    Destroy(Player.gameObject);
                     Destroy(WallPlayer.gameObject);
+                    Destroy(Player.gameObject);
                     Playermove.scorecoininit();
                     SceneManager.LoadScene("GameOver");
                 }

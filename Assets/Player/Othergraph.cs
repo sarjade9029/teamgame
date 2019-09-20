@@ -9,7 +9,6 @@ public class Othergraph : MonoBehaviour
     private bool hitA = true;
     private bool hitB = false;
     private bool prevGround = true;
-    Transform other2;
     PlayerMove playerMove;
     SpriteRenderer regleft;
     SpriteRenderer regright;
@@ -18,6 +17,7 @@ public class Othergraph : MonoBehaviour
     SpriteRenderer otherSpriteRenderer;
     SpriteRenderer other2SpriteRenderer;
     [SerializeField] GameObject other;
+    [SerializeField] Transform other2;
     [SerializeField] Transform Line;
     [SerializeField] Transform leftreg;
     [SerializeField] Transform rightreg;

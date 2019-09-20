@@ -20,8 +20,8 @@ public class Hide : MonoBehaviour
     private bool prevMimicryFlag = false;   //キーを押す前が擬態中かどうかを取る
     PlayerMove player;
     SetTomgue tomgleScript;
-    [SerializeField] GameObject Player;
     [SerializeField] GameObject WallPlayer;
+    [SerializeField] GameObject Player;
     void Start()
     {
         player = GetComponent<PlayerMove>();
@@ -38,12 +38,12 @@ public class Hide : MonoBehaviour
         if(player.GetOnGround())
         {
             GetComponent<PolygonCollider2D>().enabled = hit;
-            ChangeTransparency(normal,WallPlayer);
+            ChangeTransparency(normal,Player);
         }
         else
         {
-            Player.GetComponent<PolygonCollider2D>().enabled = hit;
-            ChangeTransparency(normal,Player);
+            WallPlayer.GetComponent<PolygonCollider2D>().enabled = hit;
+            ChangeTransparency(normal,WallPlayer);
         }
     }
     //色を変える

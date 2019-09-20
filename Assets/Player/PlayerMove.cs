@@ -35,7 +35,7 @@ public class PlayerMove : MonoBehaviour
     private bool havekey = false;
     readonly Condition[] conditions = new Condition[con];
     [SerializeField] Animator anim;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject Wallplayer;
     private void Start()
     {
         for (int i = 0; i < con; i++)
@@ -107,8 +107,8 @@ public class PlayerMove : MonoBehaviour
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(-posSpeed, 0.0f, 0.0f);
-                player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
-                prevrotz = player.transform.localRotation.z;
+                Wallplayer.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0, 0, 1));
+                prevrotz = Wallplayer.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.A) ||
@@ -133,8 +133,8 @@ public class PlayerMove : MonoBehaviour
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(posSpeed, 0.0f, 0.0f);
-                player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
-                prevrotz = player.transform.localRotation.z;
+                Wallplayer.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
+                prevrotz = Wallplayer.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.D) ||
@@ -156,8 +156,8 @@ public class PlayerMove : MonoBehaviour
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, posSpeed, 0.0f);
-                player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-                prevrotz = player.transform.localRotation.z;
+                Wallplayer.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+                prevrotz = Wallplayer.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.W) ||
@@ -175,8 +175,8 @@ public class PlayerMove : MonoBehaviour
             {
                 //動きを遅くするか止める
                 transform.position += new Vector3(0.0f, -posSpeed, 0.0f);
-                player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-                prevrotz = player.transform.localRotation.z;
+                Wallplayer.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                prevrotz = Wallplayer.transform.localRotation.z;
             }
         }
         if (Input.GetKeyUp(KeyCode.S) ||

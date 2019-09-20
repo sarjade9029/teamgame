@@ -727,7 +727,8 @@ MonoBehaviour:
   normalSpeed: 10
   movement: 0
   anim: {fileID: 5093852551039857093}
-  player: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b, type: 3}
+  Wallplayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
+    type: 3}
 --- !u!50 &3452145710262815271
 Rigidbody2D:
   serializedVersion: 4
@@ -764,9 +765,9 @@ MonoBehaviour:
   hideTime: 30
   stopperMin: 0.1
   alphaAddSub: 0.01
-  Player: {fileID: 5093852551039857099}
   WallPlayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
     type: 3}
+  Player: {fileID: 5093852551039857099}
 --- !u!114 &825797495545080457
 MonoBehaviour:
   m_ObjectHideFlags: 0
