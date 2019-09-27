@@ -235,9 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94a765a7cc490d4781a0af5a2529e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1532913147}
-  text: {fileID: 429257106}
   Text: "\u96FB\u6C17\u306B\u5F53\u305F\u308B\u3068\u58C1\u304B\u3089\u843D\u3061\u3066\u4E00\u5B9A\u6642\u9593\u52D5\u3051\u306A\u304F\u306A\u308B\u305E\uFF01\uFF01"
+  text: {fileID: 429257106}
+  flame: {fileID: 1532913147}
 --- !u!61 &216943997
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerMove
       value: 
-      objectReference: {fileID: 1665634099}
+      objectReference: {fileID: 1665634098}
     - target: {fileID: 5773417857025940055, guid: 617b3205283a2b74e952990c1114368b,
         type: 3}
       propertyPath: collder
@@ -1154,6 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StopTime: 2
+  player: {fileID: 0}
 --- !u!60 &609094693
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1698,6 +1699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StopTime: 2
+  player: {fileID: 0}
 --- !u!1001 &881910339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3222,16 +3224,16 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2116101532}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1665634099 stripped
+--- !u!114 &1665634098 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5093852551039857090, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
+  m_CorrespondingSourceObject: {fileID: 6410755765439770784, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0,
     type: 3}
   m_PrefabInstance: {fileID: 2116101532}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665634091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6781e15db30cb40a489766a49f6ba0, type: 3}
+  m_Script: {fileID: 11500000, guid: 13ea326200558fc418dc2a0ed9163948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1678011392
@@ -4046,9 +4048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94a765a7cc490d4781a0af5a2529e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1532913147}
-  text: {fileID: 1664290027}
   Text: "\u9375\u3092\u6301\u3063\u305F\u72B6\u614B\u3067Y\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u3066\u6B21\u306E\u30B9\u30C6\u30FC\u30B8\u3078\uFF01\uFF01"
+  text: {fileID: 1664290027}
+  flame: {fileID: 1532913147}
 --- !u!61 &2053825215
 BoxCollider2D:
   m_ObjectHideFlags: 0

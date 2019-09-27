@@ -242,7 +242,8 @@ MonoBehaviour:
   shotflag: 0
   animator: {fileID: 0}
   shotPoint: {fileID: 4165280255015195080}
-  shotPrefab: {fileID: 4165280254061923639}
+  shotPrefab: {fileID: 7797803294192499534, guid: 78000411f8fed2f4788145bf882128c9,
+    type: 3}
 --- !u!114 &4165280254812777194
 MonoBehaviour:
   m_ObjectHideFlags: 0

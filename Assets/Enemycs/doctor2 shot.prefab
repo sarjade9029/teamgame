@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
-  xSpeed: 5
+  xSpeed: 8
   deletetime: 2
-  Player: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b, type: 3}
-  Player1: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
+  Player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
+  WallPlayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
+    type: 3}

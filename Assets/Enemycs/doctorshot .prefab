@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047a5eb433ce36245ad649db1bec9800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
-  xSpeed: 5
+  dmg: 2
+  xSpeed: 12
   deletetime: 2
-  Player: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b, type: 3}
-  Player1: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
+  Player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
+  WallPlayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
+    type: 3}

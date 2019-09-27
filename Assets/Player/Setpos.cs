@@ -5,7 +5,7 @@ using UnityEngine;
 public class Setpos : MonoBehaviour
 {
     public Animator anim;
-    public PlayerMove playerMove;
+    [SerializeField] PlayerMove playerMove;
     public GameObject wallplayer;
     void Update()
     {

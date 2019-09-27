@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2986883199167295796}
   - component: {fileID: 2986883199167295799}
   - component: {fileID: 2986883199167295798}
-  - component: {fileID: 8140684482029007142}
+  - component: {fileID: 6741019288677525331}
   m_Layer: 0
   m_Name: "\u30AE\u30ED\u30C1\u30F3"
   m_TagString: Untagged
@@ -556,7 +556,7 @@ PolygonCollider2D:
       - {x: -0.35465333, y: -1.421465}
       - {x: -0.36609375, y: -1.4329054}
       - {x: -0.35465333, y: -1.4329054}
---- !u!114 &8140684482029007142
+--- !u!114 &6741019288677525331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -565,9 +565,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2986883199167295785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6089532db8d0f11468b7500f5bf0e7a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 047a5eb433ce36245ad649db1bec9800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 5
   dmg: 1
-  deletetime: 2
+  xSpeed: 0
+  deletetime: 0
+  Player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
+  WallPlayer: {fileID: 0}

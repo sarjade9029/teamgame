@@ -26,9 +26,12 @@ public class EnemyShot : MonoBehaviour
         // それが5秒より大きいとき自殺する
         if (Time.time - startTime > deletetime)
         {
-            if (deletetime > 0)
+            if (deletetime != 0)
             {
-                Destroy(gameObject);
+                if (deletetime > 0)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         // たまが反対を向いている（スケールがマイナス）なら反対に進ませる

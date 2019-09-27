@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StopTime: 2
+  player: {fileID: 5093852551039857099, guid: a929d1b0cf5329343bd5fc4f3e8f8ea0, type: 3}
 --- !u!60 &8001532918103580999
 PolygonCollider2D:
   m_ObjectHideFlags: 0

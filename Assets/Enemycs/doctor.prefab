@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6806ad1ad17db24ba2033affb91df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRange: 1
+  lookRange: 1.6
 --- !u!114 &251563115640038778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looktime: 0
   waittime: 0
-  allTime: 120
+  allTime: 70
   ScopeSpeed: 10
   lookUp: 1
   lookloop: 1
@@ -460,8 +460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 600
-  moveSpeed: 1
-  leftMove: 0
+  moveSpeed: 0
+  leftMove: 1
   animator: {fileID: 8834586416337505074}
 --- !u!60 &3170480310662389814
 PolygonCollider2D:

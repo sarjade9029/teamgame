@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0decc624dd7b12f4fa8a60f88d90a5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 5093852551039857099}
 --- !u!1 &4923648392801298257
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 8860892511978147966}
   - component: {fileID: 5093852551039857093}
   m_Layer: 8
-  m_Name: Player
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   sleepiness: 10
   rot: 0
   rigortime: 30
-  posSpeed: 0.01
+  posSpeed: 0.05
   normalSpeed: 10
   movement: 0
   anim: {fileID: 5093852551039857093}
@@ -795,12 +795,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6357c12dac6b4d44999a69d135544414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  other: {fileID: 0}
-  Line: {fileID: 0}
-  leftreg: {fileID: 0}
-  rightreg: {fileID: 0}
-  HitOther: {fileID: 0}
-  HitGraound: {fileID: 0}
+  WallPlayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
+    type: 3}
+  Line: {fileID: 5934159406774224671}
+  leftreg: {fileID: 6053648122791924676}
+  rightreg: {fileID: 2051057227589164543}
+  PlayerHitOther: {fileID: 7059819246705406891}
+  PlayerHitGraound: {fileID: 8547785321325385000}
 --- !u!114 &8860892511978147966
 MonoBehaviour:
   m_ObjectHideFlags: 0
