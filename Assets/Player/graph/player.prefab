@@ -478,7 +478,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5093852551039857099}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16, y: -4.23, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -765,8 +765,7 @@ MonoBehaviour:
   hideTime: 30
   stopperMin: 0.1
   alphaAddSub: 0.01
-  WallPlayer: {fileID: 3822771736033282757, guid: 617b3205283a2b74e952990c1114368b,
-    type: 3}
+  WallPlayer: {fileID: 0}
   Player: {fileID: 5093852551039857099}
 --- !u!114 &825797495545080457
 MonoBehaviour:
@@ -780,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeb707e17a38064aae4973853bd1a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tongue: {fileID: 1120416339969903017, guid: 84ad8095f30a996469907e7c52531257, type: 3}
+  Tongue: {fileID: 5093852552067590288}
   PlayerPos: {fileID: 4923648392801298257}
   player: {fileID: 5093852551039857099}
 --- !u!114 &4311929959556548877
@@ -843,6 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093852552067590291}
   - component: {fileID: 5093852552067590290}
+  - component: {fileID: 1054957846}
   m_Layer: 0
   m_Name: tongue
   m_TagString: Untagged
@@ -912,6 +912,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1054957846
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093852552067590288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 5}
+    newSize: {x: 6, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.83, y: -0.88}
+      - {x: 0.96, y: -0.87}
+      - {x: 1.1, y: -0.84999996}
+      - {x: 1.68, y: -0.75}
+      - {x: 2.35, y: -0.56}
+      - {x: 2.49, y: -0.52}
+      - {x: 2.54, y: -0.45999998}
+      - {x: 2.54, y: -0.39}
+      - {x: 2.5, y: -0.32999998}
+      - {x: 2.4099998, y: -0.32999998}
+      - {x: 1.7099999, y: -0.53}
+      - {x: 1.62, y: -0.55}
+      - {x: 1.03, y: -0.65}
+      - {x: 0.82, y: -0.66999996}
+      - {x: 0.69, y: -0.68}
+      - {x: 0.57, y: -0.69}
+      - {x: 0.31, y: -0.71}
+      - {x: 0.04, y: -0.72999996}
+      - {x: -0.48, y: -0.77}
+      - {x: -0.74, y: -0.78}
+      - {x: -0.75, y: -0.77}
+      - {x: -1.22, y: -0.77}
+      - {x: -1.23, y: -0.76}
+      - {x: -1.42, y: -0.75}
+      - {x: -1.6999999, y: -0.71}
+      - {x: -1.9, y: -0.68}
+      - {x: -2, y: -0.65999997}
+      - {x: -2.26, y: -0.61}
+      - {x: -2.34, y: -0.59999996}
+      - {x: -2.4099998, y: -0.65}
+      - {x: -2.4099998, y: -0.76}
+      - {x: -2.37, y: -0.81}
+      - {x: -2.26, y: -0.83}
+      - {x: -2.01, y: -0.88}
+      - {x: -1.89, y: -0.9}
+      - {x: -1.4, y: -0.96999997}
+      - {x: -0.96, y: -0.96999997}
+      - {x: -0.95, y: -0.97999996}
+      - {x: -0.44, y: -0.97999996}
+      - {x: 0.08, y: -0.94}
 --- !u!1 &7097276424079471131
 GameObject:
   m_ObjectHideFlags: 0

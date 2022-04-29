@@ -117,8 +117,8 @@ public class PlayerMove : MonoBehaviour
             movement = false;
         }
         //右
-        if (/*Input.GetKey(KeyCode.D) ||
-        I   nput.GetKey(KeyCode.RightArrow) ||*/
+        if (Input.GetKey(KeyCode.D) ||
+        Input.GetKey(KeyCode.RightArrow) ||
             ((joystickx > 0) && (joysticky <= 0.5f) && (joysticky >= -0.5f)))
         {
             movement = true;
@@ -143,8 +143,8 @@ public class PlayerMove : MonoBehaviour
             movement = false;
         }
         //上
-        if (/*Input.GetKey(KeyCode.W) ||
-            Input.GetKey(KeyCode.UpArrow) ||*/
+        if (Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.UpArrow) ||
             ((joysticky > 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
         {
             movement = true;
@@ -166,8 +166,8 @@ public class PlayerMove : MonoBehaviour
             movement = false;
         }
         //下
-        if (/*Input.GetKey(KeyCode.S) ||
-            Input.GetKey(KeyCode.DownArrow) ||*/
+        if (Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.DownArrow) ||
             ((joysticky < 0) && (joystickx <= 0.5f) && (joystickx >= -0.5f)))
         {
             movement = true;

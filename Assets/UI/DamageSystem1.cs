@@ -16,6 +16,7 @@ public class DamageSystem1 : MonoBehaviour
     void Start()
     {
         playerhp = player.GetComponent<PlayerMove>();
+        //textObj.GetComponent<Text>().text = ((int)playerhp).ToString();
     }
     void Update()
     {
